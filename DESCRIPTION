@@ -1,15 +1,26 @@
 Package: squeacr
 Type: Package
-Title: SQUEAC Tools
-Version: 0.0.9000
-Author: Ernest Guevarra
-Maintainer: Ernest Guevarra <ernestgmd@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: MIT License
-Encoding: UTF-8
-LazyData: true
+Title: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools  in R
+Version: 0.1.9000
+Authors@R: person("Ernest", "Guevarra", comment = c(ORCID = "0000-0002-4887-4415"), 
+    email = "ernestgmd@gmail.com", role = c("aut", "cre"))
+Description: In the recent past, measurement of coverage has been mainly through 
+    two-stage cluster sampled surveys either as part of a nutrition assessment 
+    or through a specific coverage survey known as Centric Systematic Area 
+    Sampling (CSAS). However, such methods are resource intensive and often only 
+    used for final programme evaluation meaning results arrive too late for 
+    programme adaptation. SQUEAC, which stands for Semi-Quantitative Evaluation 
+    of Access and Coverage, is a low resource method designed specifically to 
+    address this limitation and is used regularly for monitoring, planning and 
+    importantly, timely improvement to programme quality, both for agency and 
+    Ministry of Health (MoH) led programmes. This package provides functions
+    for use in conducting a SQUEAC investigation.
+License: MIT + file LICENSE
 Suggests: knitr,
     rmarkdown,
     testthat
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/rapidsurveys/squeacr
+BugReports: https://github.com/rapidsurveys/squeacr/issues
 VignetteBuilder: knitr
