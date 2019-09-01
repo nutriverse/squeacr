@@ -10,7 +10,7 @@
 #'
 #' @return Value of number of cases not in CMAM progamme
 #'
-#' @reference Myatt, Mark et al. 2012. Semi-Quantitative Evaluation of Access
+#' @references Myatt, Mark et al. 2012. Semi-Quantitative Evaluation of Access
 #' and Coverage (SQUEAC)/Simplified Lot Quality Assurance Sampling Evaluation of
 #' Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
 #'
