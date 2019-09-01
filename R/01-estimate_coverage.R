@@ -1,0 +1,76 @@
+################################################################################
+#
+#' Estimate cases not in CMAM programme
+#'
+#' @param cin Cases in CMAM programme
+#' @param cout Cases not in CMAM programme
+#' @param rin Recovering cases in programme
+#' @param k Correction factor. Ratio of the mean length of an untreated episode
+#'   to the mean length of a CMAM treatment episode
+#'
+#' @return Value of number of cases not in CMAM progamme
+#'
+#' @reference Myatt, Mark et al. 2012. Semi-Quantitative Evaluation of Access
+#' and Coverage (SQUEAC)/Simplified Lot Quality Assurance Sampling Evaluation of
+#' Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
+#'
+#' @examples
+#' calculate_rout(cin = 5, cout = 25, rin = 5, k = 3)
+#'
+#' @export
+#'
+#
+################################################################################
+
+calculate_rout <- function(cin, cout, rin, k = 3) {
+  floor((1 / k) * (rin * ((cin + 1 + cout) / (cin + 1)) - rin))
+}
+
+
+################################################################################
+#
+#' Estimate case finding effectiveness
+#'
+#' @param cin Cases in CMAM programme
+#' @param cout Cases not in CMAM programme
+#'
+#' @return Value of case finding effectiveness
+#'
+#' @examples
+#' calculate_cf(cin = 5, cout = 20)
+#'
+#' @export
+#'
+#
+################################################################################
+
+calculate_cf <- function(cin, cout) {
+  cin / (cin + cout)
+}
+
+
+################################################################################
+#
+#' Estimate treatment coverage
+#'
+#' @param cin Cases in CMAM programme
+#' @param cout Cases not in CMAM programme
+#' @param rin Recovering cases in CMAM programme
+#' @param k Correction factor. Ratio of the mean length of an untreated episode
+#'   to the mean length of a CMAM treatment episode
+#'
+#' @return Value of treatment coverage
+#'
+#' @examples
+#' calculate_tc(cin = 5, cout = 20, rin = 5, k = 3)
+#'
+#' @export
+#'
+#'
+#
+################################################################################
+
+calculate_tc <- function(cin, cout, rin, k = 3) {
+  rout <- calculate_rout(cin = cin, cout = cout, rin = rin, k = k)
+  (cin + rin) / (cin + cout + rin + rout)
+}
