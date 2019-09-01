@@ -4,3 +4,20 @@ template:
   params:
     bootswatch: sandstone
     ganalytics: UA-102485058-6
+
+home:
+  #strip_header: true
+  links:
+  - text: Read more about SQUEAC
+    href: https://www.fantaproject.org/monitoring-and-evaluation/squeac-sleac
+
+reference:
+- title: Description
+  contents:
+  - squeacr
+
+- title: Coverage estimators
+  contents:
+  - calculate_rout
+  - calculate_cf
+  - calculate_tc
