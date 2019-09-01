@@ -3,10 +3,17 @@
 
 # squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R <img src="man/figures/squeacr.png" width = "200" align="right" />
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: start -->
+
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/rapidsurveys/squeacr.svg?branch=master)](https://travis-ci.org/rapidsurveys/squeacr)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/rapidsurveys/squeacr?branch=master&svg=true)](https://ci.appveyor.com/project/rapidsurveys/squeacr)
+<!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through
 two-stage cluster sampled surveys either as part of a nutrition
@@ -27,6 +34,8 @@ conducting a SQUEAC investigation.
 GitHub as follows:
 
 ``` r
-if(!require(devtools)) install.packages("devtools")
-devtools::install_github("rapidsurveys/squeacr")
+if(!require(remotes)) install.packages("remotes")
+remotes::install_github("rapidsurveys/squeacr")
 ```
+
+## Usage
