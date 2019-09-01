@@ -10,9 +10,13 @@
 #'
 #' @return Value of number of cases not in CMAM progamme
 #'
-#' @references Myatt, Mark et al. 2012. Semi-Quantitative Evaluation of Access
-#' and Coverage (SQUEAC)/Simplified Lot Quality Assurance Sampling Evaluation of
-#' Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
+#' @author Ernest Guevarra based on technical notes and equations by Mark Myatt
+#'
+#' @references Safari Balegamire, Katja Siling, Jose Luis Alvarez Moran,
+#'   Ernest Guevarra, Sophie Woodhead, Alison Norris, Lionella Fieschi,
+#'   Paul Binns, and Mark Myatt (2015). A single coverage estimator for use in
+#'   SQUEAC, SLEAC, and other CMAM coverage assessments. Field Exchange 49,
+#'   March 2015. p81. <www.ennonline.net/fex/49/singlecoverage>
 #'
 #' @examples
 #' calculate_rout(cin = 5, cout = 25, rin = 5, k = 3)
@@ -35,6 +39,14 @@ calculate_rout <- function(cin, cout, rin, k = 3) {
 #' @param cout Cases not in CMAM programme
 #'
 #' @return Value of case finding effectiveness
+#'
+#' @author Ernest Guevarra based on technical notes and equations by Mark Myatt
+#'
+#' @references Safari Balegamire, Katja Siling, Jose Luis Alvarez Moran,
+#'   Ernest Guevarra, Sophie Woodhead, Alison Norris, Lionella Fieschi,
+#'   Paul Binns, and Mark Myatt (2015). A single coverage estimator for use in
+#'   SQUEAC, SLEAC, and other CMAM coverage assessments. Field Exchange 49,
+#'   March 2015. p81. <www.ennonline.net/fex/49/singlecoverage>
 #'
 #' @examples
 #' calculate_cf(cin = 5, cout = 20)
@@ -60,6 +72,14 @@ calculate_cf <- function(cin, cout) {
 #'   to the mean length of a CMAM treatment episode
 #'
 #' @return Value of treatment coverage
+#'
+#' @author Ernest Guevarra based on technical notes and equations by Mark Myatt
+#'
+#' @references Safari Balegamire, Katja Siling, Jose Luis Alvarez Moran,
+#'   Ernest Guevarra, Sophie Woodhead, Alison Norris, Lionella Fieschi,
+#'   Paul Binns, and Mark Myatt (2015). A single coverage estimator for use in
+#'   SQUEAC, SLEAC, and other CMAM coverage assessments. Field Exchange 49,
+#'   March 2015. p81. <www.ennonline.net/fex/49/singlecoverage>
 #'
 #' @examples
 #' calculate_tc(cin = 5, cout = 20, rin = 5, k = 3)
