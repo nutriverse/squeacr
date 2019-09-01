@@ -26,3 +26,8 @@ Estimate cases not in CMAM programme
 calculate_rout(cin = 5, cout = 25, rin = 5, k = 3)
 
 }
+\references{
+Myatt, Mark et al. 2012. Semi-Quantitative Evaluation of Access
+and Coverage (SQUEAC)/Simplified Lot Quality Assurance Sampling Evaluation of
+Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
+}
