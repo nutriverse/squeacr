@@ -9,6 +9,7 @@
 #'
 #' @docType package
 #' @name squeacr
+#' @keywords internal
 #'
 #'
 #
