@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • squeacr</title>
+<title>Calculate median length of stay for a cohort of CMAM discharges — calculate_median_los • squeacr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Calculate median length of stay for a cohort of CMAM discharges — calculate_median_los" />
+<meta property="og:description" content="Calculate median length of stay for a cohort of CMAM discharges" />
 
 
 
@@ -68,7 +69,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -118,98 +119,44 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Calculate median length of stay for a cohort of CMAM discharges</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rapidsurveys/squeacr/blob/master/R/length_of_stay.R'><code>R/length_of_stay.R</code></a></small>
+    <div class="hidden name"><code>calculate_median_los.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Calculate median length of stay for a cohort of CMAM discharges</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>calculate_median_los</span>(<span class='no'>admission</span>, <span class='no'>discharge</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-description" class="hasAnchor"><a href="#section-description" class="anchor"></a>Description</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="squeacr.html">squeacr</a></code> </p>
-        </td>
-        <td><p>squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-coverage-estimators" class="hasAnchor"><a href="#section-coverage-estimators" class="anchor"></a>Coverage estimators</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="calculate_rout.html">calculate_rout()</a></code> </p>
-        </td>
-        <td><p>Estimate cases not in CMAM programme</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_cf.html">calculate_cf()</a></code> </p>
-        </td>
-        <td><p>Estimate case finding effectiveness</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_tc.html">calculate_tc()</a></code> </p>
-        </td>
-        <td><p>Estimate treatment coverage</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-length-of-stay" class="hasAnchor"><a href="#section-length-of-stay" class="anchor"></a>Length of stay</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="calculate_los.html">calculate_los()</a></code> </p>
-        </td>
-        <td><p>Calculate CMAM length of stay</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_median_los.html">calculate_median_los()</a></code> </p>
-        </td>
-        <td><p>Calculate median length of stay for a cohort of CMAM discharges</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>admission</th>
+      <td><p>A vector of dates of admission in <code>YYYY-MM-DD</code> format.</p></td>
+    </tr>
+    <tr>
+      <th>discharge</th>
+      <td><p>A vector of dates of discharge in <code>YYYY-MM-DD</code> format.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Numeric values for median length-of-stay in days.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>admission</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2010-03-15"</span>, <span class='st'>"2010-02-15"</span>),
+                <span class='kw'>discharge</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2010-06-14"</span>, <span class='st'>"2010-04-19"</span>))
+
+<span class='fu'>calculate_median_los</span>(<span class='kw'>admission</span> <span class='kw'>=</span> <span class='no'>x</span>$<span class='no'>admission</span>,
+                     <span class='kw'>discharge</span> <span class='kw'>=</span> <span class='no'>x</span>$<span class='no'>discharge</span>)</div><div class='output co'>#&gt; [1] 77</div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
