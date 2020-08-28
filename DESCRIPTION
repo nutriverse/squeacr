@@ -16,6 +16,8 @@ Description: In the recent past, measurement of coverage has been mainly through
     Ministry of Health (MoH) led programmes. This package provides functions
     for use in conducting a SQUEAC investigation.
 License: GPL-3
+Depends: 
+    R (>= 2.10)
 Suggests: 
     knitr,
     rmarkdown,
@@ -28,3 +30,4 @@ BugReports: https://github.com/rapidsurveys/squeacr/issues
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+
