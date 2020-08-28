@@ -11,6 +11,8 @@
 #' @name squeacr
 #' @keywords internal
 #' @importFrom stats median
+#' @importFrom tibble tibble
+#' @importFrom stringr str_detect
 #'
 #
 ################################################################################
