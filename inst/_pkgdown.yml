@@ -1,23 +1,30 @@
 title: squeacr
+
 url: https://rapidsurveys.io/squeacr
+
 template:
   params:
     bootswatch: sandstone
     ganalytics: UA-102485058-6
 
 home:
-  #strip_header: true
   links:
   - text: Read more about SQUEAC
     href: https://www.fantaproject.org/monitoring-and-evaluation/squeac-sleac
 
 reference:
-- title: Description
-  contents:
-  - squeacr
+  - title: Description
+    contents:
+    - squeacr
 
-- title: Coverage estimators
-  contents:
-  - calculate_rout
-  - calculate_cf
-  - calculate_tc
+  - title: Coverage estimators
+    contents:
+    - calculate_rout
+    - calculate_cf
+    - calculate_tc
+
+  - title: Length of stay
+    contents:
+    - calculate_los
+    - calculate_median_los
+
