@@ -17,6 +17,14 @@ reference:
     contents:
     - squeacr
 
+  - title: Performance indicators
+    contents:
+    - calculate_cured
+    - calculate_dead
+    - calculate_default
+    - calculate_no_response
+    - calculate_performance
+
   - title: Coverage estimators
     contents:
     - calculate_rout
@@ -28,3 +36,11 @@ reference:
     - calculate_los
     - calculate_median_los
 
+  - title: Utilities
+    contents:
+    - find_var_names
+
+  - title: Datasets
+    contents:
+    - monitoring
+    - muac_admission
