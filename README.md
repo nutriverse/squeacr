@@ -13,6 +13,7 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 status](https://travis-ci.org/rapidsurveys/squeacr.svg?branch=master)](https://travis-ci.org/rapidsurveys/squeacr)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/rapidsurveys/squeacr?branch=master&svg=true)](https://ci.appveyor.com/project/rapidsurveys/squeacr)
+[![CodeFactor](https://www.codefactor.io/repository/github/rapidsurveys/squeacr/badge)](https://www.codefactor.io/repository/github/rapidsurveys/squeacr)
 <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through
