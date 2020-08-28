@@ -18,6 +18,9 @@ Description: In the recent past, measurement of coverage has been mainly through
 License: GPL-3
 Depends: 
     R (>= 2.10)
+Imports: 
+    tibble,
+    stringr
 Suggests: 
     knitr,
     rmarkdown,
