@@ -9,7 +9,8 @@
 #'
 #' @docType package
 #' @name squeacr
-#'
+#' @keywords internal
+#' @importFrom stats median
 #'
 #
 ################################################################################
