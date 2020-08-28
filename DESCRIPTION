@@ -30,4 +30,3 @@ BugReports: https://github.com/rapidsurveys/squeacr/issues
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-
