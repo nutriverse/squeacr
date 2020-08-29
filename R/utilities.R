@@ -78,7 +78,7 @@ smooth_m3a3 <- function(x) {
   y <- zoo::rollmedian(x = x, k = 3, fill = c(x[1], NA, x[length(x)]))
 
   ## Average of 3
-  z <- zoo::rollmean(x = y, k = 3, fill = c(x[1], NA, x[length(x)]))
+  z <- zoo::rollmean(x = y, k = 3, fill = c(y[1], NA, y[length(x)]))
 
   ## Return results
   return(z)
