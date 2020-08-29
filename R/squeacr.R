@@ -13,6 +13,7 @@
 #' @importFrom stats median
 #' @importFrom tibble tibble
 #' @importFrom stringr str_detect
+#' @importFrom zoo rollmean rollmedian
 #'
 #
 ################################################################################
