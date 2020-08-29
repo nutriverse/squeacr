@@ -39,6 +39,7 @@ reference:
   - title: Utilities
     contents:
     - find_var_names
+    - smooth_m3a3
 
   - title: Datasets
     contents:

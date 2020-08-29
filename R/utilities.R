@@ -45,3 +45,41 @@ find_var_names <- function(.data, vars, all = FALSE) {
   ## Return result
   return(z)
 }
+
+
+################################################################################
+#
+#'
+#' Apply median of 3 and average of 3 smoothing on a time series
+#'
+#' @param x A vector of numerical information to be smoothed
+#'
+#' @return A vector of smoothed data
+#'
+#' @author Ernest Guevarra
+#'
+#' @examples
+#' x <- aggregate(cbind(`New Admissions`, Default) ~ Month + Year,
+#'                data = monitoring, FUN = sum)
+#' smooth_m3a3(x = x$Default)
+#'
+#' @export
+#'
+#
+################################################################################
+
+smooth_m3a3 <- function(x) {
+  ## Check if numeric
+  if(!is.numeric(x)) {
+    stop("Input vector should be numeric. Try again.", call. = TRUE)
+  }
+
+  ## Median of 3
+  y <- zoo::rollmedian(x = x, k = 3)
+
+  ## Average of 3
+  z <- zoo::rollmean(x = y, k = 3)
+
+  ## Return results
+  return(z)
+}
