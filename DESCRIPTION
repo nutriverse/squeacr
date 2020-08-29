@@ -20,7 +20,8 @@ Depends:
     R (>= 2.10)
 Imports: 
     tibble,
-    stringr
+    stringr,
+    zoo
 Suggests: 
     knitr,
     rmarkdown,
