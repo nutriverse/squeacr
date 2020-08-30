@@ -26,7 +26,7 @@ A tibble with 8234 rows and 16 columns
 | \emph{Year} | Year |
 }
 \source{
-Federal Ministry of Health Sudan
+Federal Ministry of Health of Sudan
 }
 \usage{
 monitoring

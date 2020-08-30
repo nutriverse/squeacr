@@ -5,13 +5,12 @@
 \alias{seasonal_calendar}
 \title{Seasonal calendar data for Sudan}
 \format{
-A tibble with 28 rows and 5 columns
+A tibble with 28 rows and 4 columns
 
 | \strong{Variables} | \strong{Description} |
 | \emph{event} | Name of seasonal calendar event or activity |
 | \emph{start} | Starting date of event/activity |
 | \emph{end} | Starting date of event/activity |
-| \emph{type} | Type of activity or event |
 | \emph{group} | Classification/group of activity or event |
 }
 \source{
