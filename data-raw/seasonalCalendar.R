@@ -36,28 +36,18 @@ event <- rep(event, 4)
           paste(2018, .end, sep = "-"),
           paste(2019, .end, sep = "-"))
 
-type <- c("Preparation and planting",
-          "Preparation and planting",
-          "Preparation and planting",
-          "Harvest",
-          "Harvest",
-          "Weather",
-          "Weather")
-
-type <- rep(type, 4)
-
-group <- c("Agriculture",
-           "Agriculture",
-           "Agriculture",
-           "Agiculture",
-           "Agriculture",
+group <- c("Agriculture: Preparation and planting",
+           "Agriculture: Preparation and planting",
+           "Agriculture: Preparation and planting",
+           "Agriculture: Harvest",
+           "Agriculture: Harvest",
            "Climate",
-           "Climate")
+           "Hunger gap")
 
 group <- rep(group, 4)
 
-seasonal_calendar <- data.frame(event, .start, .end, type, group)
-names(seasonal_calendar) <- c("event", "start", "end", "type", "group")
+seasonal_calendar <- data.frame(event, .start, .end, group)
+names(seasonal_calendar) <- c("event", "start", "end", "group")
 seasonal_calendar <- tibble::tibble(seasonal_calendar)
 
 usethis::use_data(seasonal_calendar, overwrite = TRUE, compress = "xz")

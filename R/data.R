@@ -46,7 +46,7 @@
 #' | *Month* | Month |
 #' | *Year* | Year |
 #'
-#' @source Federal Ministry of Health Sudan
+#' @source Federal Ministry of Health of Sudan
 #'
 #'
 #
@@ -59,13 +59,12 @@
 #'
 #' Seasonal calendar data for Sudan
 #'
-#' @format A tibble with 28 rows and 5 columns
+#' @format A tibble with 28 rows and 4 columns
 #'
 #' | **Variables** | **Description** |
 #' | *event* | Name of seasonal calendar event or activity |
 #' | *start* | Starting date of event/activity |
 #' | *end* | Starting date of event/activity |
-#' | *type* | Type of activity or event |
 #' | *group* | Classification/group of activity or event |
 #'
 #' @source https://fews.net/east-africa/sudan/seasonal-calendar/december-2013
