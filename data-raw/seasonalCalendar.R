@@ -1,20 +1,20 @@
 ## Create seasonal calendar data for Sudan
 
 event <- c(NA,
-           "Land preparation",
+           "Land\npreparation",
            NA,
            "Planting",
            NA,
-           "Winter season planting",
+           "Winter season\nplanting",
            NA,
            "Rainy season",
            NA,
            NA,
-           "Wheat harvest (irrigated)",
+           "Wheat harvest\n(irrigated)",
            NA,
            "Lean season",
            NA,
-           "Millet and sorghum harvest")
+           "Millet and\nsorghum harvest")
 
 event <- rep(event, 4)
 
