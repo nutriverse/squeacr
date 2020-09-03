@@ -14,7 +14,7 @@ event <- c(NA,
            NA,
            "Lean season",
            NA,
-           "Millet and sorghum harveset")
+           "Millet and sorghum harvest")
 
 event <- rep(event, 4)
 
