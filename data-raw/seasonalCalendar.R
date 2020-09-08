@@ -31,10 +31,18 @@ event <- rep(event, 4)
           "10-01",
           "01-01")
 
-.end <- c(paste(2016, .end, sep = "-"),
-          paste(2017, .end, sep = "-"),
-          paste(2018, .end, sep = "-"),
-          paste(2019, .end, sep = "-"))
+.end <- c(paste(2016, .end[1:2], sep = "-"),
+          paste(2017, .end[c(3, 7)], sep = "-"),
+          paste(2016, .end[4:6], sep = "-"),
+          paste(2017, .end[1:2], sep = "-"),
+          paste(2018, .end[c(3, 7)], sep = "-"),
+          paste(2017, .end[4:6], sep = "-"),
+          paste(2018, .end[1:2], sep = "-"),
+          paste(2019, .end[c(3, 7)], sep = "-"),
+          paste(2018, .end[4:6], sep = "-"),
+          paste(2019, .end[1:2], sep = "-"),
+          paste(2020, .end[c(3, 7)], sep = "-"),
+          paste(2019, .end[4:6], sep = "-"))
 
 group <- c("Planting",
            "Planting",
@@ -50,7 +58,6 @@ seasonal_calendar <- data.frame(event, .start, .end, group)
 names(seasonal_calendar) <- c("event", "start", "end", "group")
 
 ## Remove NAs
-seasonal_calendar <- seasonal_calendar[!is.na(seasonal_calendar$event), ]
 seasonal_calendar <- tibble::tibble(seasonal_calendar)
 
 usethis::use_data(seasonal_calendar, overwrite = TRUE, compress = "xz")
