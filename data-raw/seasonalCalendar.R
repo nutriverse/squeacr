@@ -32,17 +32,21 @@ event <- rep(event, 4)
           "01-01")
 
 .end <- c(paste(2016, .end[1:2], sep = "-"),
-          paste(2017, .end[c(3, 7)], sep = "-"),
+          paste(2017, .end[3], sep = "-"),
           paste(2016, .end[4:6], sep = "-"),
+          paste(2017, .end[3], sep = "-"),
           paste(2017, .end[1:2], sep = "-"),
-          paste(2018, .end[c(3, 7)], sep = "-"),
+          paste(2018, .end[3], sep = "-"),
           paste(2017, .end[4:6], sep = "-"),
+          paste(2018, .end[7], sep = "-"),
           paste(2018, .end[1:2], sep = "-"),
-          paste(2019, .end[c(3, 7)], sep = "-"),
+          paste(2019, .end[3], sep = "-"),
           paste(2018, .end[4:6], sep = "-"),
+          paste(2019, .end[3], sep = "-"),
           paste(2019, .end[1:2], sep = "-"),
-          paste(2020, .end[c(3, 7)], sep = "-"),
-          paste(2019, .end[4:6], sep = "-"))
+          paste(2020, .end[3], sep = "-"),
+          paste(2019, .end[4:6], sep = "-"),
+          paste(2020, .end[3], sep = "-"))
 
 group <- c("Planting",
            "Planting",
