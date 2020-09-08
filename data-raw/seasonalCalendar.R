@@ -1,37 +1,21 @@
 ## Create seasonal calendar data for Sudan
 
-event <- c(NA,
-           "Land preparation",
-           NA,
+event <- c("Land preparation",
            "Planting",
-           NA,
            "Winter season planting",
-           NA,
            "Rainy season",
-           NA,
-           NA,
            "Wheat harvest (irrigated)",
-           NA,
            "Lean season",
-           NA,
            "Millet and sorghum harvest")
 
 event <- rep(event, 4)
 
-.start <- c("01-01",
-            "04-01",
-            "05-01",
+.start <- c("04-01",
             "06-01",
-            "08-01",
             "11-01",
-            "01-01",
             "06-01",
-            "10-01",
-            "01-01",
             "03-01",
-            "04-01",
             "05-01",
-            "10-01",
             "11-01")
 
 .start <- c(paste(2016, .start, sep = "-"),
@@ -39,21 +23,13 @@ event <- rep(event, 4)
             paste(2018, .start, sep = "-"),
             paste(2019, .start, sep = "-"))
 
-.end <- c("03-31",
-          "05-01",
-          "06-01",
-          "07-31",
-          "10-30",
-          "12-31",
-          "05-30",
-          "09-30",
-          "12-31",
-          "02-28",
+.end <- c("05-01",
+          "08-01",
+          "01-01",
+          "10-01",
           "04-01",
-          "05-01",
-          "09-30",
-          "11-01",
-          "12-31")
+          "10-01",
+          "01-01")
 
 .end <- c(paste(2016, .end, sep = "-"),
           paste(2017, .end, sep = "-"),
@@ -63,15 +39,7 @@ event <- rep(event, 4)
 group <- c("Planting",
            "Planting",
            "Planting",
-           "Planting",
-           "Planting",
-           "Planting",
            "Rainfall",
-           "Rainfall",
-           "Rainfall",
-           "Food availability",
-           "Food availability",
-           "Food availability",
            "Food availability",
            "Food availability",
            "Food availability")
