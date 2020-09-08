@@ -1,20 +1,20 @@
 ## Create seasonal calendar data for Sudan
 
 event <- c(NA,
-           "Land\npreparation",
+           "Land preparation",
            NA,
            "Planting",
            NA,
-           "Winter season\nplanting",
+           "Winter season planting",
            NA,
            "Rainy season",
            NA,
            NA,
-           "Wheat harvest\n(irrigated)",
+           "Wheat harvest (irrigated)",
            NA,
            "Lean season",
            NA,
-           "Millet and\nsorghum harvest")
+           "Millet and sorghum harvest")
 
 event <- rep(event, 4)
 
@@ -80,6 +80,9 @@ group <- rep(group, 4)
 
 seasonal_calendar <- data.frame(event, .start, .end, group)
 names(seasonal_calendar) <- c("event", "start", "end", "group")
+
+## Remove NAs
+seasonal_calendar <- seasonal_calendar[!is.na(seasonal_calendar$event), ]
 seasonal_calendar <- tibble::tibble(seasonal_calendar)
 
 usethis::use_data(seasonal_calendar, overwrite = TRUE, compress = "xz")
