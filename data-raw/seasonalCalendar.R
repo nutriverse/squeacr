@@ -23,30 +23,18 @@ event <- rep(event, 4)
             paste(2018, .start, sep = "-"),
             paste(2019, .start, sep = "-"))
 
-.end <- c("05-01",
-          "08-01",
-          "01-01",
-          "10-01",
-          "04-01",
-          "10-01",
-          "01-01")
+.end <- c("04-30",
+          "07-31",
+          "12-31",
+          "09-30",
+          "03-31",
+          "09-30",
+          "12-31")
 
-.end <- c(paste(2016, .end[1:2], sep = "-"),
-          paste(2017, .end[3], sep = "-"),
-          paste(2016, .end[4:6], sep = "-"),
-          paste(2017, .end[3], sep = "-"),
-          paste(2017, .end[1:2], sep = "-"),
-          paste(2018, .end[3], sep = "-"),
-          paste(2017, .end[4:6], sep = "-"),
-          paste(2018, .end[7], sep = "-"),
-          paste(2018, .end[1:2], sep = "-"),
-          paste(2019, .end[3], sep = "-"),
-          paste(2018, .end[4:6], sep = "-"),
-          paste(2019, .end[3], sep = "-"),
-          paste(2019, .end[1:2], sep = "-"),
-          paste(2020, .end[3], sep = "-"),
-          paste(2019, .end[4:6], sep = "-"),
-          paste(2020, .end[3], sep = "-"))
+.end <- c(paste(2016, .end, sep = "-"),
+          paste(2017, .end, sep = "-"),
+          paste(2018, .end, sep = "-"),
+          paste(2019, .end, sep = "-"))
 
 group <- c("Planting",
            "Planting",
