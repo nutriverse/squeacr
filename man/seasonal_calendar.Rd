@@ -5,13 +5,13 @@
 \alias{seasonal_calendar}
 \title{Seasonal calendar data for Sudan}
 \format{
-A tibble with 28 rows and 4 columns
-
-| \strong{Variables} | \strong{Description} |
-| \emph{event} | Name of seasonal calendar event or activity |
-| \emph{start} | Starting date of event/activity |
-| \emph{end} | Starting date of event/activity |
-| \emph{group} | Classification/group of activity or event |
+A tibble with 28 rows and 4 columns\tabular{ll}{
+   \strong{Variables} \tab \strong{Description} \cr
+   \emph{event} \tab Name of seasonal calendar event or activity \cr
+   \emph{start} \tab Starting date of event/activity \cr
+   \emph{end} \tab Starting date of event/activity \cr
+   \emph{group} \tab Classification/group of activity or event \cr
+}
 }
 \source{
 https://fews.net/east-africa/sudan/seasonal-calendar/december-2013
@@ -21,5 +21,9 @@ seasonal_calendar
 }
 \description{
 Seasonal calendar data for Sudan
+}
+\examples{
+seasonal_calendar
+
 }
 \keyword{datasets}

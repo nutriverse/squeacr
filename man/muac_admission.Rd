@@ -5,12 +5,12 @@
 \alias{muac_admission}
 \title{MUAC at admission}
 \format{
-A tibble with 506 rows and 3 columns
-
-\ \strong{Variable} \ \strong{Description} \
-\ \emph{muac} \ Mid-upper arm circumference in centimetres \
-\ \emph{district} \ Name of district \
-\ \emph{count} \ Number of cases with specific MUAC \
+A tibble with 506 rows and 3 columns\tabular{ll}{
+   \strong{Variable} \tab \strong{Description} \cr
+   \emph{muac} \tab Mid-upper arm circumference in centimetres \cr
+   \emph{district} \tab Name of district \cr
+   \emph{count} \tab Number of cases with specific MUAC \cr
+}
 }
 \source{
 A SQUEAC survey in Lokori, Kenya

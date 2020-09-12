@@ -5,10 +5,11 @@
 #'
 #' @format A tibble with 506 rows and 3 columns
 #'
-#' \ **Variable** \ **Description** \
-#' \ *muac* \ Mid-upper arm circumference in centimetres \
-#' \ *district* \ Name of district \
-#' \ *count* \ Number of cases with specific MUAC \
+#' | **Variable** | **Description** |
+#' | :--- | :--- |
+#' | *muac* | Mid-upper arm circumference in centimetres |
+#' | *district* | Name of district |
+#' | *count* | Number of cases with specific MUAC |
 #'
 #' @examples
 #' muac_admission
@@ -29,6 +30,7 @@
 #' @format A tibble with 8234 rows and 16 columns
 #'
 #' | **Variable** | **Description** |
+#' | :--- | :--- |
 #' | *State* | Name of state |
 #' | *Locality* | Name of locality |
 #' | *Beginning of Month* | Cases in programme at beginning of month |
@@ -46,6 +48,9 @@
 #' | *Month* | Month |
 #' | *Year* | Year |
 #'
+#' @examples
+#' monitoring
+#'
 #' @source Federal Ministry of Health of Sudan
 #'
 #'
@@ -62,10 +67,14 @@
 #' @format A tibble with 28 rows and 4 columns
 #'
 #' | **Variables** | **Description** |
+#' | :--- | :--- |
 #' | *event* | Name of seasonal calendar event or activity |
 #' | *start* | Starting date of event/activity |
 #' | *end* | Starting date of event/activity |
 #' | *group* | Classification/group of activity or event |
+#'
+#' @examples
+#' seasonal_calendar
 #'
 #' @source https://fews.net/east-africa/sudan/seasonal-calendar/december-2013
 #'

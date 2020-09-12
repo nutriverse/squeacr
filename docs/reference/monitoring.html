@@ -135,28 +135,49 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 8234 rows and 16 columns</p>
-<p>| <strong>Variable</strong> | <strong>Description</strong> |
-| <em>State</em> | Name of state |
-| <em>Locality</em> | Name of locality |
-| <em>Beginning of Month</em> | Cases in programme at beginning of month |
-| <em>New Admissions</em> | New cases admitted within the month |
-| <em>Male</em> | New male cases admitted within the month |
-| <em>Female</em> | New female cases admitted within the month |
-| <em>Cured</em> | Number of cured cases within the month |
-| <em>Death</em> | Number of cases who died within the month |
-| <em>Default</em> | Number of cases who defaulted within the month |
-| <em>Non-Responder</em> | Number of non-responder cases within the month |
-| <em>Total Discharge</em> | Total number of discharges within the month |
-| <em>RUTF Consumed</em> | Number of RUTF consumed |
-| <em>Screening</em> | Screening |
-| <em>Sites</em> | Sites |
-| <em>Month</em> | Month |
-| <em>Year</em> | Year |</p>
+    <p>A tibble with 8234 rows and 16 columns</p><table class='table'>
+<tr><td><strong>Variable</strong></td><td><strong>Description</strong></td></tr>
+<tr><td><em>State</em></td><td>Name of state</td></tr>
+<tr><td><em>Locality</em></td><td>Name of locality</td></tr>
+<tr><td><em>Beginning of Month</em></td><td>Cases in programme at beginning of month</td></tr>
+<tr><td><em>New Admissions</em></td><td>New cases admitted within the month</td></tr>
+<tr><td><em>Male</em></td><td>New male cases admitted within the month</td></tr>
+<tr><td><em>Female</em></td><td>New female cases admitted within the month</td></tr>
+<tr><td><em>Cured</em></td><td>Number of cured cases within the month</td></tr>
+<tr><td><em>Death</em></td><td>Number of cases who died within the month</td></tr>
+<tr><td><em>Default</em></td><td>Number of cases who defaulted within the month</td></tr>
+<tr><td><em>Non-Responder</em></td><td>Number of non-responder cases within the month</td></tr>
+<tr><td><em>Total Discharge</em></td><td>Total number of discharges within the month</td></tr>
+<tr><td><em>RUTF Consumed</em></td><td>Number of RUTF consumed</td></tr>
+<tr><td><em>Screening</em></td><td>Screening</td></tr>
+<tr><td><em>Sites</em></td><td>Sites</td></tr>
+<tr><td><em>Month</em></td><td>Month</td></tr>
+<tr><td><em>Year</em></td><td>Year</td></tr>
+</table>
+
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Federal Ministry of Health of Sudan</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>monitoring</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 8,234 x 16</span><span>
+#&gt;    State Locality `Beginning Of M… `New Admissions`  Male Female Cured Death
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Gaze… El Qura…               16               16     8      8    23     0
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Gaze… El Qura…               56               24    11     13     0     0
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> Gaze… El Qura…               80               41    16     25    22     0
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Gaze… El Qura…               81               43    21     22    29     0
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Gaze… El Qura…               93               51    31     30    36     2
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Gaze… El Qura…              103               59    34     25     3     0
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> Gaze… El Qura…              163               69    34     35     8     0
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> Gaze… El Qura…              104              108    56     40     6     0
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Gaze… El Qura…              275              123    61     62   111     0
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Gaze… El Qura…              204               81    39     40    52     0
+#&gt; </span><span style='color: #949494;'># … with 8,224 more rows, and 8 more variables: Default </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>,</span><span>
+#&gt; </span><span style='color: #949494;'>#   `Non-Responder` </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, `Total Discharge` </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, `Rutf Consumed` </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>,</span><span>
+#&gt; </span><span style='color: #949494;'>#   Screening </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, Sites </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, Month </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, Year </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
