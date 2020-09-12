@@ -5,25 +5,25 @@
 \alias{monitoring}
 \title{Routine CMAM monitoring data from Sudan}
 \format{
-A tibble with 8234 rows and 16 columns
-
-| \strong{Variable} | \strong{Description} |
-| \emph{State} | Name of state |
-| \emph{Locality} | Name of locality |
-| \emph{Beginning of Month} | Cases in programme at beginning of month |
-| \emph{New Admissions} | New cases admitted within the month |
-| \emph{Male} | New male cases admitted within the month |
-| \emph{Female} | New female cases admitted within the month |
-| \emph{Cured} | Number of cured cases within the month |
-| \emph{Death} | Number of cases who died within the month |
-| \emph{Default} | Number of cases who defaulted within the month |
-| \emph{Non-Responder} | Number of non-responder cases within the month |
-| \emph{Total Discharge} | Total number of discharges within the month |
-| \emph{RUTF Consumed} | Number of RUTF consumed |
-| \emph{Screening} | Screening |
-| \emph{Sites} | Sites |
-| \emph{Month} | Month |
-| \emph{Year} | Year |
+A tibble with 8234 rows and 16 columns\tabular{ll}{
+   \strong{Variable} \tab \strong{Description} \cr
+   \emph{State} \tab Name of state \cr
+   \emph{Locality} \tab Name of locality \cr
+   \emph{Beginning of Month} \tab Cases in programme at beginning of month \cr
+   \emph{New Admissions} \tab New cases admitted within the month \cr
+   \emph{Male} \tab New male cases admitted within the month \cr
+   \emph{Female} \tab New female cases admitted within the month \cr
+   \emph{Cured} \tab Number of cured cases within the month \cr
+   \emph{Death} \tab Number of cases who died within the month \cr
+   \emph{Default} \tab Number of cases who defaulted within the month \cr
+   \emph{Non-Responder} \tab Number of non-responder cases within the month \cr
+   \emph{Total Discharge} \tab Total number of discharges within the month \cr
+   \emph{RUTF Consumed} \tab Number of RUTF consumed \cr
+   \emph{Screening} \tab Screening \cr
+   \emph{Sites} \tab Sites \cr
+   \emph{Month} \tab Month \cr
+   \emph{Year} \tab Year \cr
+}
 }
 \source{
 Federal Ministry of Health of Sudan
@@ -33,5 +33,9 @@ monitoring
 }
 \description{
 Routine CMAM monitoring data from Sudan
+}
+\examples{
+monitoring
+
 }
 \keyword{datasets}

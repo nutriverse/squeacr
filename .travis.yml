@@ -14,3 +14,6 @@ addons:
      packages:
        - libgdal-dev
        - libproj-dev
+
+after_success:
+  - Rscript -e 'covr::codecov()'

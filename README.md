@@ -13,6 +13,8 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 status](https://travis-ci.org/rapidsurveys/squeacr.svg?branch=master)](https://travis-ci.org/rapidsurveys/squeacr)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/rapidsurveys/squeacr?branch=master&svg=true)](https://ci.appveyor.com/project/rapidsurveys/squeacr)
+[![Codecov test
+coverage](https://codecov.io/gh/rapidsurveys/squeacr/branch/master/graph/badge.svg)](https://codecov.io/gh/rapidsurveys/squeacr?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/rapidsurveys/squeacr/badge)](https://www.codefactor.io/repository/github/rapidsurveys/squeacr)
 <!-- badges: end -->
 
@@ -40,3 +42,7 @@ remotes::install_github("rapidsurveys/squeacr")
 ```
 
 ## Usage
+
+### CMAM Performance Indicators
+
+The `squeacr` package
