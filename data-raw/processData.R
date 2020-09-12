@@ -141,7 +141,7 @@ monitoring$Locality[monitoring$State == "Gedaref"] <- monitoring$Locality[monito
   str_replace_all(pattern = "Gala Anahal", replacement = "Gala'a El Nahal") %>%
   str_replace_all(pattern = "West Galabat", replacement = "Western Galabat") %>%
   str_replace_all(pattern = "Mid Gedaref", replacement = "Middle Geddaref") %>%
-  str_replace_all(pattern = "Gedaref", replacement = "Gedaref Town") %>%
+  str_replace_all(pattern = "Gedaref", replacement = "Gedaref Town")
 
 ## Clean up localities names - Kassala
 unique(monitoring$Locality[monitoring$State == "Kassala"])
@@ -257,7 +257,7 @@ monitoring$Locality[monitoring$State == "South Darfur"] <- monitoring$Locality[m
   str_replace_all(pattern = "Shataia", replacement = "Shattaya") %>%
   str_replace_all(pattern = "East Jabal Mara", replacement = "Sharg El Jabal")
 
-monitoring$Locality[monitoring$State == "South Darfur"][monitoring$Locality[monitoring$State == "South Darfur"] == "Nyala"] <- "Nyala North"
+monitoring$Locality[monitoring$State == "South Darfur" & monitoring$Locality == "Nyala"] <- "Nyala South"
 
 ## Clean up localities names - South Kordofan
 unique(monitoring$Locality[monitoring$State == "South Kordofan"])
