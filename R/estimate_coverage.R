@@ -8,7 +8,7 @@
 #' @param k Correction factor. Ratio of the mean length of an untreated episode
 #'   to the mean length of a CMAM treatment episode
 #'
-#' @return Value of number of cases not in CMAM progamme
+#' @return Value of number of cases not in CMAM programme
 #'
 #' @author Ernest Guevarra based on technical notes and equations by Mark Myatt
 #'

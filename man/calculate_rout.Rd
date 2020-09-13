@@ -17,7 +17,7 @@ calculate_rout(cin, cout, rin, k = 3)
 to the mean length of a CMAM treatment episode}
 }
 \value{
-Value of number of cases not in CMAM progamme
+Value of number of cases not in CMAM programme
 }
 \description{
 Estimate cases not in CMAM programme
