@@ -130,7 +130,7 @@
     <p>Calculate median length of stay for a cohort of CMAM discharges</p>
     </div>
 
-    <pre class="usage"><span class='fu'>calculate_median_los</span>(<span class='no'>admission</span>, <span class='no'>discharge</span>)</pre>
+    <pre class="usage"><span class='fu'>calculate_median_los</span>(<span class='kw'>admission</span>, <span class='kw'>discharge</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -148,13 +148,17 @@
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Numeric values for median length-of-stay in days.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Ernest Guevarra</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>admission</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2010-03-15"</span>, <span class='st'>"2010-02-15"</span>),
-                <span class='kw'>discharge</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2010-06-14"</span>, <span class='st'>"2010-04-19"</span>))
+    <pre class="examples"><div class='input'><span class='kw'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(admission = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2010-03-15"</span>, <span class='st'>"2010-02-15"</span>),
+                discharge = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2010-06-14"</span>, <span class='st'>"2010-04-19"</span>))
 
-<span class='fu'>calculate_median_los</span>(<span class='kw'>admission</span> <span class='kw'>=</span> <span class='no'>x</span>$<span class='no'>admission</span>,
-                     <span class='kw'>discharge</span> <span class='kw'>=</span> <span class='no'>x</span>$<span class='no'>discharge</span>)</div><div class='output co'>#&gt; [1] 77</div><div class='input'>
+<span class='fu'>calculate_median_los</span>(admission = <span class='kw'>x</span><span class='op'>$</span><span class='kw'>admission</span>,
+                     discharge = <span class='kw'>x</span><span class='op'>$</span><span class='kw'>discharge</span>)
+</div><div class='output co'>#&gt; [1] 77</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -171,7 +175,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
