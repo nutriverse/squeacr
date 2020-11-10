@@ -1,8 +1,12 @@
 library(readxl)
+library(dplyr)
 
-otpData <- readxl::read_xlsx(path = "data-raw/cmam/otpEpisode_calculations.xlsx",
-                             sheet = 1,
-                             range = "A1:M152")
+otp_beneficiaries <- readxl::read_xlsx(path = "data-raw/cmam/otpEpisode_calculations.xlsx",
+                                       sheet = 1,
+                                       range = "A1:M152") %>%
+  dplyr::relocate(health_facility, .before = age) %>%
+  dplyr::relocate(locality, .before = health_facility) %>%
+  dplyr::relocate(state, .before = state)
 
-usethis::use_data(otpData, overwrite = TRUE, compress = "xz")
+usethis::use_data(otp_beneficiaries, overwrite = TRUE, compress = "xz")
 
