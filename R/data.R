@@ -83,3 +83,35 @@
 ################################################################################
 "seasonal_calendar"
 
+
+################################################################################
+#
+#'
+#' Outpatient Therapeutic Care Programme (OTP) beneficiaries data
+#'
+#' @format A tibble with 151 rows and 13 columns:
+#'
+#' | **Variable** | **Description** |
+#' | :--- | :--- |
+#' | *index* | Unique identifier |
+#' | *age* | Age of child |
+#' | *muac* | Mid-upper arm circumference (cms) at admission |
+#' | *wt* | Weight (kgs) at admission |
+#' | *ht* | Height (cms) at admission |
+#' | *admDate* | Date of admission |
+#' | *disDate* | Date of discharge |
+#' | *diswt* | Weight (kgs) at discharge |
+#' | *attended* | Number of OTP sessions attended |
+#' | *exitType* | Type of exit (cured, dead, default or non-responder) |
+#' | *state* | Name of state |
+#' | *locality* | Name of locality |
+#' | *health_facility* | Name of health facility |
+#'
+#' @examples
+#' otpData
+#'
+#' @source Data collected from beneficiary cards from Kassala State, Sudan
+#'
+#
+################################################################################
+"otpData"
