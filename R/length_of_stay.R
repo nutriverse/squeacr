@@ -87,7 +87,7 @@ calculate_median_los <- function(df, admission, discharge, group = NULL) {
   ## Check group
   if(!is.null(group)) {
     x <- data.frame(df, los)
-    median_los <- aggregate(los ~ get(group), data = x, FUN = stats::median)
+    median_los <- stats::aggregate(los ~ get(group), data = x, FUN = stats::median)
     names(median_los) <- c(group, "los")
   } else {
     median_los <- stats::median(los)

@@ -2,8 +2,11 @@ Package: squeacr
 Type: Package
 Title: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R
 Version: 0.1.0.9000
-Authors@R: person("Ernest", "Guevarra", comment = c(ORCID = "0000-0002-4887-4415"), 
-    email = "ernest@guevarra.io", role = c("aut", "cre"))
+Authors@R: person(given = "Ernest", 
+                  family = "Guevarra", 
+                  comment = c(ORCID = "0000-0002-4887-4415"), 
+                  email = "ernest@guevarra.io", 
+                  role = c("aut", "cre"))
 Description: In the recent past, measurement of coverage has been mainly through 
     two-stage cluster sampled surveys either as part of a nutrition assessment 
     or through a specific coverage survey known as Centric Systematic Area 
@@ -27,12 +30,13 @@ Suggests:
     rmarkdown,
     testthat,
     covr,
-    spelling
+    spelling,
+    readxl
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-URL: https://github.com/rapidsurveys/squeacr
-BugReports: https://github.com/rapidsurveys/squeacr/issues
-VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+VignetteBuilder: knitr
+URL: https://github.com/rapidsurveys/squeacr
+BugReports: https://github.com/rapidsurveys/squeacr/issues

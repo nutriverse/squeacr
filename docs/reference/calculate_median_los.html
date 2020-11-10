@@ -130,35 +130,57 @@
     <p>Calculate median length of stay for a cohort of CMAM discharges</p>
     </div>
 
-    <pre class="usage"><span class='fu'>calculate_median_los</span>(<span class='kw'>admission</span>, <span class='kw'>discharge</span>)</pre>
+    <pre class="usage"><span class='fu'>calculate_median_los</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>admission</span>, <span class='va'>discharge</span>, group <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>df</th>
+      <td><p>A data.frame containing information on a cohort of CMAM
+discharges specifically dates of admission and dates of discharge.</p></td>
+    </tr>
+    <tr>
       <th>admission</th>
-      <td><p>A vector of dates of admission in <code>YYYY-MM-DD</code> format.</p></td>
+      <td><p>A character value for name of variable in <code>df</code> containing
+dates of admission in <code>YYYY-MM-DD</code> format.</p></td>
     </tr>
     <tr>
       <th>discharge</th>
-      <td><p>A vector of dates of discharge in <code>YYYY-MM-DD</code> format.</p></td>
+      <td><p>A character value for name of variable in <code>df</code> containing
+dates of discharge in <code>YYYY-MM-DD</code> format.</p></td>
+    </tr>
+    <tr>
+      <th>group</th>
+      <td><p>A character value for name of variable in <code>df</code> to use as
+grouping variable within which median length-of-stay is to be calculated.
+Default is NULL for no grouping.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Numeric values for median length-of-stay in days.</p>
+    <p>A named list of two objects. First is a vector of numeric values for
+length-of-stay in days per CMAM discharge. Second is a numeric value for
+median length-of-stay in days or a data.frame of numeric values for median
+length-of-stay if <code>group</code> is specified.</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Ernest Guevarra</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(admission = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2010-03-15"</span>, <span class='st'>"2010-02-15"</span>),
-                discharge = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2010-06-14"</span>, <span class='st'>"2010-04-19"</span>))
+    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>admission <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"2010-03-15"</span>, <span class='st'>"2010-02-15"</span><span class='op'>)</span>,
+                discharge <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"2010-06-14"</span>, <span class='st'>"2010-04-19"</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='fu'>calculate_median_los</span>(admission = <span class='kw'>x</span><span class='op'>$</span><span class='kw'>admission</span>,
-                     discharge = <span class='kw'>x</span><span class='op'>$</span><span class='kw'>discharge</span>)
-</div><div class='output co'>#&gt; [1] 77</div><div class='input'>
+<span class='fu'>calculate_median_los</span><span class='op'>(</span>df <span class='op'>=</span> <span class='va'>x</span>,
+                     admission <span class='op'>=</span> <span class='st'>"admission"</span>,
+                     discharge <span class='op'>=</span> <span class='st'>"discharge"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $`Length-of-stay`
+#&gt; [1] 91 63
+#&gt; 
+#&gt; $`Median length-of-stay`
+#&gt; [1] 77
+#&gt; </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
