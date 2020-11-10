@@ -94,6 +94,9 @@
 #' | **Variable** | **Description** |
 #' | :--- | :--- |
 #' | *index* | Unique identifier |
+#' | *state* | Name of state |
+#' | *locality* | Name of locality |
+#' | *health_facility* | Name of health facility |
 #' | *age* | Age of child |
 #' | *muac* | Mid-upper arm circumference (cms) at admission |
 #' | *wt* | Weight (kgs) at admission |
@@ -103,15 +106,12 @@
 #' | *diswt* | Weight (kgs) at discharge |
 #' | *attended* | Number of OTP sessions attended |
 #' | *exitType* | Type of exit (cured, dead, default or non-responder) |
-#' | *state* | Name of state |
-#' | *locality* | Name of locality |
-#' | *health_facility* | Name of health facility |
 #'
 #' @examples
-#' otpData
+#' otp_beneficiaries
 #'
 #' @source Data collected from beneficiary cards from Kassala State, Sudan
 #'
 #
 ################################################################################
-"otpData"
+"otp_beneficiaries"

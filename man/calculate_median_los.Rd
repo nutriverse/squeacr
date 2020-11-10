@@ -4,17 +4,17 @@
 \alias{calculate_median_los}
 \title{Calculate median length of stay for a cohort of CMAM discharges}
 \usage{
-calculate_median_los(df, admission, discharge, group = NULL)
+calculate_median_los(df, admission_date, discharge_date, group = NULL)
 }
 \arguments{
 \item{df}{A data.frame containing information on a cohort of CMAM
 discharges specifically dates of admission and dates of discharge.}
 
-\item{admission}{A character value for name of variable in \code{df} containing
-dates of admission in \code{YYYY-MM-DD} format.}
+\item{admission_date}{A character value for name of variable in \code{df}
+containing dates of admission in \code{YYYY-MM-DD} format.}
 
-\item{discharge}{A character value for name of variable in \code{df} containing
-dates of discharge in \code{YYYY-MM-DD} format.}
+\item{discharge_date}{A character value for name of variable in \code{df}
+containing dates of discharge in \code{YYYY-MM-DD} format.}
 
 \item{group}{A character value for name of variable in \code{df} to use as
 grouping variable within which median length-of-stay is to be calculated.
@@ -34,8 +34,8 @@ x <- data.frame(admission = c("2010-03-15", "2010-02-15"),
                 discharge = c("2010-06-14", "2010-04-19"))
 
 calculate_median_los(df = x,
-                     admission = "admission",
-                     discharge = "discharge")
+                     admission_date = "admission",
+                     discharge_date = "discharge")
 
 }
 \author{

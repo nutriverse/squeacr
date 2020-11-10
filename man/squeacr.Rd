@@ -26,6 +26,7 @@ Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://rapidsurveys.io/squeacr/}
   \item \url{https://github.com/rapidsurveys/squeacr}
   \item Report bugs at \url{https://github.com/rapidsurveys/squeacr/issues}
 }

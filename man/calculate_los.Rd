@@ -4,23 +4,28 @@
 \alias{calculate_los}
 \title{Calculate CMAM length of stay}
 \usage{
-calculate_los(admission, discharge)
+calculate_los(admission_date, discharge_date)
 }
 \arguments{
-\item{admission}{Date of admission in \code{YYYY-MM-DD} format. If child is a
-kwashiorkor case, date of lowest weight (when oedema has subsided).}
+\item{admission_date}{Date of admission in \code{YYYY-MM-DD} format. If child is a
+kwashiorkor case, date of lowest weight (when oedema has subsided). Can be
+a single date value or a vector of date values.}
 
-\item{discharge}{Date of discharge in \code{YYYY-MM-DD} format.}
+\item{discharge_date}{Date of discharge in \code{YYYY-MM-DD} format. Can be a
+single date value or a vector of date values.}
 }
 \value{
-Numeric value for length-of-stay in days.
+Numeric value or vector of numeric values for length-of-stay in days.
 }
 \description{
 Calculate CMAM length of stay
 }
 \examples{
-calculate_los(admission = "2010-03-15",
-              discharge = "2010-06-14")
+calculate_los(admission_date = "2010-03-15",
+              discharge_date = "2010-06-14")
+
+calculate_los(admission_date = c("2010-03-15", "2010-03-16"),
+              discharge_date = c("2010-06-14", "2010-06-20"))
 
 }
 \author{
