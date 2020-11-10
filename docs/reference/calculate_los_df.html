@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate median length of stay for a cohort of CMAM discharges — calculate_median_los • squeacr</title>
+<title>Calculate length of stay for a cohort of CMAM discharges — calculate_los_df • squeacr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Calculate median length of stay for a cohort of CMAM discharges — calculate_median_los" />
-<meta property="og:description" content="Calculate median length of stay for a cohort of CMAM discharges" />
+<meta property="og:title" content="Calculate length of stay for a cohort of CMAM discharges — calculate_los_df" />
+<meta property="og:description" content="Calculate length of stay for a cohort of CMAM discharges" />
 
 
 
@@ -121,16 +121,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate median length of stay for a cohort of CMAM discharges</h1>
+    <h1>Calculate length of stay for a cohort of CMAM discharges</h1>
     <small class="dont-index">Source: <a href='https://github.com/rapidsurveys/squeacr/blob/master/R/length_of_stay.R'><code>R/length_of_stay.R</code></a></small>
-    <div class="hidden name"><code>calculate_median_los.Rd</code></div>
+    <div class="hidden name"><code>calculate_los_df.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calculate median length of stay for a cohort of CMAM discharges</p>
+    <p>Calculate length of stay for a cohort of CMAM discharges</p>
     </div>
 
-    <pre class="usage"><span class='fu'>calculate_median_los</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>admission_date</span>, <span class='va'>discharge_date</span>, group <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>calculate_los_df</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>admission_date</span>, <span class='va'>discharge_date</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,19 +151,17 @@ containing dates of admission in <code>YYYY-MM-DD</code> format.</p></td>
 containing dates of discharge in <code>YYYY-MM-DD</code> format.</p></td>
     </tr>
     <tr>
-      <th>group</th>
-      <td><p>A character value for name of variable in <code>df</code> to use as
-grouping variable within which median length-of-stay is to be calculated.
-Default is NULL for no grouping.</p></td>
+      <th>add</th>
+      <td><p>Logical. Should results be added as a new column in <code>df</code>? Default
+is TRUE.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A named list of two objects. First is a vector of numeric values for
-length-of-stay in days per CMAM discharge. Second is a numeric value for
-median length-of-stay in days or a data.frame of numeric values for median
-length-of-stay if <code>group</code> is specified.</p>
+    <p>If <code>add</code> is TRUE, a tibble created from column binding <code>df</code> with
+the vector of numerical values of calculated length-of-stay. If <code>add</code> is
+FALSE, a vectdor of numerical values of calculated length-of-stay.</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Ernest Guevarra</p>
@@ -172,16 +170,15 @@ length-of-stay if <code>group</code> is specified.</p>
     <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>admission <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"2010-03-15"</span>, <span class='st'>"2010-02-15"</span><span class='op'>)</span>,
                 discharge <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"2010-06-14"</span>, <span class='st'>"2010-04-19"</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='fu'>calculate_median_los</span><span class='op'>(</span>df <span class='op'>=</span> <span class='va'>x</span>,
-                     admission_date <span class='op'>=</span> <span class='st'>"admission"</span>,
-                     discharge_date <span class='op'>=</span> <span class='st'>"discharge"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $`Length-of-stay`
-#&gt; [1] 91 63
-#&gt; 
-#&gt; $`Median length-of-stay`
-#&gt; [1] 77
-#&gt; </div><div class='input'>
-</div></pre>
+<span class='fu'>calculate_los_df</span><span class='op'>(</span>df <span class='op'>=</span> <span class='va'>x</span>,
+                 admission_date <span class='op'>=</span> <span class='st'>"admission"</span>,
+                 discharge_date <span class='op'>=</span> <span class='st'>"discharge"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 2 x 3</span><span>
+#&gt;   admission  discharge    los
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 2010-03-15 2010-06-14    91
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 2010-02-15 2010-04-19    63</div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
