@@ -31,12 +31,13 @@ Suggests:
     testthat,
     covr,
     spelling,
-    readxl
+    readxl,
+    dplyr
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
-URL: https://github.com/rapidsurveys/squeacr
+URL: https://rapidsurveys.io/squeacr/, https://github.com/rapidsurveys/squeacr
 BugReports: https://github.com/rapidsurveys/squeacr/issues
