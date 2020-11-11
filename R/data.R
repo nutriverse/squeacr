@@ -3,6 +3,29 @@
 #'
 #' MUAC at admission
 #'
+#' @format A named list with 4 tibbles:
+#'
+#' | *Telkuk* | MUAC at admission data for Telkuk locality |
+#' | *Halfa* | MUAC at admission data for Halfa locality |
+#' | *Kassala* | MUAC at admission data for Kassala locality |
+#' | *Naher Atbara* | MUAC at admission data for Naher Atbara locality |
+#'
+#' @examples
+#' muac_admission
+#'
+#' @source A CMAM programme evaluation in Sudan
+#'
+#'
+#
+################################################################################
+"muac_admission"
+
+
+################################################################################
+#
+#'
+#' MUAC at admission in tidy format
+#'
 #' @format A tibble with 506 rows and 3 columns
 #'
 #' | **Variable** | **Description** |
@@ -19,7 +42,7 @@
 #'
 #
 ################################################################################
-"muac_admission"
+"muac_admission_tidy"
 
 
 ################################################################################

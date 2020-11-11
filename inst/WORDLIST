@@ -1,4 +1,5 @@
 AppVeyor
+Atbara
 Balegamire
 Binns
 CMAM
@@ -8,6 +9,7 @@ Codecov
 FANTA
 FHI
 Fieschi
+Halfa
 Kassala
 Katja
 Lionella
@@ -15,11 +17,13 @@ Lokori
 MUAC
 MoH
 Myatt
+Naher
 ORCID
 RUTF
 SLEAC
 SQUEAC
 Siling
+Telkuk
 WIP
 admDate
 africa
@@ -39,4 +43,5 @@ muac
 singlecoverage
 sudan
 tibble
+tibbles
 www
