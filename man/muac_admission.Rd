@@ -5,15 +5,15 @@
 \alias{muac_admission}
 \title{MUAC at admission}
 \format{
-A tibble with 506 rows and 3 columns\tabular{ll}{
-   \strong{Variable} \tab \strong{Description} \cr
-   \emph{muac} \tab Mid-upper arm circumference in centimetres \cr
-   \emph{district} \tab Name of district \cr
-   \emph{count} \tab Number of cases with specific MUAC \cr
-}
+A named list with 4 tibbles:
+
+| \emph{Telkuk} | MUAC at admission data for Telkuk locality |
+| \emph{Halfa} | MUAC at admission data for Halfa locality |
+| \emph{Kassala} | MUAC at admission data for Kassala locality |
+| \emph{Naher Atbara} | MUAC at admission data for Naher Atbara locality |
 }
 \source{
-A SQUEAC survey in Lokori, Kenya
+A CMAM programme evaluation in Sudan
 }
 \usage{
 muac_admission

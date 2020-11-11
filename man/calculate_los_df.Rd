@@ -22,7 +22,7 @@ is TRUE.}
 \value{
 If \code{add} is TRUE, a tibble created from column binding \code{df} with
 the vector of numerical values of calculated length-of-stay. If \code{add} is
-FALSE, a vectdor of numerical values of calculated length-of-stay.
+FALSE, a vector of numerical values of calculated length-of-stay.
 }
 \description{
 Calculate length of stay for a cohort of CMAM discharges

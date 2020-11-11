@@ -29,7 +29,27 @@ muac_admission <- muac_admission %>%
   pivot_longer(cols = Lotubae:Lokori, names_to = "district", values_to = "count")
 
 names(muac_admission) <- c("muac", "district", "count")
+muac_admission_tidy <- muac_admission
+
+usethis::use_data(muac_admission_tidy, overwrite = TRUE, compress = "xz")
+
+##
+state_names <- openxlsx::getSheetNames(file = "data-raw/cmam/muac_admission.xlsx")
+
+muac_admission <- vector(mode = "list", length = length(state_names))
+names(muac_admission) <- state_names
+
+for(i in state_names) {
+  x <- readxl::read_xlsx(path = "data-raw/cmam/muac_admission.xlsx",
+                         sheet = i) %>%
+    dplyr::mutate(state = "Kassala", .after = muac) %>%
+    dplyr::mutate(locality = i, .after = state)
+
+  muac_admission[[i]] <- x
+}
+
 usethis::use_data(muac_admission, overwrite = TRUE, compress = "xz")
+
 
 
 

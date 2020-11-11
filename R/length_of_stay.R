@@ -59,7 +59,7 @@ calculate_los <- function(admission_date, discharge_date) {
 #'
 #' @return If `add` is TRUE, a tibble created from column binding `df` with
 #'   the vector of numerical values of calculated length-of-stay. If `add` is
-#'   FALSE, a vectdor of numerical values of calculated length-of-stay.
+#'   FALSE, a vector of numerical values of calculated length-of-stay.
 #'
 #' @author Ernest Guevarra
 #'
