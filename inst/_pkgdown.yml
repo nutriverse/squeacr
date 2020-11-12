@@ -46,5 +46,7 @@ reference:
     contents:
     - monitoring
     - muac_admission
+    - muac_admission_tidy
     - seasonal_calendar
     - otp_beneficiaries
+    - time_to_travel

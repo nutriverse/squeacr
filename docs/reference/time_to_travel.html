@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate length of stay for a cohort of CMAM discharges — calculate_los_df • squeacr</title>
+<title>Time-to-travel to health facilities for beneficiaries and volunteers — time_to_travel • squeacr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Calculate length of stay for a cohort of CMAM discharges — calculate_los_df" />
-<meta property="og:description" content="Calculate length of stay for a cohort of CMAM discharges" />
+<meta property="og:title" content="Time-to-travel to health facilities for beneficiaries and volunteers — time_to_travel" />
+<meta property="og:description" content="Time-to-travel to health facilities for beneficiaries and volunteers" />
 
 
 
@@ -121,63 +121,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate length of stay for a cohort of CMAM discharges</h1>
-    <small class="dont-index">Source: <a href='https://github.com/rapidsurveys/squeacr/blob/master/R/length_of_stay.R'><code>R/length_of_stay.R</code></a></small>
-    <div class="hidden name"><code>calculate_los_df.Rd</code></div>
+    <h1>Time-to-travel to health facilities for beneficiaries and volunteers</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rapidsurveys/squeacr/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>time_to_travel.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calculate length of stay for a cohort of CMAM discharges</p>
+    <p>Time-to-travel to health facilities for beneficiaries and volunteers</p>
     </div>
 
-    <pre class="usage"><span class='fu'>calculate_los_df</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>admission_date</span>, <span class='va'>discharge_date</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>time_to_travel</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>df</th>
-      <td><p>A data.frame containing information on a cohort of CMAM
-discharges specifically dates of admission and dates of discharge.</p></td>
-    </tr>
-    <tr>
-      <th>admission_date</th>
-      <td><p>A character value for name of variable in <code>df</code>
-containing dates of admission in <code>YYYY-MM-DD</code> format.</p></td>
-    </tr>
-    <tr>
-      <th>discharge_date</th>
-      <td><p>A character value for name of variable in <code>df</code>
-containing dates of discharge in <code>YYYY-MM-DD</code> format.</p></td>
-    </tr>
-    <tr>
-      <th>add</th>
-      <td><p>Logical. Should results be added as a new column in <code>df</code>? Default
-is TRUE.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>If <code>add</code> is TRUE, a tibble created from column binding <code>df</code> with
-the vector of numerical values of calculated length-of-stay. If <code>add</code> is
-FALSE, a vector of numerical values of calculated length-of-stay.</p>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+    <p>A tibble with 63 rows and 9 columns:</p><table class='table'>
+<tr><td><strong>Variable</strong></td><td><strong>Description</strong></td></tr>
+<tr><td><em>State</em></td><td>Name of state</td></tr>
+<tr><td><em>Locality</em></td><td>Name of locality</td></tr>
+<tr><td><em>Health Facility</em></td><td>Name of health facility</td></tr>
+<tr><td><em>Category</em></td><td>Category of beneficiary or volunteer</td></tr>
+<tr><td><em>30 or less</em></td><td>Travel time of 30 minutes or less</td></tr>
+<tr><td><em>31 to 60</em></td><td>Travel time of 31 minutes to 60 minutes</td></tr>
+<tr><td><em>61 to 90</em></td><td>Travel time of 61 minutes to 90 minutes</td></tr>
+<tr><td><em>91 to 120</em></td><td>Travel time of 91 minutes to 120 minutes</td></tr>
+<tr><td><em>more than 120</em></td><td>Travel time of more than 120 minutes</td></tr>
+</table>
 
-    <p>Ernest Guevarra</p>
+
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>Data collected from beneficiary cards from Kassala State, Sudan</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>admission <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"2010-03-15"</span>, <span class='st'>"2010-02-15"</span><span class='op'>)</span>,
-                discharge <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"2010-06-14"</span>, <span class='st'>"2010-04-19"</span><span class='op'>)</span><span class='op'>)</span>
-
-<span class='fu'>calculate_los_df</span><span class='op'>(</span>df <span class='op'>=</span> <span class='va'>x</span>,
-                 admission_date <span class='op'>=</span> <span class='st'>"admission"</span>,
-                 discharge_date <span class='op'>=</span> <span class='st'>"discharge"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 2 x 3</span><span>
-#&gt;   admission  discharge    los
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 2010-03-15 2010-06-14    91
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 2010-02-15 2010-04-19    63</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='va'>time_to_travel</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 63 x 9</span><span>
+#&gt;    State Locality `Health Facilit… Category `30 or less` `31 to 60` `61 to 90`
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Kass… Telkuk   Tahdi Osisi      Admissi…           25          0          0
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Kass… Telkuk   Tahdi Osisi      Default…            0          0          0
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> Kass… Telkuk   Tahdi Osisi      Volunte…            5          0          0
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Kass… Telkuk   Tahajer          Admissi…            4         42         10
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Kass… Telkuk   Tahajer          Default…            0          0          0
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Kass… Telkuk   Tahajer          Volunte…            1          4          1
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> Kass… Telkuk   Maman Almisgid   Admissi…            0         37          0
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> Kass… Telkuk   Maman Almisgid   Default…            0          0          0
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Kass… Telkuk   Maman Almisgid   Volunte…            4          0          0
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Kass… Telkuk   Tawayeet         Admissi…            1          5          0
+#&gt; </span><span style='color: #949494;'># … with 53 more rows, and 2 more variables: `91 to 120` </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, `more than</span><span>
+#&gt; </span><span style='color: #949494;'>#   120` </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
