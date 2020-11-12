@@ -10,3 +10,17 @@ otp_beneficiaries <- readxl::read_xlsx(path = "data-raw/cmam/otpEpisode_calculat
 
 usethis::use_data(otp_beneficiaries, overwrite = TRUE, compress = "xz")
 
+
+##
+locality_names <- openxlsx::getSheetNames(file = "data-raw/cmam/time_to_travel.xlsx")
+
+time_to_travel <- data.frame()
+
+for(i in locality_names) {
+  x <- readxl::read_xlsx(path = "data-raw/cmam/time_to_travel.xlsx",
+                         sheet = i)
+
+  time_to_travel <- rbind(time_to_travel, x)
+}
+
+usethis::use_data(time_to_travel, overwrite = TRUE, compress = "xz")

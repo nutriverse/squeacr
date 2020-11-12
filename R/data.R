@@ -138,3 +138,34 @@
 #
 ################################################################################
 "otp_beneficiaries"
+
+
+################################################################################
+#
+#'
+#' Time-to-travel to health facilities for beneficiaries and volunteers
+#'
+#' @format A tibble with 63 rows and 9 columns:
+#'
+#' | **Variable** | **Description** |
+#' | :--- | :--- |
+#' | *State* | Name of state |
+#' | *Locality* | Name of locality |
+#' | *Health Facility* | Name of health facility |
+#' | *Category* | Category of beneficiary or volunteer |
+#' | *30 or less* | Travel time of 30 minutes or less |
+#' | *31 to 60* | Travel time of 31 minutes to 60 minutes |
+#' | *61 to 90* | Travel time of 61 minutes to 90 minutes |
+#' | *91 to 120* | Travel time of 91 minutes to 120 minutes |
+#' | *more than 120* | Travel time of more than 120 minutes |
+#'
+#' @examples
+#' time_to_travel
+#'
+#' @source Data collected from beneficiary cards from Kassala State, Sudan
+#'
+#
+################################################################################
+"time_to_travel"
+
+

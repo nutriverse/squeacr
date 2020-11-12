@@ -34,12 +34,12 @@ muac_admission_tidy <- muac_admission
 usethis::use_data(muac_admission_tidy, overwrite = TRUE, compress = "xz")
 
 ##
-state_names <- openxlsx::getSheetNames(file = "data-raw/cmam/muac_admission.xlsx")
+locality_names <- openxlsx::getSheetNames(file = "data-raw/cmam/muac_admission.xlsx")
 
-muac_admission <- vector(mode = "list", length = length(state_names))
-names(muac_admission) <- state_names
+muac_admission <- vector(mode = "list", length = length(locality_names))
+names(muac_admission) <- locality_names
 
-for(i in state_names) {
+for(i in locality_names) {
   x <- readxl::read_xlsx(path = "data-raw/cmam/muac_admission.xlsx",
                          sheet = i) %>%
     dplyr::mutate(state = "Kassala", .after = muac) %>%
