@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MUAC at admission — muac_admission • squeacr</title>
+<title>MUAC at admission in tidy format — muac_admission_tidy • squeacr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="MUAC at admission — muac_admission" />
-<meta property="og:description" content="MUAC at admission" />
+<meta property="og:title" content="MUAC at admission in tidy format — muac_admission_tidy" />
+<meta property="og:description" content="MUAC at admission in tidy format" />
 
 
 
@@ -121,28 +121,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>MUAC at admission</h1>
+    <h1>MUAC at admission in tidy format</h1>
     <small class="dont-index">Source: <a href='https://github.com/rapidsurveys/squeacr/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>muac_admission.Rd</code></div>
+    <div class="hidden name"><code>muac_admission_tidy.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>MUAC at admission</p>
+    <p>MUAC at admission in tidy format</p>
     </div>
 
-    <pre class="usage"><span class='va'>muac_admission</span></pre>
+    <pre class="usage"><span class='va'>muac_admission_tidy</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A named list with 4 tibbles:</p>
-<p>| <em>Telkuk</em> | MUAC at admission data for Telkuk locality |
-| <em>Halfa</em> | MUAC at admission data for Halfa locality |
-| <em>Kassala</em> | MUAC at admission data for Kassala locality |
-| <em>Naher Atbara</em> | MUAC at admission data for Naher Atbara locality |</p>
+    <p>A tibble with 506 rows and 3 columns</p><table class='table'>
+<tr><td><strong>Variable</strong></td><td><strong>Description</strong></td></tr>
+<tr><td><em>muac</em></td><td>Mid-upper arm circumference in centimetres</td></tr>
+<tr><td><em>district</em></td><td>Name of district</td></tr>
+<tr><td><em>count</em></td><td>Number of cases with specific MUAC</td></tr>
+</table>
+
+
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>A CMAM programme evaluation in Sudan</p>
+    <p>A SQUEAC survey in Lokori, Kenya</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='va'>muac_admission</span>
