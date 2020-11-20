@@ -35,6 +35,7 @@ usethis::use_data(muac_admission_tidy, overwrite = TRUE, compress = "xz")
 
 ##
 locality_names <- openxlsx::getSheetNames(file = "data-raw/cmam/muac_admission.xlsx")
+locality_names <- locality_names[1:(length(locality_names) - 1)]
 
 muac_admission <- vector(mode = "list", length = length(locality_names))
 names(muac_admission) <- locality_names
