@@ -5,7 +5,7 @@
 \alias{otp_beneficiaries}
 \title{Outpatient Therapeutic Care Programme (OTP) beneficiaries data}
 \format{
-A tibble with 151 rows and 13 columns:\tabular{ll}{
+A tibble with 329 rows and 13 columns:\tabular{ll}{
    \strong{Variable} \tab \strong{Description} \cr
    \emph{index} \tab Unique identifier \cr
    \emph{state} \tab Name of state \cr

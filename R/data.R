@@ -112,7 +112,7 @@
 #'
 #' Outpatient Therapeutic Care Programme (OTP) beneficiaries data
 #'
-#' @format A tibble with 151 rows and 13 columns:
+#' @format A tibble with 329 rows and 13 columns:
 #'
 #' | **Variable** | **Description** |
 #' | :--- | :--- |
@@ -145,7 +145,7 @@
 #'
 #' Time-to-travel to health facilities for beneficiaries and volunteers
 #'
-#' @format A tibble with 63 rows and 9 columns:
+#' @format A tibble with 117 rows and 9 columns:
 #'
 #' | **Variable** | **Description** |
 #' | :--- | :--- |
