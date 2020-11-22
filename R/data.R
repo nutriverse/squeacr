@@ -3,12 +3,16 @@
 #'
 #' MUAC at admission
 #'
-#' @format A named list with 4 tibbles:
+#' @format A named list with 8 tibbles:
 #'
 #' | *Telkuk* | MUAC at admission data for Telkuk locality |
 #' | *Halfa* | MUAC at admission data for Halfa locality |
 #' | *Kassala* | MUAC at admission data for Kassala locality |
 #' | *Naher Atbara* | MUAC at admission data for Naher Atbara locality |
+#' | *El Fasher* | MUAC at admission data for El Fasher locality |
+#' | *Tawila* | MUAC at admission data for Tawila locality |
+#' | *Kutumu* | MUAC at admission data for Kutumu locality |
+#' | *Kalamendo* | MUAC at admission data for Kalamendo locality |
 #'
 #' @examples
 #' muac_admission
