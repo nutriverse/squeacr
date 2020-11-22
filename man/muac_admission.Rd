@@ -5,12 +5,16 @@
 \alias{muac_admission}
 \title{MUAC at admission}
 \format{
-A named list with 4 tibbles:
+A named list with 8 tibbles:
 
 | \emph{Telkuk} | MUAC at admission data for Telkuk locality |
 | \emph{Halfa} | MUAC at admission data for Halfa locality |
 | \emph{Kassala} | MUAC at admission data for Kassala locality |
 | \emph{Naher Atbara} | MUAC at admission data for Naher Atbara locality |
+| \emph{El Fasher} | MUAC at admission data for El Fasher locality |
+| \emph{Tawila} | MUAC at admission data for Tawila locality |
+| \emph{Kutumu} | MUAC at admission data for Kutumu locality |
+| \emph{Kalamendo} | MUAC at admission data for Kalamendo locality |
 }
 \source{
 A CMAM programme evaluation in Sudan
