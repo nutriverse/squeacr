@@ -45,7 +45,7 @@ for(i in locality_names) {
                          sheet = i) %>%
     dplyr::mutate(state = ifelse(i %in% c("Telkuk", "Halfa",
                                           "Kassala", "Naher Atbara"), "Kassala",
-                                 ifelse(i == c("El Fasher", "Tawila",
+                                 ifelse(i %in% c("El Fasher", "Tawila",
                                                "Kutumu", "Kalamendo"), "North Darfur",
                                         "Algazira")),
                   .after = muac) %>%
