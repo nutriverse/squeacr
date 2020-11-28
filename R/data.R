@@ -3,7 +3,7 @@
 #'
 #' MUAC at admission
 #'
-#' @format A named list with 8 tibbles:
+#' @format A named list with 12 tibbles:
 #'
 #' | *Telkuk* | MUAC at admission data for Telkuk locality |
 #' | *Halfa* | MUAC at admission data for Halfa locality |
@@ -13,6 +13,10 @@
 #' | *Tawila* | MUAC at admission data for Tawila locality |
 #' | *Kutumu* | MUAC at admission data for Kutumu locality |
 #' | *Kalamendo* | MUAC at admission data for Kalamendo locality |
+#' | *Medani Alkupra* | MUAC at admission data for Medani Alkupra locality |
+#' | *South Gazira* | MUAC at admission data for South Gazira locality |
+#' | *Sharg Algazira* | MUAC at admission data for Sharg Algazira locality |
+#' | *Al Kamlin* | MUAC at admission data for Al Kamlin locality |
 #'
 #' @examples
 #' muac_admission
@@ -116,7 +120,7 @@
 #'
 #' Outpatient Therapeutic Care Programme (OTP) beneficiaries data
 #'
-#' @format A tibble with 329 rows and 13 columns:
+#' @format A tibble with 385 rows and 13 columns:
 #'
 #' | **Variable** | **Description** |
 #' | :--- | :--- |
@@ -149,7 +153,7 @@
 #'
 #' Time-to-travel to health facilities for beneficiaries and volunteers
 #'
-#' @format A tibble with 117 rows and 9 columns:
+#' @format A tibble with 165 rows and 9 columns:
 #'
 #' | **Variable** | **Description** |
 #' | :--- | :--- |
