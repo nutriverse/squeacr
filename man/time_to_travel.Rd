@@ -5,7 +5,7 @@
 \alias{time_to_travel}
 \title{Time-to-travel to health facilities for beneficiaries and volunteers}
 \format{
-A tibble with 117 rows and 9 columns:\tabular{ll}{
+A tibble with 165 rows and 9 columns:\tabular{ll}{
    \strong{Variable} \tab \strong{Description} \cr
    \emph{State} \tab Name of state \cr
    \emph{Locality} \tab Name of locality \cr

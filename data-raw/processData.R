@@ -44,8 +44,10 @@ for(i in locality_names) {
   x <- readxl::read_xlsx(path = "data-raw/cmam/muac_admission.xlsx",
                          sheet = i) %>%
     dplyr::mutate(state = ifelse(i %in% c("Telkuk", "Halfa",
-                                                 "Kassala", "Naher Atbara"),
-                                 "Kassala", "North Darfur"),
+                                          "Kassala", "Naher Atbara"), "Kassala",
+                                 ifelse(i == c("El Fasher", "Tawila",
+                                               "Kutumu", "Kalamendo"), "North Darfur",
+                                        "Algazira")),
                   .after = muac) %>%
     dplyr::mutate(locality = i, .after = state)
 
