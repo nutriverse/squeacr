@@ -120,7 +120,7 @@
 #'
 #' Outpatient Therapeutic Care Programme (OTP) beneficiaries data
 #'
-#' @format A tibble with 385 rows and 13 columns:
+#' @format A tibble with 405 rows and 13 columns:
 #'
 #' | **Variable** | **Description** |
 #' | :--- | :--- |
@@ -141,7 +141,8 @@
 #' @examples
 #' otp_beneficiaries
 #'
-#' @source Data collected from beneficiary cards from Kassala State, Sudan
+#' @source Data collected from beneficiary cards from Kassala, North Darfur,
+#'   and Algazira State, Sudan
 #'
 #
 ################################################################################
