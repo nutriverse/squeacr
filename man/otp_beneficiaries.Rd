@@ -5,7 +5,7 @@
 \alias{otp_beneficiaries}
 \title{Outpatient Therapeutic Care Programme (OTP) beneficiaries data}
 \format{
-A tibble with 385 rows and 13 columns:\tabular{ll}{
+A tibble with 405 rows and 13 columns:\tabular{ll}{
    \strong{Variable} \tab \strong{Description} \cr
    \emph{index} \tab Unique identifier \cr
    \emph{state} \tab Name of state \cr
@@ -23,7 +23,8 @@ A tibble with 385 rows and 13 columns:\tabular{ll}{
 }
 }
 \source{
-Data collected from beneficiary cards from Kassala State, Sudan
+Data collected from beneficiary cards from Kassala, North Darfur,
+and Algazira State, Sudan
 }
 \usage{
 otp_beneficiaries
