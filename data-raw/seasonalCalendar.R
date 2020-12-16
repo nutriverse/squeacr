@@ -40,9 +40,9 @@ group <- c("Planting",
            "Planting",
            "Planting",
            "Rainfall",
-           "Food availability",
-           "Food availability",
-           "Food availability")
+           "Harvest",
+           "Lean season",
+           "Harvest")
 
 group <- rep(group, 4)
 
