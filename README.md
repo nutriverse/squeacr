@@ -9,15 +9,10 @@
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![R build
-status](https://github.com/rapidsurveys/squeacr/workflows/R-CMD-check/badge.svg)](https://github.com/rapidsurveys/squeacr/actions)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/rapidsurveys/squeacr?branch=master&svg=true)](https://ci.appveyor.com/project/rapidsurveys/squeacr)
-[![R build
-status](https://github.com/rapidsurveys/squeacr/workflows/test-coverage/badge.svg)](https://github.com/rapidsurveys/squeacr/actions)
+[![R-CMD-check](https://github.com/nutriverse/squeacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/squeacr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/rapidsurveys/squeacr/branch/master/graph/badge.svg)](https://codecov.io/gh/rapidsurveys/squeacr?branch=master)
-[![CodeFactor](https://www.codefactor.io/repository/github/rapidsurveys/squeacr/badge)](https://www.codefactor.io/repository/github/rapidsurveys/squeacr)
+coverage](https://codecov.io/gh/nutriverse/squeacr/branch/main/graph/badge.svg)](https://codecov.io/gh/nutriverse/squeacr?branch=main)
+[![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/squeacr/badge)](https://www.codefactor.io/repository/github/nutriverse/squeacr)
 <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through
@@ -35,16 +30,64 @@ conducting a SQUEAC investigation.
 
 ## Installation
 
-`squeacr` is not yet available on CRAN. `squeacr` can be installed via
-GitHub as follows:
+The `squeacr` package is not yet available on
+[CRAN](https://cran.r-project.org).
+
+The development version of `squeacr` can be installed via
+[GitHub](https://github.com/nutriverse/squeacr) as follows:
 
 ``` r
 if(!require(remotes)) install.packages("remotes")
-remotes::install_github("rapidsurveys/squeacr")
+remotes::install_github("nutriverse/squeacr")
 ```
 
-## Usage
+## What does `squeacr` do?
 
-### CMAM Performance Indicators
+The `squeacr` package provides functions that facilitate the processing,
+analysis and reporting of various components of a SQUEAC investigation.
+The current version of the `squeacr` package currently provides the
+following:
 
-The `squeacr` package
+- Functions to calculate CMAM programme performance metrics;
+
+- Functions to calculate CMAM programme length of stay metrics; and,
+
+- Functions to calculate CMAM coverage estimates.
+
+## Citation
+
+If you find the `squeacr` package useful, please cite using the
+suggested citation provided by a call to the `citation` function as
+follows:
+
+``` r
+citation("squeacr")
+#> 
+#> To cite squeacr in publications use:
+#> 
+#>   Ernest Guevarra (2023). squeacr: Semi-Quantitative Evaluation of
+#>   Access and Coverage (SQUEAC) Tools in R R package version 0.0.0.9000
+#>   URL https://nutriverse.io/squeacr/
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools  in R},
+#>     author = {{Ernest Guevarra}},
+#>     year = {2023},
+#>     note = {R package version 0.0.0.9000},
+#>     url = {https://nutriverse.io/squeacr/},
+#>   }
+```
+
+## Community guidelines
+
+Feedback, bug reports, and feature requests are welcome; file issues or
+seek support [here](https://github.com/nutriverse/squeacr/issues). If
+you would like to contribute to the package, please see our
+[contributing
+guidelines](https://nutriverse.io/squeacr/CONTRIBUTING.html).
+
+This project is released with a [Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
