@@ -1,69 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rapidsurveys.io/squeacr/index.html</loc>
+    <loc>https://nutriverse.io/squeacr/404.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_cf.html</loc>
+    <loc>https://nutriverse.io/squeacr/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_cured.html</loc>
+    <loc>https://nutriverse.io/squeacr/CONTRIBUTING.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_dead.html</loc>
+    <loc>https://nutriverse.io/squeacr/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_default.html</loc>
+    <loc>https://nutriverse.io/squeacr/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_los.html</loc>
+    <loc>https://nutriverse.io/squeacr/articles/squeacr.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_los_df.html</loc>
+    <loc>https://nutriverse.io/squeacr/authors.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_median_los.html</loc>
+    <loc>https://nutriverse.io/squeacr/index.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_no_response.html</loc>
+    <loc>https://nutriverse.io/squeacr/news/index.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_performance.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_cf.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_rout.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_cured.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/calculate_tc.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_dead.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/find_var_names.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_default.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/monitoring.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_los.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/muac_admission.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_los_df.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/muac_admission_tidy.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_median_los.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/otp_beneficiaries.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_no_response.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/seasonal_calendar.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_performance.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/smooth_m3a3.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_rout.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/squeacr.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/calculate_tc.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/reference/time_to_travel.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/find_var_names.html</loc>
   </url>
   <url>
-    <loc>https://rapidsurveys.io/squeacr/articles/squeacr.html</loc>
+    <loc>https://nutriverse.io/squeacr/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/monitoring.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/muac_admission.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/muac_admission_tidy.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/otpData.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/otp_beneficiaries.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/seasonal_calendar.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/smooth_m3a3.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/squeacr.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/squeacr/reference/time_to_travel.html</loc>
   </url>
 </urlset>

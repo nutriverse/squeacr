@@ -1,7 +1,7 @@
 Package: squeacr
 Type: Package
 Title: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R
-Version: 0.1.0.9000
+Version: 0.0.0.9000
 Authors@R: person(given = "Ernest", 
                   family = "Guevarra", 
                   comment = c(ORCID = "0000-0002-4887-4415"), 
@@ -37,7 +37,7 @@ Encoding: UTF-8
 Language: en-GB
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 VignetteBuilder: knitr
-URL: https://rapidsurveys.io/squeacr/, https://github.com/rapidsurveys/squeacr
-BugReports: https://github.com/rapidsurveys/squeacr/issues
+URL: https://nutriverse.io/squeacr/, https://github.com/nutriverse/squeacr
+BugReports: https://github.com/nutriverse/squeacr/issues

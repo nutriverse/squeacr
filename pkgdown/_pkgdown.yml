@@ -1,11 +1,38 @@
 title: squeacr
 
-url: https://rapidsurveys.io/squeacr
+url: https://nutriverse.io/squeacr
 
 template:
-  params:
-    bootswatch: sandstone
-    ganalytics: UA-102485058-6
+  bootstrap: 5
+  bootswatch: lumen
+  theme: haddock
+  ganalytics: UA-102485058-6
+
+navbar:
+  bg: primary
+  type: light
+  structure:
+    left:  [home, intro, reference, articles, news]
+    right: [twitter, linkedin, github]
+
+  components:
+    # articles:
+    #   text: Articles
+    #   menu:
+    #   - text: "Detecting haemoglobinaemia"
+    #     href: articles/haemoglobinaemia.html
+    #   - text: "Detecting inflammation"
+    #     href: articles/inflammation.html
+    #   - text: "Detecting iron deficiency"
+    #     href: articles/iron-deficiency.html
+    #   - text: "Detecting iodine deficiency"
+    #     href: articles/iodine-deficiency.html
+    twitter:
+      icon: "fab fa-twitter fa-lg"
+      href: https://twitter.com/katilingban
+    linkedin:
+      icon: "fab fa-linkedin fa-lg"
+      href: https://www.linkedin.com/company/katilingban
 
 home:
   links:
@@ -13,10 +40,6 @@ home:
     href: https://www.fantaproject.org/monitoring-and-evaluation/squeac-sleac
 
 reference:
-  - title: Description
-    contents:
-    - squeacr
-
   - title: Performance indicators
     contents:
     - calculate_cured
