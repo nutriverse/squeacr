@@ -1,10 +1,10 @@
-pandoc: 2.7.3
-pkgdown: 1.6.1
+pandoc: 2.19.2
+pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   squeacr: squeacr.html
-last_built: 2020-11-22T23:03Z
+last_built: 2023-01-06T10:20Z
 urls:
-  reference: https://rapidsurveys.io/squeacr/reference
-  article: https://rapidsurveys.io/squeacr/articles
+  reference: https://nutriverse.io/squeacr/reference
+  article: https://nutriverse.io/squeacr/articles
 
