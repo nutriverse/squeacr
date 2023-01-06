@@ -10,9 +10,11 @@ has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![R-CMD-check](https://github.com/nutriverse/squeacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/squeacr/actions/workflows/R-CMD-check.yaml)
+[![test-coverage](https://github.com/nutriverse/squeacr/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/nutriverse/squeacr/actions/workflows/test-coverage.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/nutriverse/squeacr/branch/main/graph/badge.svg)](https://codecov.io/gh/nutriverse/squeacr?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/squeacr/badge)](https://www.codefactor.io/repository/github/nutriverse/squeacr)
+[![DOI](https://zenodo.org/badge/115501158.svg)](https://zenodo.org/badge/latestdoi/115501158)
 <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through
@@ -67,7 +69,7 @@ citation("squeacr")
 #> 
 #>   Ernest Guevarra (2023). squeacr: Semi-Quantitative Evaluation of
 #>   Access and Coverage (SQUEAC) Tools in R R package version 0.0.0.9000
-#>   URL https://nutriverse.io/squeacr/
+#>   URL https://nutriverse.io/squeacr/ DOI 10.5281/zenodo.7509665
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -77,6 +79,7 @@ citation("squeacr")
 #>     year = {2023},
 #>     note = {R package version 0.0.0.9000},
 #>     url = {https://nutriverse.io/squeacr/},
+#>     doi = {10.5281/zenodo.7509665},
 #>   }
 ```
 
