@@ -27,7 +27,7 @@
 #' @keywords internal
 #' @importFrom stats median aggregate
 #' @importFrom tibble tibble
-#' @importFrom stringr str_detect
+#' @importFrom stringr str_detect str_wrap
 #' @importFrom zoo rollmean rollmedian
 #'
 #

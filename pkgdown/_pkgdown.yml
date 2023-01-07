@@ -57,7 +57,6 @@ reference:
   - title: Length of stay
     contents:
     - calculate_los
-    - calculate_los_df
     - calculate_median_los
 
   - title: Utilities
