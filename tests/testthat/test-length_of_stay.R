@@ -9,7 +9,17 @@ test_that("output is numeric", {
       )
     )
   )
+  expect_true(
+    is.numeric(
+      calculate_median_los(
+        admission_date = otp_beneficiaries$admDate,
+        discharge_date = otp_beneficiaries$disDate
+      )
+    )
+  )
 })
+
+
 
 test_that("warnings are activated", {
   expect_warning(calculate_los(NA, "2010-06-14"))
