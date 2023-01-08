@@ -38,12 +38,10 @@ find_var_names <- function(.data, vars, all = FALSE) {
   }
 
   ## Check if all is TRUE
-  if(!all) {
-    z <- z[1]
-  }
+  if(length(z) > 1) z <- z[1]
 
   ## Return result
-  return(z)
+  z
 }
 
 
@@ -81,5 +79,5 @@ smooth_m3a3 <- function(x) {
   z <- zoo::rollmean(x = y, k = 3, fill = c("extend", NA))
 
   ## Return results
-  return(z)
+  z
 }
