@@ -33,10 +33,10 @@ test_that("output is a data.frame", {
 x <- monitoring %>%
   select(Cured, Death, Default, `Non-Responder`) %>%
   rename(
-    healed = Cured,
-    died = Death,
-    missing = Default,
-    no_recovery = `Non-Responder`
+    w = Cured,
+    x = Death,
+    y = Default,
+    z = `Non-Responder`
   )
 
 y1 <- monitoring %>%
@@ -67,7 +67,7 @@ test_that("warning/error is activated", {
       .data = monitoring, vars = c("healed", "died", "missing", "no_recovery")
     )
   )
-  #expect_message(calculate_performance(.data = x))
+  expect_message(calculate_performance(.data = x))
   expect_error(calculate_performance(y1))
   expect_error(calculate_performance(y2))
   expect_error(calculate_performance(y3))
