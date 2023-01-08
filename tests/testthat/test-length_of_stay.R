@@ -17,6 +17,15 @@ test_that("output is numeric", {
       )
     )
   )
+  expect_true(
+    is.numeric(
+      calculate_median_los(
+        admission_date = otp_beneficiaries$admDate,
+        discharge_date = otp_beneficiaries$disDate,
+        group = otp_beneficiaries$locality
+      )
+    )
+  )
 })
 
 
