@@ -27,6 +27,14 @@ test_that("output is a data.frame", {
   expect_true(
     is_tibble(calculate_performance(.data = monitoring))
   )
+  expect_true(
+    is.data.frame(
+      calculate_performance(
+        .data = monitoring,
+        vars = c("Cured", "Death", "Default", "Non-Responder")
+      )
+    )
+  )
 })
 
 
