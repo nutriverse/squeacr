@@ -24,7 +24,7 @@ test_that("output is a data.frame", {
     is.data.frame(calculate_performance(.data = monitoring))
   )
   expect_true(
-    is.tibble(calculate_performance(.data = monitoring))
+    is_tibble(calculate_performance(.data = monitoring))
   )
 })
 

@@ -18,7 +18,7 @@ test_that("output is numeric", {
     )
   )
   expect_true(
-    is.numeric(
+    is.data.frame(
       calculate_median_los(
         admission_date = otp_beneficiaries$admDate,
         discharge_date = otp_beneficiaries$disDate,
