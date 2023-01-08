@@ -181,8 +181,8 @@ calculate_no_response <- function(nr, exit) {
 ################################################################################
 
 calculate_performance <- function(.data,
-                                       vars = NULL,
-                                       add = TRUE) {
+                                  vars = NULL,
+                                  add = TRUE) {
   ## Get vars
   if(is.null(vars)) {
     ## Find variables names in .data
