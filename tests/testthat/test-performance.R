@@ -31,8 +31,12 @@ test_that("output is a data.frame", {
 ## Expect warning/error
 
 test_that("warning/error is activated", {
-  expect_error(calculate_cured(cured = "10", exit = "50"))
-  expect_error(calculate_dead(dead = "10", exit = "50"))
-  expect_error(calculate_default(defaulter = "10", exit = "50"))
-  expect_error(calculate_no_response(nr = "10", exit = "50"))
+  expect_error(calculate_cured(cured = "10", exit = 50))
+  expect_error(calculate_cured(cured = 10, exit = "50"))
+  expect_error(calculate_dead(dead = "10", exit = 50))
+  expect_error(calculate_dead(dead = 10, exit = "50"))
+  expect_error(calculate_default(defaulter = "10", exit = 50))
+  expect_error(calculate_default(defaulter = 10, exit = "50"))
+  expect_error(calculate_no_response(nr = "10", exit = 50))
+  expect_error(calculate_no_response(nr = 10, exit = "50"))
 })
