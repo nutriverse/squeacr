@@ -1,4 +1,5 @@
 library(tibble)
+library(dplyr)
 
 ## Test that output is numeric
 
@@ -28,6 +29,28 @@ test_that("output is a data.frame", {
   )
 })
 
+
+x <- monitoring %>%
+  select(Cured, Death, Default, `Non-Responder`) %>%
+  rename(
+    healed = Cured,
+    died = Death,
+    missing = Default,
+    no_recovery = `Non-Responder`
+  )
+
+y1 <- monitoring %>%
+  mutate(Cured = as.character(Cured))
+
+y2 <- monitoring %>%
+  mutate(Death = as.character(Death))
+
+y3 <- monitoring %>%
+  mutate(Default = as.character(Default))
+
+y4 <- monitoring %>%
+  mutate(`Non-Responder` = as.character(`Non-Responder`))
+
 ## Expect warning/error
 
 test_that("warning/error is activated", {
@@ -39,4 +62,15 @@ test_that("warning/error is activated", {
   expect_error(calculate_default(defaulter = 10, exit = "50"))
   expect_error(calculate_no_response(nr = "10", exit = 50))
   expect_error(calculate_no_response(nr = 10, exit = "50"))
+  expect_error(
+    calculate_performance(
+      .data = monitoring, vars = c("healed", "died", "missing", "no_recovery")
+    )
+  )
+  #expect_message(calculate_performance(.data = x))
+  expect_error(calculate_performance(y1))
+  expect_error(calculate_performance(y2))
+  expect_error(calculate_performance(y3))
+  expect_error(calculate_performance(y4))
 })
+
