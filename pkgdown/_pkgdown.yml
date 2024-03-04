@@ -1,19 +1,19 @@
 title: squeacr
 
-url: https://nutriverse.io/squeacr
+url: https://nutriverse.io/squeacr/
 
 template:
   bootstrap: 5
-  bootswatch: lumen
+  bootswatch: cosmo
   theme: haddock
   ganalytics: UA-102485058-6
 
 navbar:
-  bg: primary
+  bg: success
   type: light
   structure:
     left:  [home, intro, reference, articles, news]
-    right: [twitter, linkedin, github]
+    right: [mastodon, linkedin, github]
 
   components:
     # articles:
@@ -27,9 +27,9 @@ navbar:
     #     href: articles/iron-deficiency.html
     #   - text: "Detecting iodine deficiency"
     #     href: articles/iodine-deficiency.html
-    twitter:
-      icon: "fab fa-twitter fa-lg"
-      href: https://twitter.com/katilingban
+    mastodon:
+      icon: "fab fa-mastodon fa-lg"
+      href: https://fosstodon.org/@katilingban
     linkedin:
       icon: "fab fa-linkedin fa-lg"
       href: https://www.linkedin.com/company/katilingban
