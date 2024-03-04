@@ -2,8 +2,8 @@
 % Please edit documentation in R/squeacr.R
 \docType{package}
 \name{squeacr}
-\alias{squeacr}
 \alias{squeacr-package}
+\alias{squeacr}
 \title{Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R}
 \description{
 In the recent past, measurement of coverage has been mainly through
