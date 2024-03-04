@@ -33,14 +33,14 @@ conducting a SQUEAC investigation.
 ## Installation
 
 The `squeacr` package is not yet available on
-[CRAN](https://cran.r-project.org).
-
-The development version of `squeacr` can be installed via
-[GitHub](https://github.com/nutriverse/squeacr) as follows:
+[CRAN](https://cran.r-project.org) but can be installed from the
+[Nutriverse R universe](https://nutriverse.r-universe.dev) as follows:
 
 ``` r
-if(!require(remotes)) install.packages("remotes")
-remotes::install_github("nutriverse/squeacr")
+install.packages(
+  "squeacr",
+  repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
+)
 ```
 
 ## What does `squeacr` do?
@@ -64,7 +64,6 @@ follows:
 
 ``` r
 citation("squeacr")
-#> 
 #> To cite squeacr in publications use:
 #> 
 #>   Ernest Guevarra (2023). squeacr: Semi-Quantitative Evaluation of
