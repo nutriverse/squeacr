@@ -34,7 +34,7 @@ conducting a SQUEAC investigation.
 
 The `squeacr` package is not yet available on
 [CRAN](https://cran.r-project.org) but can be installed from the
-[Nutriverse R universe](https://nutriverse.r-universe.dev) as follows:
+[nutriverse R-universe](https://nutriverse.r-universe.dev) as follows:
 
 ``` r
 install.packages(
@@ -66,9 +66,10 @@ follows:
 citation("squeacr")
 #> To cite squeacr in publications use:
 #> 
-#>   Ernest Guevarra (2023). squeacr: Semi-Quantitative Evaluation of
-#>   Access and Coverage (SQUEAC) Tools in R R package version 0.0.0.9000
-#>   URL https://nutriverse.io/squeacr/ DOI 10.5281/zenodo.7509665
+#>   Ernest Guevarra (2023). _squeacr: Semi-Quantitative Evaluation of
+#>   Access and Coverage (SQUEAC) Tools in R_. doi:10.5281/zenodo.7509665
+#>   <https://doi.org/10.5281/zenodo.7509665>, R package version
+#>   0.0.0.9000, <https://nutriverse.io/squeacr/>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -91,5 +92,5 @@ you would like to contribute to the package, please see our
 guidelines](https://nutriverse.io/squeacr/CONTRIBUTING.html).
 
 This project is released with a [Contributor Code of
-Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+Conduct](https://nutriverse.io/squeacr/CODE_OF_CONDUCT.html). By
+contributing to this project, you agree to abide by its terms.

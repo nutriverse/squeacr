@@ -29,7 +29,7 @@ In the recent past, measurement of coverage has been mainly through two-stage cl
 
 ## Installation
 
-The `squeacr` package is not yet available on [CRAN](https://cran.r-project.org) but can be installed from the [Nutriverse R universe](https://nutriverse.r-universe.dev) as follows:
+The `squeacr` package is not yet available on [CRAN](https://cran.r-project.org) but can be installed from the [nutriverse R-universe](https://nutriverse.r-universe.dev) as follows:
 
 ```{r install, echo = TRUE, eval = FALSE}
 install.packages(
@@ -60,4 +60,4 @@ citation("squeacr")
 
 Feedback, bug reports, and feature requests are welcome; file issues or seek support [here](https://github.com/nutriverse/squeacr/issues). If you would like to contribute to the package, please see our [contributing guidelines](https://nutriverse.io/squeacr/CONTRIBUTING.html).
 
-This project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+This project is released with a [Contributor Code of Conduct](https://nutriverse.io/squeacr/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
