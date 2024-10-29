@@ -8,26 +8,26 @@
 
 * Fork this repository to your Github account
 
-* Clone your version on your account down to your machine from your account
+* Clone your version on your account down to your machine from your account 
 
 ```
 git clone https://github.com/<yourgithubusername>/squeacr.git
 ```
 
-* Make sure to track progress upstream i.e., on our version of `intergrowth`
-at `nutriverse/squeacr`, by doing
+* Make sure to track progress upstream i.e., on our version of `squeacr` 
+at `nutriverse/squeacr`, by doing 
 
 ```
 git remote add upstream https://github.com/nutriverse/squeacr.git
 ```
 
-* Before making changes make sure to pull changes in from `upstream` by doing
-either `git fetch upstream` then merge later or `git pull upstream` to fetch
+* Before making changes make sure to pull changes in from `upstream` by doing 
+either `git fetch upstream` then merge later or `git pull upstream` to fetch 
 and merge in one step
 
 * Make your changes on a new feature branch
 
-* Please write a test or tests for your changes if they affect code and not just
+* Please write a test or tests for your changes if they affect code and not just 
 documentation
 
 * Push up changes to your account

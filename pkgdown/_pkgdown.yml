@@ -7,16 +7,18 @@ development:
 
 template:
   bootstrap: 5
-  bootswatch: cosmo
-  theme: haddock
-  ganalytics: UA-102485058-6
+  bootswatch: pulse
+  theme: breeze-light
+  ganalytics: G-C6TYX2E6RD
+  bslib:
+    pkgdown-nav-height: 100px
 
 navbar:
   bg: success
   type: light
   structure:
     left:  [home, intro, reference, articles, news]
-    right: [mastodon, linkedin, github]
+    right: [search, mastodon, github]
 
   components:
     # articles:
@@ -32,10 +34,7 @@ navbar:
     #     href: articles/iodine-deficiency.html
     mastodon:
       icon: "fab fa-mastodon fa-lg"
-      href: https://fosstodon.org/@katilingban
-    linkedin:
-      icon: "fab fa-linkedin fa-lg"
-      href: https://www.linkedin.com/company/katilingban
+      href: https://fosstodon.org/@nutriverse
 
 home:
   links:
