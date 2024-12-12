@@ -7,9 +7,7 @@ library(stringr)
 library(magrittr)
 library(dplyr)
 library(tidyr)
-library(rgdal)
-library(rgeos)
-library(raster)
+library(sf)
 
 
 ## Read cmam databases - Katilu
@@ -350,6 +348,11 @@ monitoring$Locality[monitoring$State == "River Nile"] <- monitoring$Locality[mon
   str_replace_all(pattern = "Shandi", replacement = "Shendi") %>%
   str_replace_all(pattern = "Abuhamad", replacement = "Abu Hamad") %>%
   str_replace_all(pattern = "Atbra", replacement = "Atbara")
+
+## Remove years outside 2016-2019
+
+monitoring <- monitoring |>
+  subset(subset = Year %in% 2016:2019)
 
 
 ## Save data as rda ############################################################
