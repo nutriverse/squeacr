@@ -11,6 +11,9 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(squeacr)
+library(dplyr)
 ```
 
 # squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools  in R <img src="man/figures/logo.png" width = "200" align="right" />
@@ -25,11 +28,21 @@ knitr::opts_chunk$set(
 [![DOI](https://zenodo.org/badge/115501158.svg)](https://zenodo.org/badge/latestdoi/115501158)
 <!-- badges: end -->
 
-In the recent past, measurement of coverage has been mainly through two-stage cluster sampled surveys either as part of a nutrition assessment or through a specific coverage survey known as Centric Systematic Area Sampling (CSAS). However, such methods are resource intensive and often only used for final programme evaluation meaning results arrive too late for programme adaptation. SQUEAC, which stands for Semi-Quantitative Evaluation of Access and Coverage, is a low resource method designed specifically to address this limitation and is used regularly for monitoring, planning and importantly, timely improvement to programme quality, both for agency and Ministry of Health (MoH) led programmes. This package provides functions for use in conducting a SQUEAC investigation.
+In the recent past, measurement of community-based management of acute malnutrition (CMAM) programme coverage has been mainly through two-stage cluster sampled surveys either as part of a nutrition assessment or through a specific coverage survey known as Centric Systematic Area Sampling (CSAS). However, such methods are resource intensive and often only used for final programme evaluation meaning results arrive too late for programme adaptation. SQUEAC, which stands for Semi-Quantitative Evaluation of Access and Coverage, is a low resource method designed specifically to address this limitation and is used regularly for monitoring, planning and importantly, timely improvement to programme quality, both for agency and Ministry of Health (MoH) led programmes. This package provides functions for use in conducting a SQUEAC investigation.
+
+## What does `squeacr` do?
+
+The `{squeacr}` package provides functions that facilitate the processing, analysis and reporting of various components of a SQUEAC investigation. The current version of the `{squeacr}` package currently provides the following:
+
+* Functions to calculate CMAM programme performance metrics;
+
+* Functions to calculate CMAM programme length of stay metrics; and,
+
+* Functions to calculate CMAM coverage estimates.
 
 ## Installation
 
-The `squeacr` package is not yet available on [CRAN](https://cran.r-project.org) but can be installed from the [nutriverse R-universe](https://nutriverse.r-universe.dev) as follows:
+The `{squeacr}` package is not yet available on [CRAN](https://cran.r-project.org) but can be installed from the [nutriverse R Universe](https://nutriverse.r-universe.dev) as follows:
 
 ```{r install, echo = TRUE, eval = FALSE}
 install.packages(
@@ -38,19 +51,121 @@ install.packages(
 )
 ```
 
-## What does `squeacr` do?
+## Usage
 
-The `squeacr` package provides functions that facilitate the processing, analysis and reporting of various components of a SQUEAC investigation. The current version of the `squeacr` package currently provides the following:
+### Calculating CMAM programme performance metrics
 
-* Functions to calculate CMAM programme performance metrics;
+*Cure rate*, *defaulter rate*, *death rate*, and *non-response rate* are the programme indicators used to monitor performance of CMAM. These indicators are calculated from routine programme monitoring data, an example of which is the `monitoring` dataset included in `{squeacr}`.
 
-* Functions to calculate CMAM programme length of stay metrics; and,
+```{r, echo = FALSE}
+monitoring |>
+  head(15) |>
+  knitr::kable(caption = "CMAM programme monitoring data for Sudan (showing first 15 rows)")
+```
 
-* Functions to calculate CMAM coverage estimates.
+The `monitoring` dataset is from the National CMAM programme in Sudan showing monthly programme statistics per locality. The dataset has the following fields:
+
+| **Variable** | **Description** |
+| :--- | :--- |
+| *State* | Name of state |
+| *Locality* | Name of locality |
+| *Beginning of Month* | Cases in programme at beginning of month |
+| *New Admissions* | New cases admitted within the month |
+| *Male* | New male cases admitted within the month |
+| *Female* | New female cases admitted within the month |
+| *Cured* | Number of cured cases within the month |
+| *Death* | Number of cases who died within the month |
+| *Default* | Number of cases who defaulted within the month |
+| *Non-Responder* | Number of non-responder cases within the month |
+| *Total Discharge* | Total number of discharges within the month |
+| *RUTF Consumed* | Number of RUTF consumed |
+| *Screening* | Screening |
+| *Sites* | Sites |
+| *Month* | Month |
+| *Year* | Year |
+
+We can calculate the different programme performance indicators using `{squeacr}`. For this example, we'll calculate the indicators for each state per year.
+
+```{r, eval = FALSE}
+library(squeacr)
+library(dplyr)
+
+monitoring |>
+  group_by(State, Year) |>
+  summarise(
+    total_discharge = sum(`Total Discharge`, na.rm = TRUE),
+    cure_rate = calculate_cured(sum(Cured, na.rm = TRUE), total_discharge),
+    default_rate = calculate_default(sum(Default, na.rm = TRUE), total_discharge),
+    death_rate = calculate_dead(sum(Death, na.rm = TRUE), total_discharge),
+    non_response_rate = calculate_no_response(sum(`Non-Responder`, na.rm = TRUE), total_discharge),
+    .groups = "drop"
+  )
+```
+
+which results in the following:
+
+```{r, echo = FALSE}
+monitoring |>
+  group_by(State, Year) |>
+  summarise(
+    total_discharge = sum(`Total Discharge`, na.rm = TRUE),
+    cure_rate = calculate_cured(sum(Cured, na.rm = TRUE), total_discharge),
+    default_rate = calculate_default(sum(Default, na.rm = TRUE), total_discharge),
+    death_rate = calculate_dead(sum(Death, na.rm = TRUE), total_discharge),
+    non_response_rate = calculate_no_response(sum(`Non-Responder`, na.rm = TRUE), total_discharge),
+    .groups = "drop"
+  )
+```
+
+### CMAM programme length-of-stay
+
+The length-of-stay in a CMAM programme is an important metric that can provide insight into several aspects of the program's performance and effectiveness. It is calculated from those discharged cured from outpatient care by counting the number of days between the admission date and the discharge date.
+
+The `otp_beneficiaries` dataset in the package is an example of a patient record data from which length-of-stay can be calculated using the `calculate_los()` function:
+
+```{r, eval = FALSE}
+calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
+```
+
+which gives the following results:
+
+```{r, echo = FALSE}
+calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
+```
+
+The median length-of-stay in a CMAM programme can be calculated as follows:
+
+```{r, eval = FALSE}
+calculate_median_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
+```
+
+which gives the following results:
+
+```{r, echo = FALSE}
+calculate_median_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
+```
+
+### CMAM programme coverage
+
+The `{squeacr}` provides functions to calcualte programme coverage. These functions implement the single coverage estimator approach[^1]. In this approach, treatment coverage is calculated in such a way that estimates $r_{out}$ or the number of severe acute malnutrition (SAM) cases that have not been enrolled in the programme but have been recovering without treatment.
+
+For example, if a coverage survey yielded 5 SAM cases in the programme, 25 cases not in the programme, and 5 recovering cases in the programme, $r_{out}$ can be calcuated as follows:
+
+```{r}
+calculate_rout(cin = 5, cout = 25, rin = 5)
+```
+
+Note here that the `calculate_rout()` function has another argument named `k` which is a correction factor representing the ratio of the mean length of an untreated episode to the mean length of a CMAM treatment episode. This, by default, is set to `k = 3` in the function. However, this should be adjusted based on programme data to estimate the mean length of a SAM treatment episode.
+
+This calculation for $r_{out}$ is used within `calculate_tc()` to estimate treatment coverage:
+
+```{r}
+calculate_tc(cin = 5, cout = 25, rin = 5)
+```
 
 ## Citation
 
-If you find the `squeacr` package useful, please cite using the suggested citation provided by a call to the `citation` function as follows:
+If you use `{squeacr}` in your work, please cite using the suggested citation provided by a call to the `citation` function as follows:
 
 ```{r cite}
 citation("squeacr")
@@ -61,3 +176,6 @@ citation("squeacr")
 Feedback, bug reports, and feature requests are welcome; file issues or seek support [here](https://github.com/nutriverse/squeacr/issues). If you would like to contribute to the package, please see our [contributing guidelines](https://nutriverse.io/squeacr/CONTRIBUTING.html).
 
 This project is released with a [Contributor Code of Conduct](https://nutriverse.io/squeacr/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+
+[^1]: Safari Balegamire, Katja Siling, Jose Luis Alvarez Moran, Ernest Guevarra, Sophie Woodhead, Alison Norris, Lionella Fieschi, Paul Binns, and Mark Myatt (2015). A single coverage estimator for use in SQUEAC, SLEAC, and other CMAM coverage assessments. Field Exchange 49, March 2015. p81. <www.ennonline.net/fex/49/singlecoverage>

@@ -26,34 +26,43 @@
 ################################################################################
 
 calculate_los <- function(admission_date, discharge_date) {
+  adm_date <- as.Date(admission_date, optional = TRUE)
+  dis_date <- as.Date(discharge_date, optional = TRUE)
+
   ## Check date formats
-  if(any(is.na(as.Date(admission_date, optional = TRUE)))) {
+  if(any(is.na(adm_date))) {
     warning(
-      stringr::str_wrap(
-        string = "Some admission date/s are not in YYYY-MM-DD format or are not
-                  available. Returning NA.",
-        width = 80
-      ),
+      "Some admission date/s are not in YYYY-MM-DD format or are not available.",
+      " Returning NA.",
       call. = TRUE
     )
   }
 
-  if(any(is.na(as.Date(discharge_date, optional = TRUE)))) {
+  if(any(is.na(dis_date))) {
     warning(
-      stringr::str_wrap(
-        string = "Some admission date/s are not in YYYY-MM-DD format or are not
-                  available. Returning NA.",
-        width = 80
-      ),
+      "Some admission date/s are not in YYYY-MM-DD format or are not available.",
+      " Returning NA.",
       call. = TRUE
     )
   }
 
-  ## Calculate length of stay
-  los <- as.numeric(as.Date(discharge_date) - as.Date(admission_date))
+  ## Calculate length of stay in days ----
+  los <- as.numeric(dis_date - adm_date)
+
+  ## Check if any los is less than 0 ----
+  if (any(los < 0, na.rm = TRUE)) {
+    warning(
+      "Some discharge dates are earlier than admisison dates. ",
+      "Returning NA.",
+      call. = TRUE
+    )
+  }
+  
+  ## Recode los less than 0 as NA ----
+  los <- ifelse(los < 0, NA_real_, los)
 
   ## Return los value
-  return(los)
+  los
 }
 
 
@@ -105,7 +114,7 @@ calculate_median_los <- function(admission_date,
     )
     #names(median_los) <- c(group, "los")
   } else {
-    median_los <- stats::median(los)
+    median_los <- stats::median(los, na.rm = TRUE)
   }
 
   ## Return results
