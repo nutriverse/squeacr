@@ -58,7 +58,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="squeacr-semi-quantitative-evaluation-of-access-and-coverage-squeac-tools-in-r-">squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R <a class="anchor" aria-label="anchor" href="#squeacr-semi-quantitative-evaluation-of-access-and-coverage-squeac-tools-in-r-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="squeacr-semi-quantitative-evaluation-of-access-and-coverage-squeac-tools-">squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools <a class="anchor" aria-label="anchor" href="#squeacr-semi-quantitative-evaluation-of-access-and-coverage-squeac-tools-"></a>
 </h1>
 </div>
 <!-- badges: start -->
@@ -496,18 +496,18 @@
 <span>  <span class="op">)</span></span></code></pre></div>
 <p>which results in the following:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 72 × 7</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt;    State          Year  total_discharge cure_rate default_rate death_rate</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;  1 Blue Nile      2016             9693     0.889       0.0906    0.0151 </span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;  2 Blue Nile      2017            10286     0.948       0.0399    0.00972</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  3 Blue Nile      2018             8807     0.947       0.0404    0.00863</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  4 Blue Nile      2019             9882     0.953       0.0366    0.00708</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  5 Central Darfur 2016            13313     0.921       0.0440    0.0174 </span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  6 Central Darfur 2017            18098     0.935       0.0421    0.00912</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;  7 Central Darfur 2018            17600     0.939       0.0364    0.00955</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;  8 Central Darfur 2019            18573     0.952       0.0260    0.00549</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;  9 East Darfur    2016             9895     0.929       0.0550    0.0104 </span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 10 East Darfur    2017            12611     0.956       0.0327    0.00690</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt;    State      Year  total_discharge cure_rate default_rate death_rate</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;  1 Blue Nile  2016             9693     0.889       0.0906    0.0151 </span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;  2 Blue Nile  2017            10286     0.948       0.0399    0.00972</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  3 Blue Nile  2018             8807     0.947       0.0404    0.00863</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  4 Blue Nile  2019             9882     0.953       0.0366    0.00708</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  5 Central D… 2016            13313     0.921       0.0440    0.0174 </span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  6 Central D… 2017            18098     0.935       0.0421    0.00912</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;  7 Central D… 2018            17600     0.939       0.0364    0.00955</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;  8 Central D… 2019            18573     0.952       0.0260    0.00549</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;  9 East Darf… 2016             9895     0.929       0.0550    0.0104 </span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 10 East Darf… 2017            12611     0.956       0.0327    0.00690</span></span>
 <span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 62 more rows</span></span>
 <span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: non_response_rate &lt;dbl&gt;</span></span></code></pre></div>
 </div>
@@ -520,57 +520,59 @@
 <code class="sourceCode R"><span><span class="fu"><a href="reference/calculate_los.html">calculate_los</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
 <p>which gives the following results:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#&gt; Warning in calculate_los(otp_beneficiaries$admDate,</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; otp_beneficiaries$disDate): Some admission date/s are not in YYYY-MM-DD</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; format or are not available. Returning NA.</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; otp_beneficiaries$disDate): Some admission date/s are not in</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; YYYY-MM-DD format or are not available. Returning NA.</span></span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; Warning in calculate_los(otp_beneficiaries$admDate,</span></span>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; otp_beneficiaries$disDate): Some discharge dates are earlier than</span></span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; admisison dates. Returning NA.</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt;   [1]  56  42  36  49  42  51  19  75  84  49  90  70  91  20  42  50  14</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt;  [18]  13  21  28 107  42  42  77  77  77  31  18  18  11  35  35  14  14</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;  [35]  14  14  28  11  61  73 102  71  71 112  55  71  80  22  22  63  62</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt;  [52]  44  30  42  35  35  28  84  28  14  42  34  47  42  45  43  23  42</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt;  [69] 105 120 105  56 104  42  79  90  77  28  14  14  77  28  14  54 103</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt;  [86]  78  79  70  70  98  78  63  58 125  42  49  44  35  89  86  60  39</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; [103]  41  50  47  46  48  51  50  44  44  46  39  50  54 140  58  84  53</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; [120]  56  21  54  21  28  49  18  56  28  28  21  54  57  29  59  50  39</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; [137]  91 136 127  63  93 155  35 105  42  28  28  35  35  70  35  82  14</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; [154]  17  28 168 147 112  42  35  21  97  35  66  35  28 126  84  70 140</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; [171]  22  63  42  70  94  63  63  98  70  77  77  60  63  63  84  56  49</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt; [188]  91  35  42  42  49  70  57  29  64  41  21  93  23  31  28  30  14</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt; [205]  21  55  65  28  21  21  88  14  22  21  21  21  35  63  42  28  84</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">#&gt; [222]  48  14  18  14  14  30  35  81  76  42  28  28  28  56  28  56  42</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt; [239]  98  58  35  28  39  34  33  28  49  28  64  28  29  33  80  77  60</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">#&gt; [256]  42  49  56  55  42  91  98  55  92  98 112  63  63  21  63  63  58</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co">#&gt; [273]  56  63 126  91 119  28  72 111  42  63  91  98  91  84  15  45  NA</span></span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co">#&gt; [290]  29  42  49  42  49  49  14  28  44  35  49  42  84  30  14  14   9</span></span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co">#&gt; [307] 112  56 112  46  28  56  14  70  70  35  28  28  28  48 123  35  14</span></span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="co">#&gt; [324]  14  19  14  56  32  35 131  21  47  53  64  64  39  NA  NA  37  32</span></span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="co">#&gt; [341]  41   6  42  30  26  44  28  19  15  14  50  35  14  31  28  21   7</span></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="co">#&gt; [358]  26  14  14  28   7   7  19  31  27  20  33  62  28  15  13  28  16</span></span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="co">#&gt; [375]  19  30   7  14  36  15   7  43  20 100  64  52  93  34  30  57  NA</span></span>
-<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="co">#&gt; [392]  56  81  52  95  63  49  54  37  70  84  28  28  66  56</span></span></code></pre></div>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt;   [1]  56  42  36  49  42  51  19  75  84  49  90  70  91  20  42  50</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt;  [17]  14  13  21  28 107  42  42  77  77  77  31  18  18  11  35  35</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;  [33]  14  14  14  14  28  11  61  73 102  71  71 112  55  71  80  22</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt;  [49]  22  63  62  44  30  42  35  35  28  84  28  14  42  34  47  42</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt;  [65]  45  43  23  42 105 120 105  56 104  42  79  90  77  28  14  14</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt;  [81]  77  28  14  54 103  78  79  70  70  98  78  63  58 125  42  49</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt;  [97]  44  35  89  86  60  39  41  50  47  46  48  51  50  44  44  46</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; [113]  39  50  54 140  58  84  53  56  21  54  21  28  49  18  56  28</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; [129]  28  21  54  57  29  59  50  39  91 136 127  63  93 155  35 105</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; [145]  42  28  28  35  35  70  35  82  14  17  28 168 147 112  42  35</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; [161]  21  97  35  66  35  28 126  84  70 140  22  63  42  70  94  63</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt; [177]  63  98  70  77  77  60  63  63  84  56  49  91  35  42  42  49</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt; [193]  70  57  29  64  41  21  93  23  31  28  30  14  21  55  65  28</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">#&gt; [209]  21  21  88  14  22  21  21  21  35  63  42  28  84  48  14  18</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt; [225]  14  14  30  35  81  76  42  28  28  28  56  28  56  42  98  58</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">#&gt; [241]  35  28  39  34  33  28  49  28  64  28  29  33  80  77  60  42</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co">#&gt; [257]  49  56  55  42  91  98  55  92  98 112  63  63  21  63  63  58</span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co">#&gt; [273]  56  63 126  91 119  28  72 111  42  63  91  98  91  84  15  45</span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co">#&gt; [289]  NA  29  42  49  42  49  49  14  28  44  35  49  42  84  30  14</span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="co">#&gt; [305]  14   9 112  56 112  46  28  56  14  70  70  35  28  28  28  48</span></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="co">#&gt; [321] 123  35  14  14  19  14  56  32  35 131  21  47  53  64  64  39</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="co">#&gt; [337]  NA  NA  37  32  41   6  42  30  26  44  28  19  15  14  50  35</span></span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="co">#&gt; [353]  14  31  28  21   7  26  14  14  28   7   7  19  31  27  20  33</span></span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="co">#&gt; [369]  62  28  15  13  28  16  19  30   7  14  36  15   7  43  20 100</span></span>
+<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a><span class="co">#&gt; [385]  64  52  93  34  30  57  NA  56  81  52  95  63  49  54  37  70</span></span>
+<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a><span class="co">#&gt; [401]  84  28  28  66  56</span></span></code></pre></div>
 <p>The median length-of-stay in a CMAM programme can be calculated as follows:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/calculate_median_los.html">calculate_median_los</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
 <p>which gives the following results:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date, discharge_date</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; = discharge_date): Some admission date/s are not in YYYY-MM-DD format or</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; are not available. Returning NA.</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date, discharge_date</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; = discharge_date): Some discharge dates are earlier than admisison</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; dates. Returning NA.</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date,</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; discharge_date = discharge_date): Some admission date/s are not in</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; YYYY-MM-DD format or are not available. Returning NA.</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date,</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; discharge_date = discharge_date): Some discharge dates are earlier</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; than admisison dates. Returning NA.</span></span>
 <span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; [1] 43</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="cmam-programme-coverage">CMAM programme coverage<a class="anchor" aria-label="anchor" href="#cmam-programme-coverage"></a>
 </h3>
-<p>The <a href="https://nutriverse.io/squeacr/">squeacr</a> provides functions to calculate programme coverage. These functions implement the single coverage estimator approach[1]. In this approach, treatment coverage is calculated in such a way that estimates <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;r_%7Bout%7D%20%22r_%7Bout%7D%22" alt="r_{out}"> or the number of severe acute malnutrition (SAM) cases that have not been enrolled in the programme but have been recovering without treatment.</p>
-<p>For example, if a coverage survey yielded 5 SAM cases in the programme, 25 cases not in the programme, and 5 recovering cases in the programme, <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;r_%7Bout%7D%20%22r_%7Bout%7D%22" alt="r_{out}"> can be calculated as follows:</p>
+<p>The <a href="https://nutriverse.io/squeacr/">squeacr</a> provides functions to calculate programme coverage. These functions implement the single coverage estimator approach[1]. In this approach, treatment coverage is calculated in such a way that estimates <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;r_out%20%22r_out%22" alt="r_out"> or the number of severe acute malnutrition (SAM) cases that have not been enrolled in the programme but have been recovering without treatment.</p>
+<p>For example, if a coverage survey yielded 5 SAM cases in the programme, 25 cases not in the programme, and 5 recovering cases in the programme, <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;r_out%20%22r_out%22" alt="r_out"> can be calculated as follows:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/calculate_rout.html">calculate_rout</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 6</span></span></code></pre></div>
 <p>Note here that the <code><a href="reference/calculate_rout.html">calculate_rout()</a></code> function has another argument named <code>k</code> which is a correction factor representing the ratio of the mean length of an untreated episode to the mean length of a CMAM treatment episode. This, by default, is set to <code>k = 3</code> in the function. However, this should be adjusted based on programme data to estimate the mean length of a SAM treatment episode.</p>
-<p>This calculation for <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;r_%7Bout%7D%20%22r_%7Bout%7D%22" alt="r_{out}"> is used within <code><a href="reference/calculate_tc.html">calculate_tc()</a></code> to estimate treatment coverage:</p>
+<p>This calculation for <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;r_out%20%22r_out%22" alt="r_out"> is used within <code><a href="reference/calculate_tc.html">calculate_tc()</a></code> to estimate treatment coverage:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/calculate_tc.html">calculate_tc</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.2439024</span></span></code></pre></div>
@@ -584,21 +586,23 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"squeacr"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; To cite squeacr in publications use:</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;   Ernest Guevarra (2024). _squeacr: Semi-Quantitative Evaluation</span></span>
-<span><span class="co">#&gt;   of Access and Coverage ('SQUEAC') Tools in R_.</span></span>
-<span><span class="co">#&gt;   doi:10.5281/zenodo.7509665</span></span>
-<span><span class="co">#&gt;   &lt;https://doi.org/10.5281/zenodo.7509665&gt;, R package version</span></span>
-<span><span class="co">#&gt;   0.0.0.9000, &lt;https://nutriverse.io/squeacr/&gt;.</span></span>
+<span><span class="co">#&gt;   Myatt, Mark, Guevarra, Ernest, Fieschi, Lionella, Norris,</span></span>
+<span><span class="co">#&gt;   Allison, Guerrero, Saul, Schofield, Lilly, Jones, Daniel,</span></span>
+<span><span class="co">#&gt;   Emru, Ephrem, Sadler, Kate (2012). _Semi-Quantitative</span></span>
+<span><span class="co">#&gt;   Evaluation of Access and Coverage (SQUEAC)/Simplified Lot</span></span>
+<span><span class="co">#&gt;   Quality Assurance Sampling Evaluation of Access and</span></span>
+<span><span class="co">#&gt;   Coverage (SLEAC) Technical Reference_.</span></span>
+<span><span class="co">#&gt;   &lt;https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;   @Manual{,</span></span>
-<span><span class="co">#&gt;     title = {squeacr: Semi-Quantitative Evaluation of Access and Coverage ('SQUEAC') Tools in R},</span></span>
-<span><span class="co">#&gt;     author = {{Ernest Guevarra}},</span></span>
-<span><span class="co">#&gt;     year = {2024},</span></span>
-<span><span class="co">#&gt;     note = {R package version 0.0.0.9000},</span></span>
-<span><span class="co">#&gt;     url = {https://nutriverse.io/squeacr/},</span></span>
-<span><span class="co">#&gt;     doi = {10.5281/zenodo.7509665},</span></span>
+<span><span class="co">#&gt;     location = {Washington, DC},</span></span>
+<span><span class="co">#&gt;     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},</span></span>
+<span><span class="co">#&gt;     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},</span></span>
+<span><span class="co">#&gt;     publisher = {FHI 360/FANTA},</span></span>
+<span><span class="co">#&gt;     author = {{Myatt} and {Mark} and {Guevarra} and {Ernest} and {Fieschi} and {Lionella} and {Norris} and {Allison} and {Guerrero} and {Saul} and {Schofield} and {Lilly} and {Jones} and {Daniel} and {Emru} and {Ephrem} and {Sadler} and {Kate}},</span></span>
+<span><span class="co">#&gt;     year = {2012},</span></span>
 <span><span class="co">#&gt;   }</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -606,6 +610,11 @@
 </h2>
 <p>Feedback, bug reports, and feature requests are welcome; file issues or seek support <a href="https://github.com/nutriverse/squeacr/issues" class="external-link">here</a>. If you would like to contribute to the package, please see our <a href="https://nutriverse.io/squeacr/CONTRIBUTING.html">contributing guidelines</a>.</p>
 <p>This project is released with a <a href="https://nutriverse.io/squeacr/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p><br></p>
+</div>
+<div class="section level2">
+<h2 id="footnotes">Footnotes<a class="anchor" aria-label="anchor" href="#footnotes"></a>
+</h2>
 <ol style="list-style-type: decimal">
 <li>Safari Balegamire, Katja Siling, Jose Luis Alvarez Moran, Ernest Guevarra, Sophie Woodhead, Alison Norris, Lionella Fieschi, Paul Binns, and Mark Myatt (2015). A single coverage estimator for use in SQUEAC, SLEAC, and other CMAM coverage assessments. Field Exchange 49, March 2015. p81. &lt;www.ennonline.net/fex/49/singlecoverage&gt;</li>
 </ol>
