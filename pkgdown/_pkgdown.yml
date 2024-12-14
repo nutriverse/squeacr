@@ -8,8 +8,7 @@ development:
 template:
   bootstrap: 5
   theme: breeze-light
-  math-rendering: mathjax
-  ganalytics: G-C6TYX2E6RD
+  ganalytics: "G-C6TYX2E6RD"
   bslib:
     bootswatch: pulse
     pkgdown-nav-height: 100px
@@ -37,7 +36,7 @@ navbar:
     mastodon:
       icon: "fab fa-mastodon fa-lg"
       aria-label: Mastodon
-      href: https://mastodon.social/@nutriverse
+      href: https://fosstodon.org/@nutriverse
 
 home:
   links:

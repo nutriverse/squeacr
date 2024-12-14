@@ -1,5 +1,3 @@
-################################################################################
-#
 #'
 #' Find possible variable names from a data.frame given a set of search names
 #'
@@ -17,8 +15,6 @@
 #'
 #' @export
 #'
-#
-################################################################################
 
 find_var_names <- function(.data, vars, all = FALSE) {
   ## Make variables and search names lower case
@@ -45,8 +41,6 @@ find_var_names <- function(.data, vars, all = FALSE) {
 }
 
 
-################################################################################
-#
 #'
 #' Apply median of 3 and average of 3 smoothing on a time series
 #'
@@ -63,8 +57,6 @@ find_var_names <- function(.data, vars, all = FALSE) {
 #'
 #' @export
 #'
-#
-################################################################################
 
 smooth_m3a3 <- function(x) {
   ## Check if numeric

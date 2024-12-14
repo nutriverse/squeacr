@@ -1,5 +1,3 @@
-################################################################################
-#
 #'
 #' Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R
 #'
@@ -18,7 +16,8 @@
 #' @references
 #' Myatt, Mark et al. 2012. Semi-Quantitative Evaluation of Access and
 #' Coverage (SQUEAC)/Simplified Lot Quality Assurance Sampling Evaluation of
-#' Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
+#' Access and Coverage (SLEAC) Technical Reference. 
+#' Washington, DC: FHI 360/FANTA.
 #'
 #' @keywords internal
 #'
@@ -30,6 +29,4 @@
 #' @importFrom stringr str_detect str_wrap
 #' @importFrom zoo rollmean rollmedian
 #'
-#
-################################################################################
 "_PACKAGE"
