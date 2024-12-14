@@ -1,0 +1,9 @@
+pandoc: 3.1.11
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  squeacr: squeacr.html
+last_built: 2024-12-14T12:33Z
+urls:
+  reference: https://nutriverse.io/squeacr/reference
+  article: https://nutriverse.io/squeacr/articles
