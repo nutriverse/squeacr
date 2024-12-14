@@ -4,6 +4,14 @@ This is a GitHub-only development version of the `{squeacr}` package.
 
 ## General updates
 
+* added vignettes;
+
+* updated README;
+
+* re-factored `calculate_performance()` functions;
+
+
+
 ## Bug fixes
 
 <br/>

@@ -58,6 +58,10 @@ reference:
     - calculate_cf
     - calculate_tc
 
+  - title: MUAC-at-admission
+    contents:
+    - calculate_median_muac
+
   - title: Length of stay
     contents:
     - calculate_los
