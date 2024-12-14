@@ -1,5 +1,5 @@
 #'
-#' Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R
+#' Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools
 #'
 #' In the recent past, measurement of coverage has been mainly through
 #' two-stage cluster sampled surveys either as part of a nutrition assessment
@@ -26,7 +26,6 @@
 #' @keywords internal
 #' @importFrom stats median aggregate
 #' @importFrom tibble tibble
-#' @importFrom stringr str_detect str_wrap
 #' @importFrom zoo rollmean rollmedian
 #'
 "_PACKAGE"

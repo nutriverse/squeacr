@@ -4,7 +4,7 @@
 \name{squeacr}
 \alias{squeacr-package}
 \alias{squeacr}
-\title{Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R}
+\title{Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools}
 \description{
 In the recent past, measurement of coverage has been mainly through
 two-stage cluster sampled surveys either as part of a nutrition assessment
