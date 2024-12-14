@@ -27,3 +27,5 @@ inst/doc
 # macOS files
 .DS_store
 docs
+
+README.html
