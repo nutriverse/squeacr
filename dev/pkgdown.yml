@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   squeacr: squeacr.html
-last_built: 2024-12-14T22:11Z
+last_built: 2024-12-14T22:20Z
 urls:
   reference: https://nutriverse.io/squeacr/reference
   article: https://nutriverse.io/squeacr/articles
