@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Semi-quantitative evaluation of access and coverage • squeacr</title>
+<title>Semi-Quantitative Evaluation of Access and Coverage • squeacr</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Semi-quantitative evaluation of access and coverage">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Semi-Quantitative Evaluation of Access and Coverage">
 <meta name="robots" content="noindex">
 </head>
 <body>
@@ -58,7 +58,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Semi-quantitative evaluation of access and coverage</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Semi-Quantitative Evaluation of Access and Coverage</h1>
                         <h4 data-toc-skip class="author">Ernest
 Guevarra</h4>
             
@@ -70,6 +70,14 @@ Guevarra</h4>
 
     
     
+<pre><code><span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'dplyr'</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     filter, lag</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span></code></pre>
 <p>In the recent past, measurement of coverage has been mainly through
 two-stage cluster sampled surveys either as part of a nutrition
 assessment or through a specific coverage survey known as Centric
@@ -83,7 +91,7 @@ improvement to programme quality, both for agency and Ministry of Health
 (MoH) led programmes. This package provides functions for use in
 conducting a SQUEAC investigation.</p>
 <div class="section level2">
-<h2 id="what-does-squeacr-do">What does <code>squeacr</code> do?<a class="anchor" aria-label="anchor" href="#what-does-squeacr-do"></a>
+<h2 id="what-does-squeacr-do">What does squeacr do?<a class="anchor" aria-label="anchor" href="#what-does-squeacr-do"></a>
 </h2>
 <p>The <a href="https://nutriverse.io/squeacr/">squeacr</a> package provides functions that facilitate
 the processing, analysis and reporting of various components of a SQUEAC
@@ -103,11 +111,533 @@ and,</p></li>
 <p>The <a href="https://nutriverse.io/squeacr/">squeacr</a> package is not yet available on <a href="https://cran.r-project.org" class="external-link">CRAN</a> but can be installed from the
 <a href="https://nutriverse.r-universe.dev" class="external-link">nutriverse R Universe</a> as
 follows:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span></span>
 <span>  <span class="st">"squeacr"</span>,</span>
 <span>  repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'https://nutriverse.r-universe.dev'</span>, <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<div class="section level3">
+<h3 id="calculating-cmam-programme-performance-metrics">Calculating CMAM programme performance metrics<a class="anchor" aria-label="anchor" href="#calculating-cmam-programme-performance-metrics"></a>
+</h3>
+<p><em>Cure rate</em>, <em>defaulter rate</em>, <em>death rate</em>, and
+<em>non-response rate</em> are the programme indicators used to monitor
+performance of CMAM. These indicators are calculated from routine
+programme monitoring data, an example of which is the
+<code>monitoring</code> dataset included in <a href="https://nutriverse.io/squeacr/">squeacr</a>.</p>
+<table class="table">
+<caption>CMAM programme monitoring data for Sudan (showing first 15
+rows)</caption>
+<colgroup>
+<col width="4%">
+<col width="7%">
+<col width="12%">
+<col width="9%">
+<col width="3%">
+<col width="4%">
+<col width="3%">
+<col width="3%">
+<col width="5%">
+<col width="9%">
+<col width="10%">
+<col width="9%">
+<col width="6%">
+<col width="3%">
+<col width="3%">
+<col width="3%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">State</th>
+<th align="left">Locality</th>
+<th align="right">Beginning Of Month</th>
+<th align="right">New Admissions</th>
+<th align="right">Male</th>
+<th align="right">Female</th>
+<th align="right">Cured</th>
+<th align="right">Death</th>
+<th align="right">Default</th>
+<th align="right">Non-Responder</th>
+<th align="right">Total Discharge</th>
+<th align="right">Rutf Consumed</th>
+<th align="right">Screening</th>
+<th align="left">Sites</th>
+<th align="left">Month</th>
+<th align="left">Year</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">16</td>
+<td align="right">16</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">23</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">26</td>
+<td align="right">80</td>
+<td align="right">49</td>
+<td align="left">NA</td>
+<td align="left">Jan</td>
+<td align="left">2016</td>
+</tr>
+<tr class="even">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">56</td>
+<td align="right">24</td>
+<td align="right">11</td>
+<td align="right">13</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-46</td>
+<td align="right">298</td>
+<td align="left">NA</td>
+<td align="left">Apr</td>
+<td align="left">2016</td>
+</tr>
+<tr class="odd">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">80</td>
+<td align="right">41</td>
+<td align="right">16</td>
+<td align="right">25</td>
+<td align="right">22</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">24</td>
+<td align="right">16</td>
+<td align="right">225</td>
+<td align="left">NA</td>
+<td align="left">May</td>
+<td align="left">2016</td>
+</tr>
+<tr class="even">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">81</td>
+<td align="right">43</td>
+<td align="right">21</td>
+<td align="right">22</td>
+<td align="right">29</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">29</td>
+<td align="right">22</td>
+<td align="right">215</td>
+<td align="left">NA</td>
+<td align="left">Jun</td>
+<td align="left">2016</td>
+</tr>
+<tr class="odd">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">93</td>
+<td align="right">51</td>
+<td align="right">31</td>
+<td align="right">30</td>
+<td align="right">36</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">38</td>
+<td align="right">14</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">Jul</td>
+<td align="left">2016</td>
+</tr>
+<tr class="even">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">103</td>
+<td align="right">59</td>
+<td align="right">34</td>
+<td align="right">25</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">12</td>
+<td align="right">289</td>
+<td align="left">NA</td>
+<td align="left">Aug</td>
+<td align="left">2016</td>
+</tr>
+<tr class="odd">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">163</td>
+<td align="right">69</td>
+<td align="right">34</td>
+<td align="right">35</td>
+<td align="right">8</td>
+<td align="right">0</td>
+<td align="right">12</td>
+<td align="right">2</td>
+<td align="right">22</td>
+<td align="right">8</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">Sep</td>
+<td align="left">2016</td>
+</tr>
+<tr class="even">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">104</td>
+<td align="right">108</td>
+<td align="right">56</td>
+<td align="right">40</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="right">47</td>
+<td align="right">0</td>
+<td align="right">53</td>
+<td align="right">-40</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">Oct</td>
+<td align="left">2016</td>
+</tr>
+<tr class="odd">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">275</td>
+<td align="right">123</td>
+<td align="right">61</td>
+<td align="right">62</td>
+<td align="right">111</td>
+<td align="right">0</td>
+<td align="right">81</td>
+<td align="right">2</td>
+<td align="right">194</td>
+<td align="right">32</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">Nov</td>
+<td align="left">2016</td>
+</tr>
+<tr class="even">
+<td align="left">Gazera</td>
+<td align="left">El Qurashi</td>
+<td align="right">204</td>
+<td align="right">81</td>
+<td align="right">39</td>
+<td align="right">40</td>
+<td align="right">52</td>
+<td align="right">0</td>
+<td align="right">8</td>
+<td align="right">2</td>
+<td align="right">62</td>
+<td align="right">52</td>
+<td align="right">293</td>
+<td align="left">NA</td>
+<td align="left">Dec</td>
+<td align="left">2016</td>
+</tr>
+<tr class="odd">
+<td align="left">Gazera</td>
+<td align="left">El Kamlin</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">3</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="left">NA</td>
+<td align="left">Jan</td>
+<td align="left">2016</td>
+</tr>
+<tr class="even">
+<td align="left">Gazera</td>
+<td align="left">El Kamlin</td>
+<td align="right">119</td>
+<td align="right">19</td>
+<td align="right">11</td>
+<td align="right">8</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">16</td>
+<td align="right">7</td>
+<td align="left">NA</td>
+<td align="left">Mar</td>
+<td align="left">2016</td>
+</tr>
+<tr class="odd">
+<td align="left">Gazera</td>
+<td align="left">El Kamlin</td>
+<td align="right">133</td>
+<td align="right">8</td>
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="right">18</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">21</td>
+<td align="right">18</td>
+<td align="right">182</td>
+<td align="left">NA</td>
+<td align="left">Apr</td>
+<td align="left">2016</td>
+</tr>
+<tr class="even">
+<td align="left">Gazera</td>
+<td align="left">El Kamlin</td>
+<td align="right">120</td>
+<td align="right">22</td>
+<td align="right">15</td>
+<td align="right">7</td>
+<td align="right">8</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">9</td>
+<td align="right">6</td>
+<td align="right">552</td>
+<td align="left">NA</td>
+<td align="left">May</td>
+<td align="left">2016</td>
+</tr>
+<tr class="odd">
+<td align="left">Gazera</td>
+<td align="left">El Kamlin</td>
+<td align="right">134</td>
+<td align="right">9</td>
+<td align="right">5</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">0</td>
+<td align="right">28</td>
+<td align="right">15</td>
+<td align="right">285</td>
+<td align="left">NA</td>
+<td align="left">Jun</td>
+<td align="left">2016</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>monitoring</code> dataset is from the National CMAM
+programme in Sudan showing monthly programme statistics per locality.
+The dataset has the following fields:</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left"><strong>Variable</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><em>State</em></td>
+<td align="left">Name of state</td>
+</tr>
+<tr class="even">
+<td align="left"><em>Locality</em></td>
+<td align="left">Name of locality</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Beginning of Month</em></td>
+<td align="left">Cases in programme at beginning of month</td>
+</tr>
+<tr class="even">
+<td align="left"><em>New Admissions</em></td>
+<td align="left">New cases admitted within the month</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Male</em></td>
+<td align="left">New male cases admitted within the month</td>
+</tr>
+<tr class="even">
+<td align="left"><em>Female</em></td>
+<td align="left">New female cases admitted within the month</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Cured</em></td>
+<td align="left">Number of cured cases within the month</td>
+</tr>
+<tr class="even">
+<td align="left"><em>Death</em></td>
+<td align="left">Number of cases who died within the month</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Default</em></td>
+<td align="left">Number of cases who defaulted within the month</td>
+</tr>
+<tr class="even">
+<td align="left"><em>Non-Responder</em></td>
+<td align="left">Number of non-responder cases within the month</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Total Discharge</em></td>
+<td align="left">Total number of discharges within the month</td>
+</tr>
+<tr class="even">
+<td align="left"><em>RUTF Consumed</em></td>
+<td align="left">Number of RUTF consumed</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Screening</em></td>
+<td align="left">Screening</td>
+</tr>
+<tr class="even">
+<td align="left"><em>Sites</em></td>
+<td align="left">Sites</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>Month</em></td>
+<td align="left">Month</td>
+</tr>
+<tr class="even">
+<td align="left"><em>Year</em></td>
+<td align="left">Year</td>
+</tr>
+</tbody>
+</table>
+<p>We can calculate the different programme performance indicators using
+<a href="https://nutriverse.io/squeacr/">squeacr</a>. For this example, we’ll calculate the indicators
+for each state per year.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nutriverse.io/squeacr/">squeacr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">monitoring</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">State</span>, <span class="va">Year</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span></span>
+<span>    total_discharge <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">`Total Discharge`</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    cure_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_cured.html">calculate_cured</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Cured</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
+<span>    default_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_default.html">calculate_default</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Default</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
+<span>    death_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_dead.html">calculate_dead</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Death</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
+<span>    non_response_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_no_response.html">calculate_no_response</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">`Non-Responder`</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
+<span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<p>which results in the following:</p>
+<pre><code><span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 72 × 7</span></span></span>
+<span><span class="co">#&gt;    State          Year  total_discharge cure_rate default_rate death_rate</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Blue Nile      2016             <span style="text-decoration: underline;">9</span>693     0.889       0.090<span style="text-decoration: underline;">6</span>    0.015<span style="text-decoration: underline;">1</span> </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Blue Nile      2017            <span style="text-decoration: underline;">10</span>286     0.948       0.039<span style="text-decoration: underline;">9</span>    0.009<span style="text-decoration: underline;">72</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Blue Nile      2018             <span style="text-decoration: underline;">8</span>807     0.947       0.040<span style="text-decoration: underline;">4</span>    0.008<span style="text-decoration: underline;">63</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Blue Nile      2019             <span style="text-decoration: underline;">9</span>882     0.953       0.036<span style="text-decoration: underline;">6</span>    0.007<span style="text-decoration: underline;">08</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Central Darfur 2016            <span style="text-decoration: underline;">13</span>313     0.921       0.044<span style="text-decoration: underline;">0</span>    0.017<span style="text-decoration: underline;">4</span> </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Central Darfur 2017            <span style="text-decoration: underline;">18</span>098     0.935       0.042<span style="text-decoration: underline;">1</span>    0.009<span style="text-decoration: underline;">12</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Central Darfur 2018            <span style="text-decoration: underline;">17</span>600     0.939       0.036<span style="text-decoration: underline;">4</span>    0.009<span style="text-decoration: underline;">55</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Central Darfur 2019            <span style="text-decoration: underline;">18</span>573     0.952       0.026<span style="text-decoration: underline;">0</span>    0.005<span style="text-decoration: underline;">49</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> East Darfur    2016             <span style="text-decoration: underline;">9</span>895     0.929       0.055<span style="text-decoration: underline;">0</span>    0.010<span style="text-decoration: underline;">4</span> </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> East Darfur    2017            <span style="text-decoration: underline;">12</span>611     0.956       0.032<span style="text-decoration: underline;">7</span>    0.006<span style="text-decoration: underline;">90</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 62 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: non_response_rate &lt;dbl&gt;</span></span></span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="cmam-programme-length-of-stay">CMAM programme length-of-stay<a class="anchor" aria-label="anchor" href="#cmam-programme-length-of-stay"></a>
+</h3>
+<p>The length-of-stay in a CMAM programme is an important metric that
+can provide insight into several aspects of the program’s performance
+and effectiveness. It is calculated from those discharged cured from
+outpatient care by counting the number of days between the admission
+date and the discharge date.</p>
+<p>The <code>otp_beneficiaries</code> dataset in the package is an
+example of a patient record data from which length-of-stay can be
+calculated using the <code><a href="../reference/calculate_los.html">calculate_los()</a></code> function:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_los.html">calculate_los</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
+<p>which gives the following results:</p>
+<pre><code><span><span class="co">#&gt; Warning in calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate):</span></span>
+<span><span class="co">#&gt; Some admission date/s are not in YYYY-MM-DD format or are not available.</span></span>
+<span><span class="co">#&gt; Returning NA.</span></span>
+<span><span class="co">#&gt; Warning in calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate):</span></span>
+<span><span class="co">#&gt; Some discharge dates are earlier than admisison dates. Returning NA.</span></span>
+<span><span class="co">#&gt;   [1]  56  42  36  49  42  51  19  75  84  49  90  70  91  20  42  50  14  13</span></span>
+<span><span class="co">#&gt;  [19]  21  28 107  42  42  77  77  77  31  18  18  11  35  35  14  14  14  14</span></span>
+<span><span class="co">#&gt;  [37]  28  11  61  73 102  71  71 112  55  71  80  22  22  63  62  44  30  42</span></span>
+<span><span class="co">#&gt;  [55]  35  35  28  84  28  14  42  34  47  42  45  43  23  42 105 120 105  56</span></span>
+<span><span class="co">#&gt;  [73] 104  42  79  90  77  28  14  14  77  28  14  54 103  78  79  70  70  98</span></span>
+<span><span class="co">#&gt;  [91]  78  63  58 125  42  49  44  35  89  86  60  39  41  50  47  46  48  51</span></span>
+<span><span class="co">#&gt; [109]  50  44  44  46  39  50  54 140  58  84  53  56  21  54  21  28  49  18</span></span>
+<span><span class="co">#&gt; [127]  56  28  28  21  54  57  29  59  50  39  91 136 127  63  93 155  35 105</span></span>
+<span><span class="co">#&gt; [145]  42  28  28  35  35  70  35  82  14  17  28 168 147 112  42  35  21  97</span></span>
+<span><span class="co">#&gt; [163]  35  66  35  28 126  84  70 140  22  63  42  70  94  63  63  98  70  77</span></span>
+<span><span class="co">#&gt; [181]  77  60  63  63  84  56  49  91  35  42  42  49  70  57  29  64  41  21</span></span>
+<span><span class="co">#&gt; [199]  93  23  31  28  30  14  21  55  65  28  21  21  88  14  22  21  21  21</span></span>
+<span><span class="co">#&gt; [217]  35  63  42  28  84  48  14  18  14  14  30  35  81  76  42  28  28  28</span></span>
+<span><span class="co">#&gt; [235]  56  28  56  42  98  58  35  28  39  34  33  28  49  28  64  28  29  33</span></span>
+<span><span class="co">#&gt; [253]  80  77  60  42  49  56  55  42  91  98  55  92  98 112  63  63  21  63</span></span>
+<span><span class="co">#&gt; [271]  63  58  56  63 126  91 119  28  72 111  42  63  91  98  91  84  15  45</span></span>
+<span><span class="co">#&gt; [289]  NA  29  42  49  42  49  49  14  28  44  35  49  42  84  30  14  14   9</span></span>
+<span><span class="co">#&gt; [307] 112  56 112  46  28  56  14  70  70  35  28  28  28  48 123  35  14  14</span></span>
+<span><span class="co">#&gt; [325]  19  14  56  32  35 131  21  47  53  64  64  39  NA  NA  37  32  41   6</span></span>
+<span><span class="co">#&gt; [343]  42  30  26  44  28  19  15  14  50  35  14  31  28  21   7  26  14  14</span></span>
+<span><span class="co">#&gt; [361]  28   7   7  19  31  27  20  33  62  28  15  13  28  16  19  30   7  14</span></span>
+<span><span class="co">#&gt; [379]  36  15   7  43  20 100  64  52  93  34  30  57  NA  56  81  52  95  63</span></span>
+<span><span class="co">#&gt; [397]  49  54  37  70  84  28  28  66  56</span></span></code></pre>
+<p>The median length-of-stay in a CMAM programme can be calculated as
+follows:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_median_los.html">calculate_median_los</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
+<p>which gives the following results:</p>
+<pre><code><span><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date, discharge_date =</span></span>
+<span><span class="co">#&gt; discharge_date): Some admission date/s are not in YYYY-MM-DD format or are not</span></span>
+<span><span class="co">#&gt; available. Returning NA.</span></span>
+<span><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date, discharge_date =</span></span>
+<span><span class="co">#&gt; discharge_date): Some discharge dates are earlier than admisison dates.</span></span>
+<span><span class="co">#&gt; Returning NA.</span></span>
+<span><span class="co">#&gt; [1] 43</span></span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="cmam-programme-coverage">CMAM programme coverage<a class="anchor" aria-label="anchor" href="#cmam-programme-coverage"></a>
+</h3>
+<p>The <a href="https://nutriverse.io/squeacr/">squeacr</a> provides functions to calculate programme
+coverage. These functions implement the single coverage estimator
+approach[^1]. In this approach, treatment coverage is calculated in such
+a way that estimates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">r_{out}</annotation></semantics></math>
+or the number of severe acute malnutrition (SAM) cases that have not
+been enrolled in the programme but have been recovering without
+treatment.</p>
+<p>For example, if a coverage survey yielded 5 SAM cases in the
+programme, 25 cases not in the programme, and 5 recovering cases in the
+programme,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">r_{out}</annotation></semantics></math>
+can be calculated as follows:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_rout.html">calculate_rout</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 6</span></span></code></pre></div>
+<p>Note here that the <code><a href="../reference/calculate_rout.html">calculate_rout()</a></code> function has another
+argument named <code>k</code> which is a correction factor representing
+the ratio of the mean length of an untreated episode to the mean length
+of a CMAM treatment episode. This, by default, is set to
+<code>k = 3</code> in the function. However, this should be adjusted
+based on programme data to estimate the mean length of a SAM treatment
+episode.</p>
+<p>This calculation for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">r_{out}</annotation></semantics></math>
+is used within <code><a href="../reference/calculate_tc.html">calculate_tc()</a></code> to estimate treatment
+coverage:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_tc.html">calculate_tc</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.2439024</span></span></code></pre></div>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
