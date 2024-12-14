@@ -6,6 +6,7 @@ This is a GitHub-only development version of the `{squeacr}` package.
 
 ## Bug fixes
 
+<br/>
 
 # squeacr 0.0.0.9000
 
