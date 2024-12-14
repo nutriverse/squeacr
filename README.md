@@ -13,6 +13,7 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 [![test-coverage](https://github.com/nutriverse/squeacr/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/nutriverse/squeacr/actions/workflows/test-coverage.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/nutriverse/squeacr/branch/main/graph/badge.svg)](https://codecov.io/gh/nutriverse/squeacr?branch=main)
+[![pkgdown](https://github.com/nutriverse/squeacr/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/nutriverse/squeacr/actions/workflows/pkgdown.yaml)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/squeacr/badge)](https://www.codefactor.io/repository/github/nutriverse/squeacr)
 [![DOI](https://zenodo.org/badge/115501158.svg)](https://zenodo.org/badge/latestdoi/115501158)
 <!-- badges: end -->
