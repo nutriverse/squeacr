@@ -4,10 +4,10 @@
 \alias{find_var_names}
 \title{Find possible variable names from a data.frame given a set of search names}
 \usage{
-find_var_names(.data, vars, all = FALSE)
+find_var_names(df, vars, all = FALSE)
 }
 \arguments{
-\item{.data}{A data.frame to search variable names from}
+\item{df}{A data.frame to search variable names from}
 
 \item{vars}{A vector of terms to search for}
 
@@ -15,13 +15,13 @@ find_var_names(.data, vars, all = FALSE)
 (default), only first value is returned.}
 }
 \value{
-A character vector of variable name/s in \code{.data}
+A character vector of variable name/s in \code{df}
 }
 \description{
 Find possible variable names from a data.frame given a set of search names
 }
 \examples{
-find_var_names(.data = muac_admission, vars = "MUAC")
+find_var_names(df = otp_beneficiaries, vars = "MUAC")
 
 }
 \author{

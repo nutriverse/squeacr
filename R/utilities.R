@@ -1,31 +1,31 @@
 #'
 #' Find possible variable names from a data.frame given a set of search names
 #'
-#' @param .data A data.frame to search variable names from
+#' @param df A data.frame to search variable names from
 #' @param vars A vector of terms to search for
 #' @param all Logical. Should all results of search be returned? If FALSE
 #'   (default), only first value is returned.
 #'
-#' @return A character vector of variable name/s in `.data`
+#' @return A character vector of variable name/s in `df`
 #'
 #' @author Ernest Guevarra
 #'
 #' @examples
-#' find_var_names(.data = muac_admission, vars = "MUAC")
+#' find_var_names(df = otp_beneficiaries, vars = "MUAC")
 #'
 #' @export
 #'
 
-find_var_names <- function(.data, vars, all = FALSE) {
+find_var_names <- function(df, vars, all = FALSE) {
   ## Make variables and search names lower case
-  x <- tolower(names(.data))
+  x <- tolower(names(df))
   .vars <- tolower(vars)
 
   ## Compose search term
   search_term <- paste(.vars, collapse = "|")
 
   ## Get data variable names matching search
-  z <- names(.data)[stringr::str_detect(x, pattern = search_term)]
+  z <- names(df)[grep(pattern = search_term, x = names(df), ignore.case = TRUE)]
 
   ## Check if z is empty
   if(length(z) == 0) {
@@ -34,7 +34,11 @@ find_var_names <- function(.data, vars, all = FALSE) {
   }
 
   ## Check if all is TRUE
-  if(length(z) > 1) z <- z[1]
+  if (all) {
+    z
+  } else {
+    z <- z[1]
+  } 
 
   ## Return result
   z

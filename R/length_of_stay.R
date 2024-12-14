@@ -1,13 +1,21 @@
 #'
-#' Calculate CMAM length of stay
+#' Calculate CMAM length of stay and median length of stay for a cohort of CMAM 
+#' discharges
 #'
 #' @param admission_date Date of admission in `YYYY-MM-DD` format. If child is a
 #'   kwashiorkor case, date of lowest weight (when oedema has subsided). Can be
 #'   a single date value or a vector of date values.
 #' @param discharge_date Date of discharge in `YYYY-MM-DD` format. Can be a
 #'   single date value or a vector of date values.
+#' @param group A character value/s with the same length as `admission_date` and
+#'   `discharge_data` to use as grouping variable within which median
+#'   length-of-stay is to be calculated. Default is NULL for no grouping.
 #'
-#' @return Numeric value or vector of numeric values for length-of-stay in days.
+#' @return Numeric value or vector of numeric values for length-of-stay in days
+#'   for [calculate_los()]. A numeric value for median length-of-stay in
+#'   days for [calculate_los_median()]. If `group` is not NULL, a vector of 
+#'   numeric values for median length-of-stay in days with length equal to the 
+#'   number of groups.
 #'
 #' @author Ernest Guevarra
 #'
@@ -17,8 +25,15 @@
 #'
 #' calculate_los(admission_date = c("2010-03-15", "2010-03-16"),
 #'               discharge_date = c("2010-06-14", "2010-06-20"))
+#' 
+#' calculate_los_median(
+#'   otp_beneficiaries$admDate,
+#'   otp_beneficiaries$disDate,
+#'   group = otp_beneficiaries$locality
+#' )
 #'
 #' @export
+#' @rdname calculate_los
 #'
 
 calculate_los <- function(admission_date, discharge_date) {
@@ -63,34 +78,11 @@ calculate_los <- function(admission_date, discharge_date) {
 
 
 #'
-#' Calculate median length of stay for a cohort of CMAM discharges
-#'
-#' @param admission_date Date of admission in `YYYY-MM-DD` format. If child is a
-#'   kwashiorkor case, date of lowest weight (when oedema has subsided). Can be
-#'   a single date value or a vector of date values.
-#' @param discharge_date Date of discharge in `YYYY-MM-DD` format. Can be a
-#'   single date value or a vector of date values.
-#' @param group A character value/s with the same length as `admission_date` and
-#'   `discharge_data` to use as grouping variable within which median
-#'   length-of-stay is to be calculated. Default is NULL for no grouping.
-#'
-#' @return A numeric value for median length-of-stay in days. If `group` is not
-#'   NULL, a vector of numeric values for median length-of-stay in days with
-#'   length equal to the number of groups.
-#'
-#' @author Ernest Guevarra
-#'
-#' @examples
-#' calculate_median_los(
-#'   otp_beneficiaries$admDate,
-#'   otp_beneficiaries$disDate,
-#'   group = otp_beneficiaries$locality
-#' )
-#'
 #' @export
+#' @rdname calculate_los
 #'
 
-calculate_median_los <- function(admission_date,
+calculate_los_median <- function(admission_date,
                                  discharge_date,
                                  group = NULL) {
   ## Calculate median length of stay

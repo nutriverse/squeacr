@@ -22,15 +22,15 @@ test_that("output is numeric", {
 
 test_that("output is a data.frame", {
   expect_true(
-    is.data.frame(calculate_performance(.data = monitoring))
+    is.data.frame(calculate_performance(df = monitoring))
   )
   expect_true(
-    is_tibble(calculate_performance(.data = monitoring))
+    is_tibble(calculate_performance(df = monitoring))
   )
   expect_true(
     is.data.frame(
       calculate_performance(
-        .data = monitoring,
+        df = monitoring,
         vars = c("Cured", "Death", "Default", "Non-Responder")
       )
     )
@@ -72,10 +72,10 @@ test_that("warning/error is activated", {
   expect_error(calculate_no_response(nr = 10, exit = "50"))
   expect_error(
     calculate_performance(
-      .data = monitoring, vars = c("healed", "died", "missing", "no_recovery")
+      df = monitoring, vars = c("healed", "died", "missing", "no_recovery")
     )
   )
-  expect_message(calculate_performance(.data = x))
+  expect_message(calculate_performance(df = x))
   expect_error(calculate_performance(y1))
   expect_error(calculate_performance(y2))
   expect_error(calculate_performance(y3))

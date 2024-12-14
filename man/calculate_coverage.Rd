@@ -2,9 +2,15 @@
 % Please edit documentation in R/estimate_coverage.R
 \name{calculate_rout}
 \alias{calculate_rout}
-\title{Estimate cases not in CMAM programme}
+\alias{calculate_cf}
+\alias{calculate_tc}
+\title{CMAM coverage estimators}
 \usage{
 calculate_rout(cin, cout, rin, k = 3)
+
+calculate_cf(cin, cout)
+
+calculate_tc(cin, cout, rin, k = 3)
 }
 \arguments{
 \item{cin}{Cases in CMAM programme}
@@ -17,13 +23,15 @@ calculate_rout(cin, cout, rin, k = 3)
 to the mean length of a CMAM treatment episode}
 }
 \value{
-Value of number of cases not in CMAM programme
+Numeric value of required coverage estiamtor
 }
 \description{
-Estimate cases not in CMAM programme
+CMAM coverage estimators
 }
 \examples{
 calculate_rout(cin = 5, cout = 25, rin = 5, k = 3)
+calculate_cf(cin = 5, cout = 20)
+calculate_tc(cin = 5, cout = 20, rin = 5, k = 3)
 
 }
 \references{
