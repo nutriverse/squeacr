@@ -132,19 +132,20 @@ monitoring |>
 which results in the following:
 
     #> # A tibble: 72 × 7
-    #>    State     Year  total_discharge cure_rate default_rate death_rate non_response_rate
-    #>    <chr>     <chr>           <dbl>     <dbl>        <dbl>      <dbl>             <dbl>
-    #>  1 Blue Nile 2016             9693     0.889       0.0906    0.0151            0.00526
-    #>  2 Blue Nile 2017            10286     0.948       0.0399    0.00972           0.00282
-    #>  3 Blue Nile 2018             8807     0.947       0.0404    0.00863           0.00420
-    #>  4 Blue Nile 2019             9882     0.953       0.0366    0.00708           0.00314
-    #>  5 Central … 2016            13313     0.921       0.0440    0.0174            0.0176 
-    #>  6 Central … 2017            18098     0.935       0.0421    0.00912           0.0143 
-    #>  7 Central … 2018            17600     0.939       0.0364    0.00955           0.0153 
-    #>  8 Central … 2019            18573     0.952       0.0260    0.00549           0.0168 
-    #>  9 East Dar… 2016             9895     0.929       0.0550    0.0104            0.00606
-    #> 10 East Dar… 2017            12611     0.956       0.0327    0.00690           0.00436
+    #>    State          Year  total_discharge cure_rate default_rate death_rate
+    #>    <chr>          <chr>           <dbl>     <dbl>        <dbl>      <dbl>
+    #>  1 Blue Nile      2016             9693     0.889       0.0906    0.0151 
+    #>  2 Blue Nile      2017            10286     0.948       0.0399    0.00972
+    #>  3 Blue Nile      2018             8807     0.947       0.0404    0.00863
+    #>  4 Blue Nile      2019             9882     0.953       0.0366    0.00708
+    #>  5 Central Darfur 2016            13313     0.921       0.0440    0.0174 
+    #>  6 Central Darfur 2017            18098     0.935       0.0421    0.00912
+    #>  7 Central Darfur 2018            17600     0.939       0.0364    0.00955
+    #>  8 Central Darfur 2019            18573     0.952       0.0260    0.00549
+    #>  9 East Darfur    2016             9895     0.929       0.0550    0.0104 
+    #> 10 East Darfur    2017            12611     0.956       0.0327    0.00690
     #> # ℹ 62 more rows
+    #> # ℹ 1 more variable: non_response_rate <dbl>
 
 ### CMAM programme length-of-stay
 
@@ -164,31 +165,36 @@ calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
 
 which gives the following results:
 
-    #> Warning in calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate): Some
-    #> admission date/s are not in YYYY-MM-DD format or are not available. Returning NA.
-    #> Warning in calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate): Some
-    #> discharge dates are earlier than admisison dates. Returning NA.
-    #>   [1]  56  42  36  49  42  51  19  75  84  49  90  70  91  20  42  50  14  13  21  28
-    #>  [21] 107  42  42  77  77  77  31  18  18  11  35  35  14  14  14  14  28  11  61  73
-    #>  [41] 102  71  71 112  55  71  80  22  22  63  62  44  30  42  35  35  28  84  28  14
-    #>  [61]  42  34  47  42  45  43  23  42 105 120 105  56 104  42  79  90  77  28  14  14
-    #>  [81]  77  28  14  54 103  78  79  70  70  98  78  63  58 125  42  49  44  35  89  86
-    #> [101]  60  39  41  50  47  46  48  51  50  44  44  46  39  50  54 140  58  84  53  56
-    #> [121]  21  54  21  28  49  18  56  28  28  21  54  57  29  59  50  39  91 136 127  63
-    #> [141]  93 155  35 105  42  28  28  35  35  70  35  82  14  17  28 168 147 112  42  35
-    #> [161]  21  97  35  66  35  28 126  84  70 140  22  63  42  70  94  63  63  98  70  77
-    #> [181]  77  60  63  63  84  56  49  91  35  42  42  49  70  57  29  64  41  21  93  23
-    #> [201]  31  28  30  14  21  55  65  28  21  21  88  14  22  21  21  21  35  63  42  28
-    #> [221]  84  48  14  18  14  14  30  35  81  76  42  28  28  28  56  28  56  42  98  58
-    #> [241]  35  28  39  34  33  28  49  28  64  28  29  33  80  77  60  42  49  56  55  42
-    #> [261]  91  98  55  92  98 112  63  63  21  63  63  58  56  63 126  91 119  28  72 111
-    #> [281]  42  63  91  98  91  84  15  45  NA  29  42  49  42  49  49  14  28  44  35  49
-    #> [301]  42  84  30  14  14   9 112  56 112  46  28  56  14  70  70  35  28  28  28  48
-    #> [321] 123  35  14  14  19  14  56  32  35 131  21  47  53  64  64  39  NA  NA  37  32
-    #> [341]  41   6  42  30  26  44  28  19  15  14  50  35  14  31  28  21   7  26  14  14
-    #> [361]  28   7   7  19  31  27  20  33  62  28  15  13  28  16  19  30   7  14  36  15
-    #> [381]   7  43  20 100  64  52  93  34  30  57  NA  56  81  52  95  63  49  54  37  70
-    #> [401]  84  28  28  66  56
+    #> Warning in calculate_los(otp_beneficiaries$admDate,
+    #> otp_beneficiaries$disDate): Some admission date/s are not in YYYY-MM-DD
+    #> format or are not available. Returning NA.
+    #> Warning in calculate_los(otp_beneficiaries$admDate,
+    #> otp_beneficiaries$disDate): Some discharge dates are earlier than
+    #> admisison dates. Returning NA.
+    #>   [1]  56  42  36  49  42  51  19  75  84  49  90  70  91  20  42  50  14
+    #>  [18]  13  21  28 107  42  42  77  77  77  31  18  18  11  35  35  14  14
+    #>  [35]  14  14  28  11  61  73 102  71  71 112  55  71  80  22  22  63  62
+    #>  [52]  44  30  42  35  35  28  84  28  14  42  34  47  42  45  43  23  42
+    #>  [69] 105 120 105  56 104  42  79  90  77  28  14  14  77  28  14  54 103
+    #>  [86]  78  79  70  70  98  78  63  58 125  42  49  44  35  89  86  60  39
+    #> [103]  41  50  47  46  48  51  50  44  44  46  39  50  54 140  58  84  53
+    #> [120]  56  21  54  21  28  49  18  56  28  28  21  54  57  29  59  50  39
+    #> [137]  91 136 127  63  93 155  35 105  42  28  28  35  35  70  35  82  14
+    #> [154]  17  28 168 147 112  42  35  21  97  35  66  35  28 126  84  70 140
+    #> [171]  22  63  42  70  94  63  63  98  70  77  77  60  63  63  84  56  49
+    #> [188]  91  35  42  42  49  70  57  29  64  41  21  93  23  31  28  30  14
+    #> [205]  21  55  65  28  21  21  88  14  22  21  21  21  35  63  42  28  84
+    #> [222]  48  14  18  14  14  30  35  81  76  42  28  28  28  56  28  56  42
+    #> [239]  98  58  35  28  39  34  33  28  49  28  64  28  29  33  80  77  60
+    #> [256]  42  49  56  55  42  91  98  55  92  98 112  63  63  21  63  63  58
+    #> [273]  56  63 126  91 119  28  72 111  42  63  91  98  91  84  15  45  NA
+    #> [290]  29  42  49  42  49  49  14  28  44  35  49  42  84  30  14  14   9
+    #> [307] 112  56 112  46  28  56  14  70  70  35  28  28  28  48 123  35  14
+    #> [324]  14  19  14  56  32  35 131  21  47  53  64  64  39  NA  NA  37  32
+    #> [341]  41   6  42  30  26  44  28  19  15  14  50  35  14  31  28  21   7
+    #> [358]  26  14  14  28   7   7  19  31  27  20  33  62  28  15  13  28  16
+    #> [375]  19  30   7  14  36  15   7  43  20 100  64  52  93  34  30  57  NA
+    #> [392]  56  81  52  95  63  49  54  37  70  84  28  28  66  56
 
 The median length-of-stay in a CMAM programme can be calculated as
 follows:
@@ -199,11 +205,12 @@ calculate_median_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
 
 which gives the following results:
 
-    #> Warning in calculate_los(admission_date = admission_date, discharge_date =
-    #> discharge_date): Some admission date/s are not in YYYY-MM-DD format or are not
-    #> available. Returning NA.
-    #> Warning in calculate_los(admission_date = admission_date, discharge_date =
-    #> discharge_date): Some discharge dates are earlier than admisison dates. Returning NA.
+    #> Warning in calculate_los(admission_date = admission_date, discharge_date
+    #> = discharge_date): Some admission date/s are not in YYYY-MM-DD format or
+    #> are not available. Returning NA.
+    #> Warning in calculate_los(admission_date = admission_date, discharge_date
+    #> = discharge_date): Some discharge dates are earlier than admisison
+    #> dates. Returning NA.
     #> [1] 43
 
 ### CMAM programme coverage
@@ -253,10 +260,11 @@ citation provided by a call to the `citation` function as follows:
 citation("squeacr")
 #> To cite squeacr in publications use:
 #> 
-#>   Ernest Guevarra (2024). _squeacr: Semi-Quantitative Evaluation of Access
-#>   and Coverage ('SQUEAC') Tools in R_. doi:10.5281/zenodo.7509665
-#>   <https://doi.org/10.5281/zenodo.7509665>, R package version 0.0.0.9000,
-#>   <https://nutriverse.io/squeacr/>.
+#>   Ernest Guevarra (2024). _squeacr: Semi-Quantitative Evaluation
+#>   of Access and Coverage ('SQUEAC') Tools in R_.
+#>   doi:10.5281/zenodo.7509665
+#>   <https://doi.org/10.5281/zenodo.7509665>, R package version
+#>   0.0.0.9000, <https://nutriverse.io/squeacr/>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
