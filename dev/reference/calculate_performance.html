@@ -40,14 +40,22 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">calculate_performance</span><span class="op">(</span><span class="va">.data</span>, vars <span class="op">=</span> <span class="cn">NULL</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">calculate_performance</span><span class="op">(</span><span class="va">df</span>, vars <span class="op">=</span> <span class="cn">NULL</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">calculate_cured</span><span class="op">(</span><span class="va">cured</span>, <span class="va">exit</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">calculate_dead</span><span class="op">(</span><span class="va">dead</span>, <span class="va">exit</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">calculate_default</span><span class="op">(</span><span class="va">defaulter</span>, <span class="va">exit</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">calculate_no_response</span><span class="op">(</span><span class="va">nr</span>, <span class="va">exit</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg--data">.data<a class="anchor" aria-label="anchor" href="#arg--data"></a></dt>
+<dl><dt id="arg-df">df<a class="anchor" aria-label="anchor" href="#arg-df"></a></dt>
 <dd><p>A data.frame containing programme monitoring data on number of
 cured, deaths, defaulters and non-response. The required data.frame
 holds rows of data corresponding to total counts for each performance
@@ -58,18 +66,41 @@ rather than rows of individual cases.</p></dd>
 <dt id="arg-vars">vars<a class="anchor" aria-label="anchor" href="#arg-vars"></a></dt>
 <dd><p>A vector of variable names specifying <strong>cured</strong>, <strong>dead</strong>,
 <strong>defaulter</strong> and <strong>non-responder</strong> (in this specific order) values in
-<code>.data</code>. If NULL (default), typical names used for these variables will
+<code>df</code>. If NULL (default), typical names used for these variables will
 be searched and used accordingly. If search doesn't yield matching variable
 names, the first 4 columns of the data.frame will be used.</p></dd>
 
 
 <dt id="arg-add">add<a class="anchor" aria-label="anchor" href="#arg-add"></a></dt>
-<dd><p>Logical. Should result be added to <code>.data</code>. Default is TRUE.</p></dd>
+<dd><p>Logical. Should result be added to <code>df</code>. Default is TRUE.</p></dd>
+
+
+<dt id="arg-cured">cured<a class="anchor" aria-label="anchor" href="#arg-cured"></a></dt>
+<dd><p>Numeric value for total number of cured cases</p></dd>
+
+
+<dt id="arg-exit">exit<a class="anchor" aria-label="anchor" href="#arg-exit"></a></dt>
+<dd><p>Numeric value for total number of programme exits</p></dd>
+
+
+<dt id="arg-dead">dead<a class="anchor" aria-label="anchor" href="#arg-dead"></a></dt>
+<dd><p>Numeric value for total number of cases who died</p></dd>
+
+
+<dt id="arg-defaulter">defaulter<a class="anchor" aria-label="anchor" href="#arg-defaulter"></a></dt>
+<dd><p>Numeric value for total number of cases who defaulted</p></dd>
+
+
+<dt id="arg-nr">nr<a class="anchor" aria-label="anchor" href="#arg-nr"></a></dt>
+<dd><p>Numeric value for total number of cases who did not respond to</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble of performance indicator results</p>
+    <p>A tibble of performance indicator results (for
+<code>calculate_performance()</code>) or a numeric value of specified CMAM performance
+indicator (for <code>calculate_cured()</code>, <code>calculate_default()</code>,
+<code>calculate_dead()</code>), and <code>calculate_no_response()</code>.</p>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -78,7 +109,7 @@ names, the first 4 columns of the data.frame will be used.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">calculate_performance</span><span class="op">(</span>.data <span class="op">=</span> <span class="va">monitoring</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">calculate_performance</span><span class="op">(</span>df <span class="op">=</span> <span class="va">monitoring</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8,234 × 20</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    State Locality `Beginning Of Month` `New Admissions`  Male Female Cured Death</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
@@ -97,6 +128,14 @@ names, the first 4 columns of the data.frame will be used.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Total Discharge` &lt;dbl&gt;, `Rutf Consumed` &lt;dbl&gt;, Screening &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Sites &lt;lgl&gt;, Month &lt;chr&gt;, Year &lt;chr&gt;, cured_prop &lt;dbl&gt;, dead_prop &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   defaulter_prop &lt;dbl&gt;, nr_prop &lt;dbl&gt;</span></span>
+<span class="r-in"><span><span class="fu">calculate_cured</span><span class="op">(</span>cured <span class="op">=</span> <span class="fl">10</span>, exit <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.2</span>
+<span class="r-in"><span><span class="fu">calculate_dead</span><span class="op">(</span>dead <span class="op">=</span> <span class="fl">10</span>, exit <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.2</span>
+<span class="r-in"><span><span class="fu">calculate_default</span><span class="op">(</span>defaulter <span class="op">=</span> <span class="fl">10</span>, exit <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.2</span>
+<span class="r-in"><span><span class="fu">calculate_no_response</span><span class="op">(</span>nr <span class="op">=</span> <span class="fl">10</span>, exit <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.2</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

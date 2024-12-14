@@ -526,10 +526,10 @@ for each state per year.</p>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">State</span>, <span class="va">Year</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span></span>
 <span>    total_discharge <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">`Total Discharge`</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    cure_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_cured.html">calculate_cured</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Cured</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
-<span>    default_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_default.html">calculate_default</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Default</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
-<span>    death_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_dead.html">calculate_dead</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Death</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
-<span>    non_response_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_no_response.html">calculate_no_response</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">`Non-Responder`</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
+<span>    cure_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_performance.html">calculate_cured</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Cured</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
+<span>    default_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_performance.html">calculate_default</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Default</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
+<span>    death_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_performance.html">calculate_dead</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">Death</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
+<span>    non_response_rate <span class="op">=</span> <span class="fu"><a href="../reference/calculate_performance.html">calculate_no_response</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">`Non-Responder`</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">total_discharge</span><span class="op">)</span>,</span>
 <span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 <p>which results in the following:</p>
@@ -594,7 +594,7 @@ calculated using the <code><a href="../reference/calculate_los.html">calculate_l
 <p>The median length-of-stay in a CMAM programme can be calculated as
 follows:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_median_los.html">calculate_median_los</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_los.html">calculate_los_median</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
 <p>which gives the following results:</p>
 <pre><code><span><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date, discharge_date =</span></span>
 <span><span class="co">#&gt; discharge_date): Some admission date/s are not in YYYY-MM-DD format or are not</span></span>
@@ -621,9 +621,9 @@ programme,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">r_{out}</annotation></semantics></math>
 can be calculated as follows:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_rout.html">calculate_rout</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_coverage.html">calculate_rout</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 6</span></span></code></pre></div>
-<p>Note here that the <code><a href="../reference/calculate_rout.html">calculate_rout()</a></code> function has another
+<p>Note here that the <code><a href="../reference/calculate_coverage.html">calculate_rout()</a></code> function has another
 argument named <code>k</code> which is a correction factor representing
 the ratio of the mean length of an untreated episode to the mean length
 of a CMAM treatment episode. This, by default, is set to
@@ -632,10 +632,10 @@ based on programme data to estimate the mean length of a SAM treatment
 episode.</p>
 <p>This calculation for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">r_{out}</annotation></semantics></math>
-is used within <code><a href="../reference/calculate_tc.html">calculate_tc()</a></code> to estimate treatment
+is used within <code><a href="../reference/calculate_coverage.html">calculate_tc()</a></code> to estimate treatment
 coverage:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_tc.html">calculate_tc</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_coverage.html">calculate_tc</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.2439024</span></span></code></pre></div>
 </div>
 </div>
