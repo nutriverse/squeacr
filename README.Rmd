@@ -147,9 +147,9 @@ calculate_median_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
 
 ### CMAM programme coverage
 
-The `{squeacr}` provides functions to calcualte programme coverage. These functions implement the single coverage estimator approach[^1]. In this approach, treatment coverage is calculated in such a way that estimates $r_{out}$ or the number of severe acute malnutrition (SAM) cases that have not been enrolled in the programme but have been recovering without treatment.
+The `{squeacr}` provides functions to calculate programme coverage. These functions implement the single coverage estimator approach[^1]. In this approach, treatment coverage is calculated in such a way that estimates $r_{out}$ or the number of severe acute malnutrition (SAM) cases that have not been enrolled in the programme but have been recovering without treatment.
 
-For example, if a coverage survey yielded 5 SAM cases in the programme, 25 cases not in the programme, and 5 recovering cases in the programme, $r_{out}$ can be calcuated as follows:
+For example, if a coverage survey yielded 5 SAM cases in the programme, 25 cases not in the programme, and 5 recovering cases in the programme, $r_{out}$ can be calculated as follows:
 
 ```{r}
 calculate_rout(cin = 5, cout = 25, rin = 5)
