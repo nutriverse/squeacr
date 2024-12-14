@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<!-- # squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools  in R <img src="man/figures/logo.png" width = "200" align="right" /> -->
+# squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools in R <img src="man/figures/logo.png" width = "200" align="right" />
 
 <!-- badges: start -->
 
