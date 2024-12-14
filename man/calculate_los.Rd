@@ -2,9 +2,13 @@
 % Please edit documentation in R/length_of_stay.R
 \name{calculate_los}
 \alias{calculate_los}
-\title{Calculate CMAM length of stay}
+\alias{calculate_los_median}
+\title{Calculate CMAM length of stay and median length of stay for a cohort of CMAM
+discharges}
 \usage{
 calculate_los(admission_date, discharge_date)
+
+calculate_los_median(admission_date, discharge_date, group = NULL)
 }
 \arguments{
 \item{admission_date}{Date of admission in \code{YYYY-MM-DD} format. If child is a
@@ -13,12 +17,21 @@ a single date value or a vector of date values.}
 
 \item{discharge_date}{Date of discharge in \code{YYYY-MM-DD} format. Can be a
 single date value or a vector of date values.}
+
+\item{group}{A character value/s with the same length as \code{admission_date} and
+\code{discharge_data} to use as grouping variable within which median
+length-of-stay is to be calculated. Default is NULL for no grouping.}
 }
 \value{
-Numeric value or vector of numeric values for length-of-stay in days.
+Numeric value or vector of numeric values for length-of-stay in days
+for \code{\link[=calculate_los]{calculate_los()}}. A numeric value for median length-of-stay in
+days for \code{\link[=calculate_los_median]{calculate_los_median()}}. If \code{group} is not NULL, a vector of
+numeric values for median length-of-stay in days with length equal to the
+number of groups.
 }
 \description{
-Calculate CMAM length of stay
+Calculate CMAM length of stay and median length of stay for a cohort of CMAM
+discharges
 }
 \examples{
 calculate_los(admission_date = "2010-03-15",
@@ -26,6 +39,12 @@ calculate_los(admission_date = "2010-03-15",
 
 calculate_los(admission_date = c("2010-03-15", "2010-03-16"),
               discharge_date = c("2010-06-14", "2010-06-20"))
+
+calculate_los_median(
+  otp_beneficiaries$admDate,
+  otp_beneficiaries$disDate,
+  group = otp_beneficiaries$locality
+)
 
 }
 \author{

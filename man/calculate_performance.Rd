@@ -2,12 +2,24 @@
 % Please edit documentation in R/performance.R
 \name{calculate_performance}
 \alias{calculate_performance}
+\alias{calculate_cured}
+\alias{calculate_dead}
+\alias{calculate_default}
+\alias{calculate_no_response}
 \title{Calculate CMAM performance indicators}
 \usage{
-calculate_performance(.data, vars = NULL, add = TRUE)
+calculate_performance(df, vars = NULL, add = TRUE)
+
+calculate_cured(cured, exit)
+
+calculate_dead(dead, exit)
+
+calculate_default(defaulter, exit)
+
+calculate_no_response(nr, exit)
 }
 \arguments{
-\item{.data}{A data.frame containing programme monitoring data on number of
+\item{df}{A data.frame containing programme monitoring data on number of
 cured, deaths, defaulters and non-response. The required data.frame
 holds rows of data corresponding to total counts for each performance
 indicator (i.e., \strong{cured}, \strong{dead}, \strong{defaulter} and \strong{non-responder})
@@ -15,20 +27,37 @@ rather than rows of individual cases.}
 
 \item{vars}{A vector of variable names specifying \strong{cured}, \strong{dead},
 \strong{defaulter} and \strong{non-responder} (in this specific order) values in
-\code{.data}. If NULL (default), typical names used for these variables will
+\code{df}. If NULL (default), typical names used for these variables will
 be searched and used accordingly. If search doesn't yield matching variable
 names, the first 4 columns of the data.frame will be used.}
 
-\item{add}{Logical. Should result be added to \code{.data}. Default is TRUE.}
+\item{add}{Logical. Should result be added to \code{df}. Default is TRUE.}
+
+\item{cured}{Numeric value for total number of cured cases}
+
+\item{exit}{Numeric value for total number of programme exits}
+
+\item{dead}{Numeric value for total number of cases who died}
+
+\item{defaulter}{Numeric value for total number of cases who defaulted}
+
+\item{nr}{Numeric value for total number of cases who did not respond to}
 }
 \value{
-A tibble of performance indicator results
+A tibble of performance indicator results (for
+\code{\link[=calculate_performance]{calculate_performance()}}) or a numeric value of specified CMAM performance
+indicator (for \code{\link[=calculate_cured]{calculate_cured()}}, \code{\link[=calculate_default]{calculate_default()}},
+\code{\link[=calculate_dead]{calculate_dead()}}), and \code{\link[=calculate_no_response]{calculate_no_response()}}.
 }
 \description{
 Calculate CMAM performance indicators
 }
 \examples{
-calculate_performance(.data = monitoring)
+calculate_performance(df = monitoring)
+calculate_cured(cured = 10, exit = 50)
+calculate_dead(dead = 10, exit = 50)
+calculate_default(defaulter = 10, exit = 50)
+calculate_no_response(nr = 10, exit = 50)
 
 }
 \author{

@@ -203,7 +203,7 @@ The median length-of-stay in a CMAM programme can be calculated as
 follows:
 
 ``` r
-calculate_median_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
+calculate_los_median(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
 ```
 
 which gives the following results:

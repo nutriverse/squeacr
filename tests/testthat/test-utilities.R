@@ -4,17 +4,17 @@ library(dplyr)
 
 test_that("output is character", {
   expect_true(
-    is.character(find_var_names(.data = muac_admission[[1]], vars = "MUAC"))
+    is.character(find_var_names(df = muac_admission[[1]], vars = "MUAC"))
   )
   expect_true(
     is.character(
-      find_var_names(.data = muac_admission[[1]], vars = c("MUAC", "State"))
+      find_var_names(df = muac_admission[[1]], vars = c("MUAC", "State"))
     )
   )
 })
 
 test_that("message is activated", {
-  expect_message(find_var_names(.data = muac_admission[[1]], vars = "Sudan"))
+  expect_message(find_var_names(df = muac_admission[[1]], vars = "Sudan"))
 })
 
 df <- monitoring %>%

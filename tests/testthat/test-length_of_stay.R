@@ -11,7 +11,7 @@ test_that("output is numeric", {
   )
   expect_true(
     is.numeric(
-      calculate_median_los(
+      calculate_los_median(
         admission_date = otp_beneficiaries$admDate,
         discharge_date = otp_beneficiaries$disDate
       )
@@ -19,7 +19,7 @@ test_that("output is numeric", {
   )
   expect_true(
     is.data.frame(
-      calculate_median_los(
+      calculate_los_median(
         admission_date = otp_beneficiaries$admDate,
         discharge_date = otp_beneficiaries$disDate,
         group = otp_beneficiaries$locality
@@ -40,3 +40,4 @@ test_that("warnings are activated", {
     )
   )
 })
+
