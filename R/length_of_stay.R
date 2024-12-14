@@ -1,5 +1,3 @@
-################################################################################
-#
 #'
 #' Calculate CMAM length of stay
 #'
@@ -22,8 +20,6 @@
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_los <- function(admission_date, discharge_date) {
   adm_date <- as.Date(admission_date, optional = TRUE)
@@ -66,8 +62,6 @@ calculate_los <- function(admission_date, discharge_date) {
 }
 
 
-################################################################################
-#
 #'
 #' Calculate median length of stay for a cohort of CMAM discharges
 #'
@@ -95,8 +89,6 @@ calculate_los <- function(admission_date, discharge_date) {
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_median_los <- function(admission_date,
                                  discharge_date,

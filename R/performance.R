@@ -1,5 +1,3 @@
-################################################################################
-#
 #'
 #' Calculate CMAM performance indicators - cure rate
 #'
@@ -15,8 +13,6 @@
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_cured <- function(cured, exit) {
   ## Check that parameters are numeric
@@ -36,8 +32,6 @@ calculate_cured <- function(cured, exit) {
 }
 
 
-################################################################################
-#
 #'
 #' Calculate CMAM performance indicators - death rate
 #'
@@ -53,8 +47,6 @@ calculate_cured <- function(cured, exit) {
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_dead <- function(dead, exit) {
   ## Check that parameters are numeric
@@ -74,8 +66,6 @@ calculate_dead <- function(dead, exit) {
 }
 
 
-################################################################################
-#
 #'
 #' Calculate CMAM performance indicators - default rate
 #'
@@ -91,8 +81,6 @@ calculate_dead <- function(dead, exit) {
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_default <- function(defaulter, exit) {
   ## Check that parameters are numeric
@@ -112,8 +100,6 @@ calculate_default <- function(defaulter, exit) {
 }
 
 
-################################################################################
-#
 #'
 #' Calculate CMAM performance indicators - non-response rate
 #'
@@ -130,8 +116,6 @@ calculate_default <- function(defaulter, exit) {
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_no_response <- function(nr, exit) {
   ## Check that parameters are numeric
@@ -150,9 +134,6 @@ calculate_no_response <- function(nr, exit) {
   return(prop_nr)
 }
 
-
-################################################################################
-#
 #'
 #' Calculate CMAM performance indicators
 #'
@@ -177,14 +158,12 @@ calculate_no_response <- function(nr, exit) {
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_performance <- function(.data,
                                   vars = NULL,
                                   add = TRUE) {
   ## Get vars
-  if(is.null(vars)) {
+  if (is.null(vars)) {
     ## Find variables names in .data
     .vars <- c(find_var_names(.data, vars = c("cure", "recover")),
                find_var_names(.data, vars = c("dead", "death")),
@@ -192,7 +171,7 @@ calculate_performance <- function(.data,
                find_var_names(.data, vars = c("response", "respond")))
 
     ##
-    if(any(is.null(.vars))) {
+    if (any(is.null(.vars))) {
       message(
         "No variables in .data match with usual performance indicators data
         variable names. First 4 columns of .data will be used."
@@ -202,7 +181,7 @@ calculate_performance <- function(.data,
     }
   } else {
     ## check if vars found in names of .data
-    if(!all(vars %in% names(.data))) {
+    if (!all(vars %in% names(.data))) {
       stop(
         "Variables in .data does not match with specified variable names in
         vars. Try again.", call. = TRUE
@@ -213,19 +192,19 @@ calculate_performance <- function(.data,
   }
 
   ## Check that input variables are numeric
-  if(!is.numeric(.data[[.vars[1]]])) {
+  if (!is.numeric(.data[[.vars[1]]])) {
     stop(paste(.vars[1], "should be numeric. Try again.", call. = TRUE))
   }
 
-  if(!is.numeric(.data[[.vars[2]]])) {
+  if (!is.numeric(.data[[.vars[2]]])) {
     stop(paste(.vars[2], "should be numeric. Try again.", call. = TRUE))
   }
 
-  if(!is.numeric(.data[[.vars[3]]])) {
+  if (!is.numeric(.data[[.vars[3]]])) {
     stop(paste(.vars[3], "should be numeric. Try again.", call. = TRUE))
   }
 
-  if(!is.numeric(.data[[.vars[4]]])) {
+  if (!is.numeric(.data[[.vars[4]]])) {
     stop(paste(.vars[4], "should be numeric. Try again.", call. = TRUE))
   }
 
@@ -242,12 +221,10 @@ calculate_performance <- function(.data,
   nr_prop <- calculate_no_response(nr = .data[[.vars[4]]],
                                    exit = rowSums(.data[ , .vars]))
 
-
-
   ## Concatenate
   pf <- data.frame(cured_prop, dead_prop, defaulter_prop, nr_prop)
 
-  if(add) {
+  if (add) {
     pf <- cbind(.data, pf)
   }
 
@@ -257,3 +234,4 @@ calculate_performance <- function(.data,
   ## Return result
   return(pf)
 }
+
