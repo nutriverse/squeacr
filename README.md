@@ -133,18 +133,18 @@ monitoring |>
 which results in the following:
 
     #> # A tibble: 72 × 7
-    #>    State      Year  total_discharge cure_rate default_rate death_rate
-    #>    <chr>      <chr>           <dbl>     <dbl>        <dbl>      <dbl>
-    #>  1 Blue Nile  2016             9693     0.889       0.0906    0.0151 
-    #>  2 Blue Nile  2017            10286     0.948       0.0399    0.00972
-    #>  3 Blue Nile  2018             8807     0.947       0.0404    0.00863
-    #>  4 Blue Nile  2019             9882     0.953       0.0366    0.00708
-    #>  5 Central D… 2016            13313     0.921       0.0440    0.0174 
-    #>  6 Central D… 2017            18098     0.935       0.0421    0.00912
-    #>  7 Central D… 2018            17600     0.939       0.0364    0.00955
-    #>  8 Central D… 2019            18573     0.952       0.0260    0.00549
-    #>  9 East Darf… 2016             9895     0.929       0.0550    0.0104 
-    #> 10 East Darf… 2017            12611     0.956       0.0327    0.00690
+    #>    State        Year  total_discharge cure_rate default_rate death_rate
+    #>    <chr>        <chr>           <dbl>     <dbl>        <dbl>      <dbl>
+    #>  1 Blue Nile    2016             9693     0.889       0.0906    0.0151 
+    #>  2 Blue Nile    2017            10286     0.948       0.0399    0.00972
+    #>  3 Blue Nile    2018             8807     0.947       0.0404    0.00863
+    #>  4 Blue Nile    2019             9882     0.953       0.0366    0.00708
+    #>  5 Central Dar… 2016            13313     0.921       0.0440    0.0174 
+    #>  6 Central Dar… 2017            18098     0.935       0.0421    0.00912
+    #>  7 Central Dar… 2018            17600     0.939       0.0364    0.00955
+    #>  8 Central Dar… 2019            18573     0.952       0.0260    0.00549
+    #>  9 East Darfur  2016             9895     0.929       0.0550    0.0104 
+    #> 10 East Darfur  2017            12611     0.956       0.0327    0.00690
     #> # ℹ 62 more rows
     #> # ℹ 1 more variable: non_response_rate <dbl>
 
@@ -221,16 +221,13 @@ which gives the following results:
 The `{squeacr}` provides functions to calculate programme coverage.
 These functions implement the single coverage estimator approach\[1\].
 In this approach, treatment coverage is calculated in such a way that
-estimates
-![r\_out](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;r_out
-"r_out") or the number of severe acute malnutrition (SAM) cases that
-have not been enrolled in the programme but have been recovering without
-treatment.
+estimates the number of severe acute malnutrition (SAM) cases that have
+not been enrolled in the programme but have been recovering without
+treatment (`r_out`).
 
 For example, if a coverage survey yielded 5 SAM cases in the programme,
 25 cases not in the programme, and 5 recovering cases in the programme,
-![r\_out](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;r_out
-"r_out") can be calculated as follows:
+`r_out` can be calculated as follows:
 
 ``` r
 calculate_rout(cin = 5, cout = 25, rin = 5)
@@ -244,9 +241,8 @@ treatment episode. This, by default, is set to `k = 3` in the function.
 However, this should be adjusted based on programme data to estimate the
 mean length of a SAM treatment episode.
 
-This calculation for
-![r\_out](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;r_out
-"r_out") is used within `calculate_tc()` to estimate treatment coverage:
+This calculation for `r_out` is used within `calculate_tc()` to estimate
+treatment coverage:
 
 ``` r
 calculate_tc(cin = 5, cout = 25, rin = 5)
@@ -266,8 +262,8 @@ citation("squeacr")
 #>   Allison, Guerrero, Saul, Schofield, Lilly, Jones, Daniel,
 #>   Emru, Ephrem, Sadler, Kate (2012). _Semi-Quantitative
 #>   Evaluation of Access and Coverage (SQUEAC)/Simplified Lot
-#>   Quality Assurance Sampling Evaluation of Access and
-#>   Coverage (SLEAC) Technical Reference_.
+#>   Quality Assurance Sampling Evaluation of Access and Coverage
+#>   (SLEAC) Technical Reference_.
 #>   <https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf>.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -295,8 +291,6 @@ Conduct](https://nutriverse.io/squeacr/CODE_OF_CONDUCT.html). By
 contributing to this project, you agree to abide by its terms.
 
 <br/>
-
-## Footnotes
 
 1.  Safari Balegamire, Katja Siling, Jose Luis Alvarez Moran, Ernest
     Guevarra, Sophie Woodhead, Alison Norris, Lionella Fieschi, Paul

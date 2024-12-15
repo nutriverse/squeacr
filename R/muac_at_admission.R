@@ -9,8 +9,8 @@
 #' @param na_values A vector of values in `muac` that are to be considered as
 #'   NA values. Default to NULL which will use NA.
 #' 
-#' @returns A numeric value (if `index = NULL`) or vector of values for median
-#'   mid-upper arm circumference.
+#' @returns A numeric value (if `index = NULL`) or named vector of values for 
+#'   median mid-upper arm circumference with names from each level of `index`.
 #'
 #' @examples
 #' calculate_median_muac(otp_beneficiaries$muac)

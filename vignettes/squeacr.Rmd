@@ -12,6 +12,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  message = FALSE,
   comment = "#>"
 )
 ```
@@ -140,9 +141,9 @@ calculate_los_median(otp_beneficiaries$admDate, otp_beneficiaries$disDate)
 
 ### CMAM programme coverage
 
-The `{squeacr}` provides functions to calculate programme coverage. These functions implement the single coverage estimator approach[^1]. In this approach, treatment coverage is calculated in such a way that estimates $r_{out}$ or the number of severe acute malnutrition (SAM) cases that have not been enrolled in the programme but have been recovering without treatment.
+The `{squeacr}` provides functions to calculate programme coverage. These functions implement the single coverage estimator approach[^1]. In this approach, treatment coverage is calculated in such a way that estimates the number of severe acute malnutrition (SAM) cases that have not been enrolled in the programme but have been recovering without treatment (`r_out`).
 
-For example, if a coverage survey yielded 5 SAM cases in the programme, 25 cases not in the programme, and 5 recovering cases in the programme, $r_{out}$ can be calculated as follows:
+For example, if a coverage survey yielded 5 SAM cases in the programme, 25 cases not in the programme, and 5 recovering cases in the programme, `r_out` can be calculated as follows:
 
 ```{r}
 calculate_rout(cin = 5, cout = 25, rin = 5)
@@ -150,10 +151,11 @@ calculate_rout(cin = 5, cout = 25, rin = 5)
 
 Note here that the `calculate_rout()` function has another argument named `k` which is a correction factor representing the ratio of the mean length of an untreated episode to the mean length of a CMAM treatment episode. This, by default, is set to `k = 3` in the function. However, this should be adjusted based on programme data to estimate the mean length of a SAM treatment episode.
 
-This calculation for $r_{out}$ is used within `calculate_tc()` to estimate treatment coverage:
+This calculation for `r_out` is used within `calculate_tc()` to estimate treatment coverage:
 
 ```{r}
 calculate_tc(cin = 5, cout = 25, rin = 5)
 ```
 
 
+[^1]: Safari Balegamire, Katja Siling, Jose Luis Alvarez Moran, Ernest Guevarra, Sophie Woodhead, Alison Norris, Lionella Fieschi, Paul Binns, and Mark Myatt (2015). A single coverage estimator for use in SQUEAC, SLEAC, and other CMAM coverage assessments. Field Exchange 49, March 2015. p81. <www.ennonline.net/fex/49/singlecoverage>

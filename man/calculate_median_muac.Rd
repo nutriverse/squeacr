@@ -18,8 +18,8 @@ grouping applied).}
 NA values. Default to NULL which will use NA.}
 }
 \value{
-A numeric value (if \code{index = NULL}) or vector of values for median
-mid-upper arm circumference.
+A numeric value (if \code{index = NULL}) or named vector of values for
+median mid-upper arm circumference with names from each level of \code{index}.
 }
 \description{
 Calculate median MUAC-at_admissions
