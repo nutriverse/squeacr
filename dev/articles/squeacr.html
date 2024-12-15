@@ -12,11 +12,12 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="../katex-auto.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Semi-Quantitative Evaluation of Access and Coverage">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><link href="../deps/KaTex-0.16.10/katex.min.css" rel="stylesheet">
+<script src="../deps/KaTex-0.16.10/katex.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Semi-Quantitative Evaluation of Access and Coverage">
 <meta name="robots" content="noindex">
 </head>
 <body>
@@ -62,7 +63,7 @@
                         <h4 data-toc-skip class="author">Ernest
 Guevarra</h4>
             
-            <h4 data-toc-skip class="date">2024-12-14</h4>
+            <h4 data-toc-skip class="date">2024-12-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nutriverse/squeacr/blob/main/vignettes/squeacr.Rmd" class="external-link"><code>vignettes/squeacr.Rmd</code></a></small>
       <div class="d-none name"><code>squeacr.Rmd</code></div>
@@ -70,14 +71,6 @@ Guevarra</h4>
 
     
     
-<pre><code><span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'dplyr'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     filter, lag</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span></code></pre>
 <p>In the recent past, measurement of coverage has been mainly through
 two-stage cluster sampled surveys either as part of a nutrition
 assessment or through a specific coverage survey known as Centric
@@ -111,7 +104,7 @@ and,</p></li>
 <p>The <a href="https://nutriverse.io/squeacr/">squeacr</a> package is not yet available on <a href="https://cran.r-project.org" class="external-link">CRAN</a> but can be installed from the
 <a href="https://nutriverse.r-universe.dev" class="external-link">nutriverse R Universe</a> as
 follows:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span></span>
 <span>  <span class="st">"squeacr"</span>,</span>
 <span>  repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'https://nutriverse.r-universe.dev'</span>, <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span></span>
@@ -518,7 +511,7 @@ The dataset has the following fields:</p>
 <p>We can calculate the different programme performance indicators using
 <a href="https://nutriverse.io/squeacr/">squeacr</a>. For this example, we’ll calculate the indicators
 for each state per year.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nutriverse.io/squeacr/">squeacr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span></span>
@@ -560,7 +553,7 @@ date and the discharge date.</p>
 <p>The <code>otp_beneficiaries</code> dataset in the package is an
 example of a patient record data from which length-of-stay can be
 calculated using the <code><a href="../reference/calculate_los.html">calculate_los()</a></code> function:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_los.html">calculate_los</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
 <p>which gives the following results:</p>
 <pre><code><span><span class="co">#&gt; Warning in calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate):</span></span>
@@ -593,7 +586,7 @@ calculated using the <code><a href="../reference/calculate_los.html">calculate_l
 <span><span class="co">#&gt; [397]  49  54  37  70  84  28  28  66  56</span></span></code></pre>
 <p>The median length-of-stay in a CMAM programme can be calculated as
 follows:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_los.html">calculate_los_median</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
 <p>which gives the following results:</p>
 <pre><code><span><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date, discharge_date =</span></span>
@@ -609,18 +602,19 @@ follows:</p>
 </h3>
 <p>The <a href="https://nutriverse.io/squeacr/">squeacr</a> provides functions to calculate programme
 coverage. These functions implement the single coverage estimator
-approach[^1]. In this approach, treatment coverage is calculated in such
-a way that estimates
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">r_{out}</annotation></semantics></math>
-or the number of severe acute malnutrition (SAM) cases that have not
-been enrolled in the programme but have been recovering without
-treatment.</p>
+approach<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content="&lt;p&gt;Safari Balegamire, Katja Siling, Jose Luis Alvarez
+Moran, Ernest Guevarra, Sophie Woodhead, Alison Norris, Lionella
+Fieschi, Paul Binns, and Mark Myatt (2015). A single coverage estimator
+for use in SQUEAC, SLEAC, and other CMAM coverage assessments. Field
+Exchange 49, March 2015. p81.
+&amp;lt;www.ennonline.net/fex/49/singlecoverage&amp;gt;&lt;/p&gt;"><sup>1</sup></a>. In this approach, treatment coverage is
+calculated in such a way that estimates the number of severe acute
+malnutrition (SAM) cases that have not been enrolled in the programme
+but have been recovering without treatment (<code>r_out</code>).</p>
 <p>For example, if a coverage survey yielded 5 SAM cases in the
 programme, 25 cases not in the programme, and 5 recovering cases in the
-programme,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">r_{out}</annotation></semantics></math>
-can be calculated as follows:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+programme, <code>r_out</code> can be calculated as follows:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_coverage.html">calculate_rout</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 6</span></span></code></pre></div>
 <p>Note here that the <code><a href="../reference/calculate_coverage.html">calculate_rout()</a></code> function has another
@@ -630,15 +624,14 @@ of a CMAM treatment episode. This, by default, is set to
 <code>k = 3</code> in the function. However, this should be adjusted
 based on programme data to estimate the mean length of a SAM treatment
 episode.</p>
-<p>This calculation for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">r_{out}</annotation></semantics></math>
-is used within <code><a href="../reference/calculate_coverage.html">calculate_tc()</a></code> to estimate treatment
-coverage:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<p>This calculation for <code>r_out</code> is used within
+<code><a href="../reference/calculate_coverage.html">calculate_tc()</a></code> to estimate treatment coverage:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_coverage.html">calculate_tc</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.2439024</span></span></code></pre></div>
 </div>
 </div>
+
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
