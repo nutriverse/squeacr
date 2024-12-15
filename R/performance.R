@@ -41,27 +41,29 @@ calculate_performance <- function(df,
                                   add = TRUE) {
   ## Get vars
   if (is.null(vars)) {
-    ## Find variables names in .data
-    .vars <- c(find_var_names(df, vars = c("cure", "recover")),
-               find_var_names(df, vars = c("dead", "death")),
-               find_var_names(df, vars = c("default", "def")),
-               find_var_names(df, vars = c("response", "respond")))
+    ## Find variables names in df
+    .vars <- c(
+      find_var_names(df, vars = c("cure", "recover", "rec")),
+      find_var_names(df, vars = c("dead", "death")),
+      find_var_names(df, vars = c("default", "def")),
+      find_var_names(df, vars = c("response", "respond", "nr"))
+    )
 
     ##
-    if (any(is.null(.vars))) {
-      message(
-        "No variables in `df` match with usual performance indicators data
-        variable names. First 4 columns of df will be used."
+    if (all(is.null(.vars))) {
+      stop(
+        "No variables in `df` match with usual performance indicators data ",
+        "variable names. Please check `df` or specify appropriate `vars`.",
+        call. = TRUE
       )
-
-      .vars <- names(df)[1:4]
     }
   } else {
     ## check if vars found in names of df
-    if (!all(vars %in% names(df))) {
+    if (any(!vars %in% names(df))) {
       stop(
-        "Variables in .data does not match with specified variable names in
-        vars. Try again.", call. = TRUE
+        "Some or all variables in `df` does not match with specified variable ",
+        "names in `vars`. Please try again.", 
+        call. = TRUE
       )
     }
 
