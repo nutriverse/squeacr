@@ -1,10 +1,10 @@
 bibentry(
-  bibtype   = "Manual",
-  header    = "To cite squeacr in publications use:",
-	location  = "Washington, DC",
+  bibtype   = "Book",
+  header    = "To cite sleacr in publications use:",
 	title     = "Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference",
-	url       = "https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf",
-	publisher = "FHI 360/FANTA",
-	author    = "Myatt, Mark and Guevarra, Ernest and Fieschi, Lionella and Norris, Allison and Guerrero, Saul and Schofield, Lilly and Jones, Daniel and Emru, Ephrem and Sadler, Kate",
-	year      = "2012"
+	author    = c(person("Mark Myatt"), person("Ernest Guevarra"), person("Lionella Fieschi"), person("Allison Norris"), person("Saul Guerrero"), person("Lilly Schofield"), person("Daniel Jones"), person("Ephrem Emru"), person("Kate Sadler")),
+  year      = "2012",
+  publisher = "FHI 360/FANTA",
+  address   = "Washington, DC",
+	url       = "https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf"
 )

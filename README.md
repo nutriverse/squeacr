@@ -133,18 +133,18 @@ monitoring |>
 which results in the following:
 
     #> # A tibble: 72 × 7
-    #>    State        Year  total_discharge cure_rate default_rate death_rate
-    #>    <chr>        <chr>           <dbl>     <dbl>        <dbl>      <dbl>
-    #>  1 Blue Nile    2016             9693     0.889       0.0906    0.0151 
-    #>  2 Blue Nile    2017            10286     0.948       0.0399    0.00972
-    #>  3 Blue Nile    2018             8807     0.947       0.0404    0.00863
-    #>  4 Blue Nile    2019             9882     0.953       0.0366    0.00708
-    #>  5 Central Dar… 2016            13313     0.921       0.0440    0.0174 
-    #>  6 Central Dar… 2017            18098     0.935       0.0421    0.00912
-    #>  7 Central Dar… 2018            17600     0.939       0.0364    0.00955
-    #>  8 Central Dar… 2019            18573     0.952       0.0260    0.00549
-    #>  9 East Darfur  2016             9895     0.929       0.0550    0.0104 
-    #> 10 East Darfur  2017            12611     0.956       0.0327    0.00690
+    #>    State       Year  total_discharge cure_rate default_rate death_rate
+    #>    <chr>       <chr>           <dbl>     <dbl>        <dbl>      <dbl>
+    #>  1 Blue Nile   2016             9693     0.889       0.0906    0.0151 
+    #>  2 Blue Nile   2017            10286     0.948       0.0399    0.00972
+    #>  3 Blue Nile   2018             8807     0.947       0.0404    0.00863
+    #>  4 Blue Nile   2019             9882     0.953       0.0366    0.00708
+    #>  5 Central Da… 2016            13313     0.921       0.0440    0.0174 
+    #>  6 Central Da… 2017            18098     0.935       0.0421    0.00912
+    #>  7 Central Da… 2018            17600     0.939       0.0364    0.00955
+    #>  8 Central Da… 2019            18573     0.952       0.0260    0.00549
+    #>  9 East Darfur 2016             9895     0.929       0.0550    0.0104 
+    #> 10 East Darfur 2017            12611     0.956       0.0327    0.00690
     #> # ℹ 62 more rows
     #> # ℹ 1 more variable: non_response_rate <dbl>
 
@@ -256,25 +256,25 @@ citation provided by a call to the `citation` function as follows:
 
 ``` r
 citation("squeacr")
-#> To cite squeacr in publications use:
+#> To cite sleacr in publications use:
 #> 
-#>   Myatt, Mark, Guevarra, Ernest, Fieschi, Lionella, Norris,
-#>   Allison, Guerrero, Saul, Schofield, Lilly, Jones, Daniel,
-#>   Emru, Ephrem, Sadler, Kate (2012). _Semi-Quantitative
-#>   Evaluation of Access and Coverage (SQUEAC)/Simplified Lot
-#>   Quality Assurance Sampling Evaluation of Access and Coverage
-#>   (SLEAC) Technical Reference_.
+#>   Mark Myatt, Ernest Guevarra, Lionella Fieschi, Allison
+#>   Norris, Saul Guerrero, Lilly Schofield, Daniel Jones, Ephrem
+#>   Emru, Kate Sadler (2012). _Semi-Quantitative Evaluation of
+#>   Access and Coverage (SQUEAC)/Simplified Lot Quality
+#>   Assurance Sampling Evaluation of Access and Coverage (SLEAC)
+#>   Technical Reference_. FHI 360/FANTA, Washington, DC.
 #>   <https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
-#>   @Manual{,
-#>     location = {Washington, DC},
+#>   @Book{,
 #>     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},
-#>     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},
-#>     publisher = {FHI 360/FANTA},
-#>     author = {{Myatt} and {Mark} and {Guevarra} and {Ernest} and {Fieschi} and {Lionella} and {Norris} and {Allison} and {Guerrero} and {Saul} and {Schofield} and {Lilly} and {Jones} and {Daniel} and {Emru} and {Ephrem} and {Sadler} and {Kate}},
+#>     author = {{Mark Myatt} and {Ernest Guevarra} and {Lionella Fieschi} and {Allison Norris} and {Saul Guerrero} and {Lilly Schofield} and {Daniel Jones} and {Ephrem Emru} and {Kate Sadler}},
 #>     year = {2012},
+#>     publisher = {FHI 360/FANTA},
+#>     address = {Washington, DC},
+#>     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},
 #>   }
 ```
 
