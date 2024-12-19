@@ -497,18 +497,18 @@
 <span>  <span class="op">)</span></span></code></pre></div>
 <p>which results in the following:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co">#&gt; # A tibble: 72 × 7</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt;    State        Year  total_discharge cure_rate default_rate death_rate</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;  1 Blue Nile    2016             9693     0.889       0.0906    0.0151 </span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;  2 Blue Nile    2017            10286     0.948       0.0399    0.00972</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  3 Blue Nile    2018             8807     0.947       0.0404    0.00863</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  4 Blue Nile    2019             9882     0.953       0.0366    0.00708</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  5 Central Dar… 2016            13313     0.921       0.0440    0.0174 </span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  6 Central Dar… 2017            18098     0.935       0.0421    0.00912</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;  7 Central Dar… 2018            17600     0.939       0.0364    0.00955</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;  8 Central Dar… 2019            18573     0.952       0.0260    0.00549</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;  9 East Darfur  2016             9895     0.929       0.0550    0.0104 </span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 10 East Darfur  2017            12611     0.956       0.0327    0.00690</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt;    State       Year  total_discharge cure_rate default_rate death_rate</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;  1 Blue Nile   2016             9693     0.889       0.0906    0.0151 </span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;  2 Blue Nile   2017            10286     0.948       0.0399    0.00972</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  3 Blue Nile   2018             8807     0.947       0.0404    0.00863</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  4 Blue Nile   2019             9882     0.953       0.0366    0.00708</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  5 Central Da… 2016            13313     0.921       0.0440    0.0174 </span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  6 Central Da… 2017            18098     0.935       0.0421    0.00912</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;  7 Central Da… 2018            17600     0.939       0.0364    0.00955</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;  8 Central Da… 2019            18573     0.952       0.0260    0.00549</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;  9 East Darfur 2016             9895     0.929       0.0550    0.0104 </span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 10 East Darfur 2017            12611     0.956       0.0327    0.00690</span></span>
 <span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; # ℹ 62 more rows</span></span>
 <span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: non_response_rate &lt;dbl&gt;</span></span></code></pre></div>
 </div>
@@ -585,25 +585,25 @@
 <p>If you use <a href="https://nutriverse.io/squeacr/">squeacr</a> in your work, please cite using the suggested citation provided by a call to the <code>citation</code> function as follows:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"squeacr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; To cite squeacr in publications use:</span></span>
+<span><span class="co">#&gt; To cite sleacr in publications use:</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;   Myatt, Mark, Guevarra, Ernest, Fieschi, Lionella, Norris,</span></span>
-<span><span class="co">#&gt;   Allison, Guerrero, Saul, Schofield, Lilly, Jones, Daniel,</span></span>
-<span><span class="co">#&gt;   Emru, Ephrem, Sadler, Kate (2012). _Semi-Quantitative</span></span>
-<span><span class="co">#&gt;   Evaluation of Access and Coverage (SQUEAC)/Simplified Lot</span></span>
-<span><span class="co">#&gt;   Quality Assurance Sampling Evaluation of Access and Coverage</span></span>
-<span><span class="co">#&gt;   (SLEAC) Technical Reference_.</span></span>
+<span><span class="co">#&gt;   Mark Myatt, Ernest Guevarra, Lionella Fieschi, Allison</span></span>
+<span><span class="co">#&gt;   Norris, Saul Guerrero, Lilly Schofield, Daniel Jones, Ephrem</span></span>
+<span><span class="co">#&gt;   Emru, Kate Sadler (2012). _Semi-Quantitative Evaluation of</span></span>
+<span><span class="co">#&gt;   Access and Coverage (SQUEAC)/Simplified Lot Quality</span></span>
+<span><span class="co">#&gt;   Assurance Sampling Evaluation of Access and Coverage (SLEAC)</span></span>
+<span><span class="co">#&gt;   Technical Reference_. FHI 360/FANTA, Washington, DC.</span></span>
 <span><span class="co">#&gt;   &lt;https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;   @Manual{,</span></span>
-<span><span class="co">#&gt;     location = {Washington, DC},</span></span>
+<span><span class="co">#&gt;   @Book{,</span></span>
 <span><span class="co">#&gt;     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},</span></span>
-<span><span class="co">#&gt;     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},</span></span>
-<span><span class="co">#&gt;     publisher = {FHI 360/FANTA},</span></span>
-<span><span class="co">#&gt;     author = {{Myatt} and {Mark} and {Guevarra} and {Ernest} and {Fieschi} and {Lionella} and {Norris} and {Allison} and {Guerrero} and {Saul} and {Schofield} and {Lilly} and {Jones} and {Daniel} and {Emru} and {Ephrem} and {Sadler} and {Kate}},</span></span>
+<span><span class="co">#&gt;     author = {{Mark Myatt} and {Ernest Guevarra} and {Lionella Fieschi} and {Allison Norris} and {Saul Guerrero} and {Lilly Schofield} and {Daniel Jones} and {Ephrem Emru} and {Kate Sadler}},</span></span>
 <span><span class="co">#&gt;     year = {2012},</span></span>
+<span><span class="co">#&gt;     publisher = {FHI 360/FANTA},</span></span>
+<span><span class="co">#&gt;     address = {Washington, DC},</span></span>
+<span><span class="co">#&gt;     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},</span></span>
 <span><span class="co">#&gt;   }</span></span></code></pre></div>
 </div>
 <div class="section level2">

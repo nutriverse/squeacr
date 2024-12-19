@@ -63,7 +63,7 @@
                         <h4 data-toc-skip class="author">Ernest
 Guevarra</h4>
             
-            <h4 data-toc-skip class="date">2024-12-15</h4>
+            <h4 data-toc-skip class="date">2024-12-19</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nutriverse/squeacr/blob/main/vignettes/squeacr.Rmd" class="external-link"><code>vignettes/squeacr.Rmd</code></a></small>
       <div class="d-none name"><code>squeacr.Rmd</code></div>
@@ -71,6 +71,8 @@ Guevarra</h4>
 
     
     
+<pre><code><span><span class="co">#&gt; Error in get(paste0(generic, ".", class), envir = get_method_env()) : </span></span>
+<span><span class="co">#&gt;   object 'type_sum.accel' not found</span></span></code></pre>
 <p>In the recent past, measurement of coverage has been mainly through
 two-stage cluster sampled surveys either as part of a nutrition
 assessment or through a specific coverage survey known as Centric
@@ -104,7 +106,7 @@ and,</p></li>
 <p>The <a href="https://nutriverse.io/squeacr/">squeacr</a> package is not yet available on <a href="https://cran.r-project.org" class="external-link">CRAN</a> but can be installed from the
 <a href="https://nutriverse.r-universe.dev" class="external-link">nutriverse R Universe</a> as
 follows:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span></span>
 <span>  <span class="st">"squeacr"</span>,</span>
 <span>  repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'https://nutriverse.r-universe.dev'</span>, <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span></span>
@@ -511,7 +513,7 @@ The dataset has the following fields:</p>
 <p>We can calculate the different programme performance indicators using
 <a href="https://nutriverse.io/squeacr/">squeacr</a>. For this example, we’ll calculate the indicators
 for each state per year.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nutriverse.io/squeacr/">squeacr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span></span>
@@ -553,7 +555,7 @@ date and the discharge date.</p>
 <p>The <code>otp_beneficiaries</code> dataset in the package is an
 example of a patient record data from which length-of-stay can be
 calculated using the <code><a href="../reference/calculate_los.html">calculate_los()</a></code> function:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_los.html">calculate_los</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
 <p>which gives the following results:</p>
 <pre><code><span><span class="co">#&gt; Warning in calculate_los(otp_beneficiaries$admDate, otp_beneficiaries$disDate):</span></span>
@@ -586,7 +588,7 @@ calculated using the <code><a href="../reference/calculate_los.html">calculate_l
 <span><span class="co">#&gt; [397]  49  54  37  70  84  28  28  66  56</span></span></code></pre>
 <p>The median length-of-stay in a CMAM programme can be calculated as
 follows:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_los.html">calculate_los_median</a></span><span class="op">(</span><span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">admDate</span>, <span class="va">otp_beneficiaries</span><span class="op">$</span><span class="va">disDate</span><span class="op">)</span></span></code></pre></div>
 <p>which gives the following results:</p>
 <pre><code><span><span class="co">#&gt; Warning in calculate_los(admission_date = admission_date, discharge_date =</span></span>
@@ -614,7 +616,7 @@ but have been recovering without treatment (<code>r_out</code>).</p>
 <p>For example, if a coverage survey yielded 5 SAM cases in the
 programme, 25 cases not in the programme, and 5 recovering cases in the
 programme, <code>r_out</code> can be calculated as follows:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_coverage.html">calculate_rout</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 6</span></span></code></pre></div>
 <p>Note here that the <code><a href="../reference/calculate_coverage.html">calculate_rout()</a></code> function has another
@@ -626,7 +628,7 @@ based on programme data to estimate the mean length of a SAM treatment
 episode.</p>
 <p>This calculation for <code>r_out</code> is used within
 <code><a href="../reference/calculate_coverage.html">calculate_tc()</a></code> to estimate treatment coverage:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_coverage.html">calculate_tc</a></span><span class="op">(</span>cin <span class="op">=</span> <span class="fl">5</span>, cout <span class="op">=</span> <span class="fl">25</span>, rin <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.2439024</span></span></code></pre></div>
 </div>
