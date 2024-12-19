@@ -13,13 +13,14 @@
 #'   median mid-upper arm circumference with names from each level of `index`.
 #'
 #' @examples
-#' calculate_median_muac(otp_beneficiaries$muac)
-#' calculate_median_muac(otp_beneficiaries$muac, otp_beneficiaries$locality)
+#' calculate_muac_median(otp_beneficiaries$muac)
+#' calculate_muac_median(otp_beneficiaries$muac, otp_beneficiaries$locality)
 #' 
 #' @export
+#' @rdname calculate_muac
 #' 
 
-calculate_median_muac <- function(muac, index = NULL, na_values = NULL) {
+calculate_muac_median <- function(muac, index = NULL, na_values = NULL) {
   if (!is.null(na_values)) {
     muac <- ifelse(muac %in% na_values, NA_real_, muac)
   }
@@ -37,4 +38,23 @@ calculate_median_muac <- function(muac, index = NULL, na_values = NULL) {
   }
 
   median_muac
+}
+
+
+calculate_muac_median_count <- function(muac, n, index = NULL) {
+  if (is.null(index)) {
+    Map(f = rep, x = muac, times = n) |>
+      unlist() |>
+      median(na.rm = TRUE)
+  } else {
+    split(data.frame(muac, n), f = index) |> 
+      lapply(
+        FUN = function(x) Map(f = rep, x = x$muac, times = x$n) |> unlist()
+      ) |> 
+      lapply(FUN = median, na.rm = TRUE) |> 
+      (\(x) do.call(rbind, x))() |>
+      (\(x) data.frame(
+        index = row.names(x), median_muac = x, row.names = NULL
+      ))()
+  }
 }

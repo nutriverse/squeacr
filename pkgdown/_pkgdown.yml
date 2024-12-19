@@ -61,7 +61,7 @@ reference:
 
   - title: MUAC-at-admission
     contents:
-    - calculate_median_muac
+    - calculate_muac_median
 
   - title: Length of stay
     contents:
