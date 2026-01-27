@@ -12,3 +12,4 @@
 ^pkgdown$
 ^CODE_OF_CONDUCT\.md$
 ^README\.html$
+^CITATION\.cff$
