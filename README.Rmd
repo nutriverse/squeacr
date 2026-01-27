@@ -19,19 +19,18 @@ library(dplyr)
 # squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC) Tools <img src="man/figures/logo.png" width = "200" align="right" />
 
 <!-- badges: start -->
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/nutriverse/squeacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/squeacr/actions/workflows/R-CMD-check.yaml)
 [![test-coverage](https://github.com/nutriverse/squeacr/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/nutriverse/squeacr/actions/workflows/test-coverage.yaml)
-[![Codecov test coverage](https://codecov.io/gh/nutriverse/squeacr/branch/main/graph/badge.svg)](https://codecov.io/gh/nutriverse/squeacr?branch=main)
-[![pkgdown](https://github.com/nutriverse/squeacr/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/nutriverse/squeacr/actions/workflows/pkgdown.yaml)
+[![Codecov test coverage](https://codecov.io/gh/nutriverse/squeacr/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/squeacr)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/squeacr/badge)](https://www.codefactor.io/repository/github/nutriverse/squeacr)
-[![DOI](https://zenodo.org/badge/115501158.svg)](https://zenodo.org/badge/latestdoi/115501158)
+[![DOI](https://zenodo.org/badge/115501158.svg)](https://doi.org/10.5281/zenodo.7509665)
 <!-- badges: end -->
 
 In the recent past, measurement of community-based management of acute malnutrition (CMAM) programme coverage has been mainly through two-stage cluster sampled surveys either as part of a nutrition assessment or through a specific coverage survey known as Centric Systematic Area Sampling (CSAS). However, such methods are resource intensive and often only used for final programme evaluation meaning results arrive too late for programme adaptation. SQUEAC, which stands for Semi-Quantitative Evaluation of Access and Coverage, is a low resource method designed specifically to address this limitation and is used regularly for monitoring, planning and importantly, timely improvement to programme quality, both for agency and Ministry of Health (MoH) led programmes. This package provides functions for use in conducting a SQUEAC investigation.
 
-## What does `squeacr` do?
+## What does the package do?
 
 The `{squeacr}` package provides functions that facilitate the processing, analysis and reporting of various components of a SQUEAC investigation. The current version of the `{squeacr}` package currently provides the following:
 
@@ -43,14 +42,30 @@ The `{squeacr}` package provides functions that facilitate the processing, analy
 
 ## Installation
 
-The `{squeacr}` package is not yet available on [CRAN](https://cran.r-project.org) but can be installed from the [nutriverse R Universe](https://nutriverse.r-universe.dev) as follows:
+::: {.pkgdown-release}
+You can install `{squeacr}` from [CRAN](https://cran.r-project.org) with:
 
-```{r install, echo = TRUE, eval = FALSE}
+```R
+install.packages("squeacr")
+```
+:::
+
+::: {.pkgdown-devel}
+You can install the development version of `{squeacr}` from GitHub using the `{pak}` package with:
+
+```R
+if (!require("pak")) install.packages("pak")
+pak::pak("nutriverse/squeacr")
+```
+You can also install `{squeacr}` from the [nutriverse R Universe](https://nutriverse.r-universe.dev) with:
+
+```R
 install.packages(
-  "squeacr",
+  "squeacr", 
   repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
 )
 ```
+:::
 
 ## Usage
 
@@ -166,7 +181,9 @@ calculate_tc(cin = 5, cout = 25, rin = 5)
 
 ## Citation
 
-If you use `{squeacr}` in your work, please cite using the suggested citation provided by a call to the `citation` function as follows:
+If you use the `{squeacr}` package in your work, please cite both the `{squeacr}` package and the authors and developers of the **SQUEAC and SLEAC method**.
+
+A suggested citation for both is provided by a call to the `citation()` function as follows:
 
 ```{r cite}
 citation("squeacr")
@@ -181,3 +198,7 @@ This project is released with a [Contributor Code of Conduct](https://nutriverse
 <br/>
 
 [^1]: Safari Balegamire, Katja Siling, Jose Luis Alvarez Moran, Ernest Guevarra, Sophie Woodhead, Alison Norris, Lionella Fieschi, Paul Binns, and Mark Myatt (2015). A single coverage estimator for use in SQUEAC, SLEAC, and other CMAM coverage assessments. Field Exchange 49, March 2015. p81. <www.ennonline.net/fex/49/singlecoverage>
+
+<br/>
+
+[![This is part of the nutriverse project under the Oxford iHealth initiative of the MSc in International Health and Tropical Medicine, Nuffield Department of Medicine, University of Oxford](https://github.com/nutriverse/nutriverse-images/blob/main/nutriverse/nutriverse_footer.png?raw=true)](https://nutriverse.io)
